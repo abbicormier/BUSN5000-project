@@ -300,11 +300,14 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Cause:</strong> You changed something in the YAML besides the <code>author:</code> line (e.g., the <code>output:</code> value, the <code>css:</code> reference, the <code>widescreen:</code> setting).</p>
 <p><strong>Fix:</strong></p>
 <ol type="1">
-<li>Download a fresh copy of the relevant Rmd (<code>pre_project.Rmd</code> or <code>project.Rmd</code>) from the file pack on eLC. Save it somewhere temporary like your Downloads folder — not in your <code>Project/</code> directory.</li>
-<li>Open the fresh copy. Copy the entire YAML block (the section between the two <code>---</code> markers at the top of the file).</li>
+<li>Identify which Rmd is broken: <code>pre_project.Rmd</code> or <code>project.Rmd</code>.</li>
+<li>Copy the canonical YAML block from the relevant chapter:
+<ul>
+<li><strong>Pre-project:</strong> the YAML block is in <a href="./pre-project.html#step-4-fill-in-the-yaml-author-line">Pre-project Step 4</a>.</li>
+<li><strong>Main project:</strong> the YAML block is in <a href="./main-project.html#the-yaml-block">Main Project — The YAML block</a>.</li>
+</ul></li>
 <li>Open your working Rmd. Replace your current YAML with the YAML you just copied.</li>
 <li>Re-add your name on the <code>author:</code> line.</li>
-<li><strong>Delete the fresh Rmd copy</strong> from your Downloads folder so you don’t accidentally start working in it instead of your real file.</li>
 <li>Re-knit.</li>
 </ol>
 </section>

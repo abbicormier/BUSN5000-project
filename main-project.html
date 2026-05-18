@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -211,20 +246,21 @@ window.Quarto = {
   <li><a href="#the-yaml-block" id="toc-the-yaml-block" class="nav-link" data-scroll-target="#the-yaml-block"><span class="header-section-number">3.3.5</span> The YAML block</a></li>
   <li><a href="#the-setup-chunk" id="toc-the-setup-chunk" class="nav-link" data-scroll-target="#the-setup-chunk"><span class="header-section-number">3.3.6</span> The setup chunk</a></li>
   </ul></li>
-  <li><a href="#slide-by-slide-instructions" id="toc-slide-by-slide-instructions" class="nav-link" data-scroll-target="#slide-by-slide-instructions"><span class="header-section-number">3.4</span> Slide-by-slide instructions</a>
+  <li><a href="#a-note-on-units" id="toc-a-note-on-units" class="nav-link" data-scroll-target="#a-note-on-units"><span class="header-section-number">3.4</span> A note on units</a></li>
+  <li><a href="#slide-by-slide-instructions" id="toc-slide-by-slide-instructions" class="nav-link" data-scroll-target="#slide-by-slide-instructions"><span class="header-section-number">3.5</span> Slide-by-slide instructions</a>
   <ul class="collapse">
-  <li><a href="#front-matter-slides-12" id="toc-front-matter-slides-12" class="nav-link" data-scroll-target="#front-matter-slides-12"><span class="header-section-number">3.4.1</span> Front matter (slides 1–2)</a></li>
-  <li><a href="#introduction-slides-34" id="toc-introduction-slides-34" class="nav-link" data-scroll-target="#introduction-slides-34"><span class="header-section-number">3.4.2</span> Introduction (slides 3–4)</a></li>
-  <li><a href="#data-slides-58" id="toc-data-slides-58" class="nav-link" data-scroll-target="#data-slides-58"><span class="header-section-number">3.4.3</span> Data (slides 5–8)</a></li>
-  <li><a href="#baseline-earnings-distributions-slides-912" id="toc-baseline-earnings-distributions-slides-912" class="nav-link" data-scroll-target="#baseline-earnings-distributions-slides-912"><span class="header-section-number">3.4.4</span> Baseline earnings distributions (slides 9–12)</a></li>
-  <li><a href="#the-career-gender-gap-slides-1320" id="toc-the-career-gender-gap-slides-1320" class="nav-link" data-scroll-target="#the-career-gender-gap-slides-1320"><span class="header-section-number">3.4.5</span> The career gender gap (slides 13–20)</a></li>
-  <li><a href="#explaining-the-gender-wage-gap-slides-2130" id="toc-explaining-the-gender-wage-gap-slides-2130" class="nav-link" data-scroll-target="#explaining-the-gender-wage-gap-slides-2130"><span class="header-section-number">3.4.6</span> Explaining the gender wage gap (slides 21–30)</a></li>
-  <li><a href="#conclusion-slides-3132" id="toc-conclusion-slides-3132" class="nav-link" data-scroll-target="#conclusion-slides-3132"><span class="header-section-number">3.4.7</span> Conclusion (slides 31–32)</a></li>
-  <li><a href="#appendix-slides-3335" id="toc-appendix-slides-3335" class="nav-link" data-scroll-target="#appendix-slides-3335"><span class="header-section-number">3.4.8</span> Appendix (slides 33–35)</a></li>
+  <li><a href="#front-matter-slides-12" id="toc-front-matter-slides-12" class="nav-link" data-scroll-target="#front-matter-slides-12"><span class="header-section-number">3.5.1</span> Front matter (slides 1–2)</a></li>
+  <li><a href="#introduction-slides-34" id="toc-introduction-slides-34" class="nav-link" data-scroll-target="#introduction-slides-34"><span class="header-section-number">3.5.2</span> Introduction (slides 3–4)</a></li>
+  <li><a href="#data-slides-58" id="toc-data-slides-58" class="nav-link" data-scroll-target="#data-slides-58"><span class="header-section-number">3.5.3</span> Data (slides 5–8)</a></li>
+  <li><a href="#baseline-earnings-distributions-slides-912" id="toc-baseline-earnings-distributions-slides-912" class="nav-link" data-scroll-target="#baseline-earnings-distributions-slides-912"><span class="header-section-number">3.5.4</span> Baseline earnings distributions (slides 9–12)</a></li>
+  <li><a href="#the-career-gender-gap-slides-1320" id="toc-the-career-gender-gap-slides-1320" class="nav-link" data-scroll-target="#the-career-gender-gap-slides-1320"><span class="header-section-number">3.5.5</span> The career gender gap (slides 13–20)</a></li>
+  <li><a href="#explaining-the-gender-wage-gap-slides-2130" id="toc-explaining-the-gender-wage-gap-slides-2130" class="nav-link" data-scroll-target="#explaining-the-gender-wage-gap-slides-2130"><span class="header-section-number">3.5.6</span> Explaining the gender wage gap (slides 21–30)</a></li>
+  <li><a href="#conclusion-slides-3132" id="toc-conclusion-slides-3132" class="nav-link" data-scroll-target="#conclusion-slides-3132"><span class="header-section-number">3.5.7</span> Conclusion (slides 31–32)</a></li>
+  <li><a href="#appendix-slides-3335" id="toc-appendix-slides-3335" class="nav-link" data-scroll-target="#appendix-slides-3335"><span class="header-section-number">3.5.8</span> Appendix (slides 33–35)</a></li>
   </ul></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">3.5</span> Submission</a></li>
-  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls"><span class="header-section-number">3.6</span> Common pitfalls</a></li>
-  <li><a href="#what-happens-next" id="toc-what-happens-next" class="nav-link" data-scroll-target="#what-happens-next"><span class="header-section-number">3.7</span> What happens next</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">3.6</span> Submission</a></li>
+  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls"><span class="header-section-number">3.7</span> Common pitfalls</a></li>
+  <li><a href="#what-happens-next" id="toc-what-happens-next" class="nav-link" data-scroll-target="#what-happens-next"><span class="header-section-number">3.8</span> What happens next</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/abbicormier/BUSN5000-project/edit/main/main-project.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/abbicormier/BUSN5000-project/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -258,9 +294,29 @@ window.Quarto = {
 <p>The project is intentionally built to mirror the course content week by week. As you cover new material in class, the next chunk of the project becomes doable.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="assets/instructions_img_1.png" class="img-fluid figure-img" alt="Diagram showing how the 35 project slides map to weeks 1-7 of the course: Week 1 Data Fundamentals → Slides 1-7; Week 2 Beginning to Learn → Slides 8-12; Week 3 Models for Exploration → Slides 13-20; Week 4 Making Inferences → Slides 21-26; Week 5 Sources of Bias → Through Slide 20 (optional check); Week 7 Regression Fundamentals → Slides 27-35"></p>
+<p><img src="assets/instructions_img_1.png" class="img-fluid figure-img" alt="Diagram showing how the 35 project slides map to weeks 1-7 of the in-person course: Week 1 Data Fundamentals → Slides 1-7; Week 2 Beginning to Learn → Slides 8-12; Week 3 Models for Exploration → Slides 13-20; Week 4 Making Inferences → Slides 21-26; Week 5 Sources of Bias → Through Slide 20 (optional check); Week 7 Regression Fundamentals → Slides 27-35"></p>
 <figcaption>Project-course alignment</figcaption>
 </figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>BUSN 5000E summer schedule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The image above shows the in-person (16-week) Spring/Fall pacing. The BUSN 5000E summer schedule is condensed — two course modules per calendar week. Re-mapped to BUSN 5000E calendar weeks:</p>
+<ul>
+<li><strong>Week 1</strong> (Modules 1–2, Data Fundamentals + Beginning to Learn): unlocks project slides 1–12</li>
+<li><strong>Week 2</strong> (Modules 3–4, Models for Exploration + Making Inferences): unlocks slides 13–20</li>
+<li><strong>Week 3</strong> (Modules 5–6, Measurement Error &amp; Confounding): optional check on tables &amp; figures through slide 20</li>
+<li><strong>Week 4</strong> (Modules 7–8, Bayesian + Regression Fundamentals): unlocks slides 21–35; <strong>Project Progress Check due Mon Jul 6</strong></li>
+<li><strong>Week 7</strong>: <strong>Final Project due Thu Jul 23</strong></li>
+</ul>
+</div>
 </div>
 <p>If you fall behind on the course content, the project gets harder fast. Stay on schedule.</p>
 </section>
@@ -288,10 +344,30 @@ window.Quarto = {
 <section id="write-up-line-limits" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="write-up-line-limits"><span class="header-section-number">3.3.2</span> Write-up line limits</h3>
 <p>Each write-up slide has a specific line limit (noted in the slide’s section below). <strong>We will not read beyond the line limit.</strong> Stay disciplined — concise writing is what’s being graded, not volume.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>What counts as a “line”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Lines of text” means <strong>rendered, countable lines on your final PDF</strong> — not sentences, and not lines as they appear in RStudio’s editor or output preview. A long sentence that wraps into three visual lines on the rendered slide counts as three lines.</p>
+<p>Submissions that exceed the line limit are <strong>heavily penalized</strong>. Always check your knitted PDF and count the actual visible lines on the slide before you submit.</p>
+</div>
+</div>
 </section>
 <section id="echo-settings" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="echo-settings"><span class="header-section-number">3.3.3</span> Echo settings</h3>
-<p>The template’s global <code>echo = TRUE</code> setting displays your code on each slide by default. A handful of chunks individually set <code>echo = FALSE</code> (the <code>.5</code> chunks that display tables/figures, the three <code>datasummary</code> chunks, and the appendix <code>var_doc_table</code>). <strong>Do not edit these <code>echo</code> settings.</strong> They exist to keep the deck to 35 slides.</p>
+<p>The template’s global <code>echo = TRUE</code> setting displays your code on each slide by default. We’ve individually overridden this to <code>echo = FALSE</code> on a specific list of chunks where displaying the code would be redundant or take up unnecessary space:</p>
+<ul>
+<li>The <code>.5</code> chunks (<code>btl2.5</code>, <code>mi2.5</code>, <code>mi3.5</code>, <code>reg1.5</code>, <code>reg2.5</code>) — these display tables and figures from objects defined in the previous chunk; the “code” is just the object name.</li>
+<li>The three <code>datasummary</code> chunks (<code>mi1</code>, <code>ed_vars</code>, <code>demo_vars</code>) — <code>datasummary</code> calls are long and not informative to show.</li>
+<li>The appendix <code>var_doc_table</code> chunk — just renders the documentation table built in <code>var_doc</code>.</li>
+</ul>
+<p><strong>Do not edit these <code>echo</code> settings.</strong> They exist to keep the deck to exactly 35 slides.</p>
 </section>
 <section id="html-commands-wrapping-chunks" class="level3" data-number="3.3.4">
 <h3 data-number="3.3.4" class="anchored" data-anchor-id="html-commands-wrapping-chunks"><span class="header-section-number">3.3.4</span> HTML commands wrapping chunks</h3>
@@ -300,6 +376,19 @@ window.Quarto = {
 <section id="the-yaml-block" class="level3" data-number="3.3.5">
 <h3 data-number="3.3.5" class="anchored" data-anchor-id="the-yaml-block"><span class="header-section-number">3.3.5</span> The YAML block</h3>
 <p>When you open <code>project.Rmd</code> for the first time, fill in your name on the <code>author:</code> line of the YAML — that’s the only change you should make to the YAML. After your name is in, save the file under a new name following the convention from the <a href="./submission.html#filename-conventions">Submission chapter</a>: <code>firstname_lastname_project.Rmd</code>.</p>
+<p>The canonical project YAML block (for reference and recovery if yours gets corrupted):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"BUSN 5000 Project"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Exploring Pay Differences between Women and Men"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"First Name Last Name"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    | Summer 2026</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    | (updated `r format(Sys.time(), '%d %b %y')`)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ioslides_presentation</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> css/project_slidedeck.css</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">widescreen</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -333,28 +422,33 @@ Important
 </div>
 </section>
 </section>
-<section id="slide-by-slide-instructions" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="slide-by-slide-instructions"><span class="header-section-number">3.4</span> Slide-by-slide instructions</h2>
+<section id="a-note-on-units" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="a-note-on-units"><span class="header-section-number">3.4</span> A note on units</h2>
+<p>Throughout your write-ups, use <strong>percent</strong> and <strong>percentage point</strong> correctly. They are not interchangeable.</p>
+<p>A wage gap going from 25% to 20% is a <strong>5 percentage point</strong> decrease — not a 5% decrease. (A 5% decrease from 25% would be 23.75%, not 20%.) Mixing the two is a recurring point of deduction.</p>
+</section>
+<section id="slide-by-slide-instructions" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="slide-by-slide-instructions"><span class="header-section-number">3.5</span> Slide-by-slide instructions</h2>
 <p>The point allocation for each graded slide is shown in parentheses next to the slide title. Slides without a point allocation are section dividers or scaffolding chunks (the code chunks whose output is displayed on the next <code>.5</code> slide).</p>
-<section id="front-matter-slides-12" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="front-matter-slides-12"><span class="header-section-number">3.4.1</span> Front matter (slides 1–2)</h3>
-<section id="slide-1-busn-5000-project" class="level4" data-number="3.4.1.1">
-<h4 data-number="3.4.1.1" class="anchored" data-anchor-id="slide-1-busn-5000-project"><span class="header-section-number">3.4.1.1</span> Slide 1: BUSN 5000 Project</h4>
+<section id="front-matter-slides-12" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="front-matter-slides-12"><span class="header-section-number">3.5.1</span> Front matter (slides 1–2)</h3>
+<section id="slide-1-busn-5000-project" class="level4" data-number="3.5.1.1">
+<h4 data-number="3.5.1.1" class="anchored" data-anchor-id="slide-1-busn-5000-project"><span class="header-section-number">3.5.1.1</span> Slide 1: BUSN 5000 Project</h4>
 <p>Title slide. It’s auto-formatted with your name from the YAML <code>author:</code> line.</p>
 </section>
-<section id="slide-2-academic-honesty-statement-1-point" class="level4" data-number="3.4.1.2">
-<h4 data-number="3.4.1.2" class="anchored" data-anchor-id="slide-2-academic-honesty-statement-1-point"><span class="header-section-number">3.4.1.2</span> Slide 2: Academic Honesty Statement <em>(1 point)</em></h4>
+<section id="slide-2-academic-honesty-statement-1-point" class="level4" data-number="3.5.1.2">
+<h4 data-number="3.5.1.2" class="anchored" data-anchor-id="slide-2-academic-honesty-statement-1-point"><span class="header-section-number">3.5.1.2</span> Slide 2: Academic Honesty Statement <em>(1 point)</em></h4>
 <p>Indicate your compliance by typing your first and last name on the “Signature:” line. You may consult Terry Analytics Lab staff, the TA, or the instructor for help — but you may not seek assistance or otherwise collaborate with anyone else.</p>
 </section>
 </section>
-<section id="introduction-slides-34" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="introduction-slides-34"><span class="header-section-number">3.4.2</span> Introduction (slides 3–4)</h3>
-<section id="slide-3-introduction" class="level4" data-number="3.4.2.1">
-<h4 data-number="3.4.2.1" class="anchored" data-anchor-id="slide-3-introduction"><span class="header-section-number">3.4.2.1</span> Slide 3: Introduction</h4>
+<section id="introduction-slides-34" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="introduction-slides-34"><span class="header-section-number">3.5.2</span> Introduction (slides 3–4)</h3>
+<section id="slide-3-introduction" class="level4" data-number="3.5.2.1">
+<h4 data-number="3.5.2.1" class="anchored" data-anchor-id="slide-3-introduction"><span class="header-section-number">3.5.2.1</span> Slide 3: Introduction</h4>
 <p>Section divider.</p>
 </section>
-<section id="slide-4-overview-2-points" class="level4" data-number="3.4.2.2">
-<h4 data-number="3.4.2.2" class="anchored" data-anchor-id="slide-4-overview-2-points"><span class="header-section-number">3.4.2.2</span> Slide 4: Overview <em>(2 points)</em></h4>
+<section id="slide-4-overview-2-points" class="level4" data-number="3.5.2.2">
+<h4 data-number="3.5.2.2" class="anchored" data-anchor-id="slide-4-overview-2-points"><span class="header-section-number">3.5.2.2</span> Slide 4: Overview <em>(2 points)</em></h4>
 <p>Provide a brief overview of the project. Include:</p>
 <ul>
 <li>What you are trying to learn about</li>
@@ -378,14 +472,14 @@ Important
 </div>
 </section>
 </section>
-<section id="data-slides-58" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="data-slides-58"><span class="header-section-number">3.4.3</span> Data (slides 5–8)</h3>
-<section id="slide-5-data" class="level4" data-number="3.4.3.1">
-<h4 data-number="3.4.3.1" class="anchored" data-anchor-id="slide-5-data"><span class="header-section-number">3.4.3.1</span> Slide 5: Data</h4>
+<section id="data-slides-58" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="data-slides-58"><span class="header-section-number">3.5.3</span> Data (slides 5–8)</h3>
+<section id="slide-5-data" class="level4" data-number="3.5.3.1">
+<h4 data-number="3.5.3.1" class="anchored" data-anchor-id="slide-5-data"><span class="header-section-number">3.5.3.1</span> Slide 5: Data</h4>
 <p>Section divider.</p>
 </section>
-<section id="slide-6-march-2024-cps-4-points" class="level4" data-number="3.4.3.2">
-<h4 data-number="3.4.3.2" class="anchored" data-anchor-id="slide-6-march-2024-cps-4-points"><span class="header-section-number">3.4.3.2</span> Slide 6: March 2024 CPS <em>(4 points)</em></h4>
+<section id="slide-6-march-2024-cps-4-points" class="level4" data-number="3.5.3.2">
+<h4 data-number="3.5.3.2" class="anchored" data-anchor-id="slide-6-march-2024-cps-4-points"><span class="header-section-number">3.5.3.2</span> Slide 6: March 2024 CPS <em>(4 points)</em></h4>
 <p>Using the ASEC documentation (<code>cpsmar24_documentation.pdf</code>), provide a brief overview of the March 2024 CPS. Include:</p>
 <ul>
 <li>Approximately the number of households surveyed</li>
@@ -407,8 +501,8 @@ Important
 </div>
 </div>
 </section>
-<section id="slide-7-march-2024-cps-extract-4-points" class="level4" data-number="3.4.3.3">
-<h4 data-number="3.4.3.3" class="anchored" data-anchor-id="slide-7-march-2024-cps-extract-4-points"><span class="header-section-number">3.4.3.3</span> Slide 7: March 2024 CPS Extract <em>(4 points)</em></h4>
+<section id="slide-7-march-2024-cps-extract-4-points" class="level4" data-number="3.5.3.3">
+<h4 data-number="3.5.3.3" class="anchored" data-anchor-id="slide-7-march-2024-cps-extract-4-points"><span class="header-section-number">3.5.3.3</span> Slide 7: March 2024 CPS Extract <em>(4 points)</em></h4>
 <p>Complete the <code>read_data</code> code chunk to read the extract you created with <code>cpsmar_e.R</code>.</p>
 <p>Then, in the write-up section, explain the actions you applied to the March 2024 survey in <code>cpsmar_e.R</code> to create the data extract <code>cpsmar_e.csv</code>. Include:</p>
 <ul>
@@ -432,8 +526,8 @@ Important
 </div>
 </div>
 </section>
-<section id="slide-8-analysis-sample-2-points" class="level4" data-number="3.4.3.4">
-<h4 data-number="3.4.3.4" class="anchored" data-anchor-id="slide-8-analysis-sample-2-points"><span class="header-section-number">3.4.3.4</span> Slide 8: Analysis sample <em>(2 points)</em></h4>
+<section id="slide-8-analysis-sample-2-points" class="level4" data-number="3.5.3.4">
+<h4 data-number="3.5.3.4" class="anchored" data-anchor-id="slide-8-analysis-sample-2-points"><span class="header-section-number">3.5.3.4</span> Slide 8: Analysis sample <em>(2 points)</em></h4>
 <p>Complete the <code>btl1</code> code chunk to create your analysis sample (<code>cpsmar_a</code>) with the following restrictions and additions:</p>
 <ul>
 <li>Restrict to individuals who are 23 to 62 years old (inclusive)</li>
@@ -457,14 +551,14 @@ Important
 </div>
 </section>
 </section>
-<section id="baseline-earnings-distributions-slides-912" class="level3" data-number="3.4.4">
-<h3 data-number="3.4.4" class="anchored" data-anchor-id="baseline-earnings-distributions-slides-912"><span class="header-section-number">3.4.4</span> Baseline earnings distributions (slides 9–12)</h3>
-<section id="slide-9-baseline-earnings-distributions" class="level4" data-number="3.4.4.1">
-<h4 data-number="3.4.4.1" class="anchored" data-anchor-id="slide-9-baseline-earnings-distributions"><span class="header-section-number">3.4.4.1</span> Slide 9: Baseline earnings distributions</h4>
+<section id="baseline-earnings-distributions-slides-912" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="baseline-earnings-distributions-slides-912"><span class="header-section-number">3.5.4</span> Baseline earnings distributions (slides 9–12)</h3>
+<section id="slide-9-baseline-earnings-distributions" class="level4" data-number="3.5.4.1">
+<h4 data-number="3.5.4.1" class="anchored" data-anchor-id="slide-9-baseline-earnings-distributions"><span class="header-section-number">3.5.4.1</span> Slide 9: Baseline earnings distributions</h4>
 <p>Section divider.</p>
 </section>
-<section id="slide-10-plotting-earnings-distributions" class="level4" data-number="3.4.4.2">
-<h4 data-number="3.4.4.2" class="anchored" data-anchor-id="slide-10-plotting-earnings-distributions"><span class="header-section-number">3.4.4.2</span> Slide 10: Plotting earnings distributions</h4>
+<section id="slide-10-plotting-earnings-distributions" class="level4" data-number="3.5.4.2">
+<h4 data-number="3.5.4.2" class="anchored" data-anchor-id="slide-10-plotting-earnings-distributions"><span class="header-section-number">3.5.4.2</span> Slide 10: Plotting earnings distributions</h4>
 <p>Complete the <code>btl2</code> code chunk to:</p>
 <ul>
 <li>Create the <code>figure1</code> ggplot object (the earnings distribution by gender plot)</li>
@@ -472,12 +566,12 @@ Important
 <li>Pull the average earnings for women and men into single values (<code>avg_earnings_f</code>, <code>avg_earnings_m</code>) using <code>filter</code> and <code>pull</code></li>
 </ul>
 </section>
-<section id="slide-11-distribution-of-earnings-by-gender-8-points" class="level4" data-number="3.4.4.3">
-<h4 data-number="3.4.4.3" class="anchored" data-anchor-id="slide-11-distribution-of-earnings-by-gender-8-points"><span class="header-section-number">3.4.4.3</span> Slide 11: Distribution of earnings by gender <em>(8 points)</em></h4>
+<section id="slide-11-distribution-of-earnings-by-gender-8-points" class="level4" data-number="3.5.4.3">
+<h4 data-number="3.5.4.3" class="anchored" data-anchor-id="slide-11-distribution-of-earnings-by-gender-8-points"><span class="header-section-number">3.5.4.3</span> Slide 11: Distribution of earnings by gender <em>(8 points)</em></h4>
 <p>Complete the <code>btl2.5</code> code chunk to display Figure 1 by writing the name of the Figure 1 object.</p>
 </section>
-<section id="slide-12-baseline-comparisons-4-points" class="level4" data-number="3.4.4.4">
-<h4 data-number="3.4.4.4" class="anchored" data-anchor-id="slide-12-baseline-comparisons-4-points"><span class="header-section-number">3.4.4.4</span> Slide 12: Baseline comparisons <em>(4 points)</em></h4>
+<section id="slide-12-baseline-comparisons-4-points" class="level4" data-number="3.5.4.4">
+<h4 data-number="3.5.4.4" class="anchored" data-anchor-id="slide-12-baseline-comparisons-4-points"><span class="header-section-number">3.5.4.4</span> Slide 12: Baseline comparisons <em>(4 points)</em></h4>
 <p>Summarize the main empirical facts associated with Figure 1. Include:</p>
 <ul>
 <li>A description of the most important fact communicated by the figure</li>
@@ -500,31 +594,31 @@ Important
 </div>
 </section>
 </section>
-<section id="the-career-gender-gap-slides-1320" class="level3" data-number="3.4.5">
-<h3 data-number="3.4.5" class="anchored" data-anchor-id="the-career-gender-gap-slides-1320"><span class="header-section-number">3.4.5</span> The career gender gap (slides 13–20)</h3>
-<section id="slide-13-the-career-gender-gap" class="level4" data-number="3.4.5.1">
-<h4 data-number="3.4.5.1" class="anchored" data-anchor-id="slide-13-the-career-gender-gap"><span class="header-section-number">3.4.5.1</span> Slide 13: The career gender gap</h4>
+<section id="the-career-gender-gap-slides-1320" class="level3" data-number="3.5.5">
+<h3 data-number="3.5.5" class="anchored" data-anchor-id="the-career-gender-gap-slides-1320"><span class="header-section-number">3.5.5</span> The career gender gap (slides 13–20)</h3>
+<section id="slide-13-the-career-gender-gap" class="level4" data-number="3.5.5.1">
+<h4 data-number="3.5.5.1" class="anchored" data-anchor-id="slide-13-the-career-gender-gap"><span class="header-section-number">3.5.5.1</span> Slide 13: The career gender gap</h4>
 <p>Section divider.</p>
 </section>
-<section id="slide-14-wages-and-hours-differences-8-points" class="level4" data-number="3.4.5.2">
-<h4 data-number="3.4.5.2" class="anchored" data-anchor-id="slide-14-wages-and-hours-differences-8-points"><span class="header-section-number">3.4.5.2</span> Slide 14: Wages and hours differences <em>(8 points)</em></h4>
+<section id="slide-14-wages-and-hours-differences-8-points" class="level4" data-number="3.5.5.2">
+<h4 data-number="3.5.5.2" class="anchored" data-anchor-id="slide-14-wages-and-hours-differences-8-points"><span class="header-section-number">3.5.5.2</span> Slide 14: Wages and hours differences <em>(8 points)</em></h4>
 <p>Complete the <code>mi1</code> code chunk to create and display Table 1 (wages and hours by gender).</p>
 </section>
-<section id="slide-15-documenting-the-differences-2-points" class="level4" data-number="3.4.5.3">
-<h4 data-number="3.4.5.3" class="anchored" data-anchor-id="slide-15-documenting-the-differences-2-points"><span class="header-section-number">3.4.5.3</span> Slide 15: Documenting the differences <em>(2 points)</em></h4>
+<section id="slide-15-documenting-the-differences-2-points" class="level4" data-number="3.5.5.3">
+<h4 data-number="3.5.5.3" class="anchored" data-anchor-id="slide-15-documenting-the-differences-2-points"><span class="header-section-number">3.5.5.3</span> Slide 15: Documenting the differences <em>(2 points)</em></h4>
 <p>Summarize the wage and hours differences presented in Table 1.</p>
 <p>Limit your documentation to <strong>3 lines of text</strong> on the slide.</p>
 </section>
-<section id="slide-16-plotting-career-log-wage-profiles" class="level4" data-number="3.4.5.4">
-<h4 data-number="3.4.5.4" class="anchored" data-anchor-id="slide-16-plotting-career-log-wage-profiles"><span class="header-section-number">3.4.5.4</span> Slide 16: Plotting career log wage profiles</h4>
+<section id="slide-16-plotting-career-log-wage-profiles" class="level4" data-number="3.5.5.4">
+<h4 data-number="3.5.5.4" class="anchored" data-anchor-id="slide-16-plotting-career-log-wage-profiles"><span class="header-section-number">3.5.5.4</span> Slide 16: Plotting career log wage profiles</h4>
 <p>Complete the <code>mi2</code> code chunk to estimate log wage profiles for women and men and create Figure 2.</p>
 </section>
-<section id="slide-17-career-log-wage-profiles-8-points" class="level4" data-number="3.4.5.5">
-<h4 data-number="3.4.5.5" class="anchored" data-anchor-id="slide-17-career-log-wage-profiles-8-points"><span class="header-section-number">3.4.5.5</span> Slide 17: Career log wage profiles <em>(8 points)</em></h4>
+<section id="slide-17-career-log-wage-profiles-8-points" class="level4" data-number="3.5.5.5">
+<h4 data-number="3.5.5.5" class="anchored" data-anchor-id="slide-17-career-log-wage-profiles-8-points"><span class="header-section-number">3.5.5.5</span> Slide 17: Career log wage profiles <em>(8 points)</em></h4>
 <p>Complete the <code>mi2.5</code> chunk to display Figure 2.</p>
 </section>
-<section id="slide-18-estimating-wage-differences-over-a-career" class="level4" data-number="3.4.5.6">
-<h4 data-number="3.4.5.6" class="anchored" data-anchor-id="slide-18-estimating-wage-differences-over-a-career"><span class="header-section-number">3.4.5.6</span> Slide 18: Estimating wage differences over a career</h4>
+<section id="slide-18-estimating-wage-differences-over-a-career" class="level4" data-number="3.5.5.6">
+<h4 data-number="3.5.5.6" class="anchored" data-anchor-id="slide-18-estimating-wage-differences-over-a-career"><span class="header-section-number">3.5.5.6</span> Slide 18: Estimating wage differences over a career</h4>
 <p>Complete the <code>mi3</code> code chunk to create Table 2. This involves:</p>
 <ul>
 <li>Creating <code>males</code> and <code>females</code> objects using <code>filter</code> and <code>rename</code></li>
@@ -534,48 +628,48 @@ Important
 <li>Using <code>kable()</code> to organize the results into the <code>table2</code> object</li>
 </ul>
 </section>
-<section id="slide-19-evolution-of-the-gender-wage-gap-8-points" class="level4" data-number="3.4.5.7">
-<h4 data-number="3.4.5.7" class="anchored" data-anchor-id="slide-19-evolution-of-the-gender-wage-gap-8-points"><span class="header-section-number">3.4.5.7</span> Slide 19: Evolution of the gender wage gap <em>(8 points)</em></h4>
+<section id="slide-19-evolution-of-the-gender-wage-gap-8-points" class="level4" data-number="3.5.5.7">
+<h4 data-number="3.5.5.7" class="anchored" data-anchor-id="slide-19-evolution-of-the-gender-wage-gap-8-points"><span class="header-section-number">3.5.5.7</span> Slide 19: Evolution of the gender wage gap <em>(8 points)</em></h4>
 <p>Complete the <code>mi3.5</code> code chunk to display Table 2.</p>
 </section>
-<section id="slide-20-discussing-the-gender-wage-gap-evolution-2-points" class="level4" data-number="3.4.5.8">
-<h4 data-number="3.4.5.8" class="anchored" data-anchor-id="slide-20-discussing-the-gender-wage-gap-evolution-2-points"><span class="header-section-number">3.4.5.8</span> Slide 20: Discussing the gender wage gap evolution <em>(2 points)</em></h4>
+<section id="slide-20-discussing-the-gender-wage-gap-evolution-2-points" class="level4" data-number="3.5.5.8">
+<h4 data-number="3.5.5.8" class="anchored" data-anchor-id="slide-20-discussing-the-gender-wage-gap-evolution-2-points"><span class="header-section-number">3.5.5.8</span> Slide 20: Discussing the gender wage gap evolution <em>(2 points)</em></h4>
 <p>Summarize the results presented in Figure 2 and Table 2.</p>
 <p>Limit your summary to <strong>3 lines of text</strong> on the slide.</p>
 </section>
 </section>
-<section id="explaining-the-gender-wage-gap-slides-2130" class="level3" data-number="3.4.6">
-<h3 data-number="3.4.6" class="anchored" data-anchor-id="explaining-the-gender-wage-gap-slides-2130"><span class="header-section-number">3.4.6</span> Explaining the gender wage gap (slides 21–30)</h3>
-<section id="slide-21-explaining-the-gender-wage-gap" class="level4" data-number="3.4.6.1">
-<h4 data-number="3.4.6.1" class="anchored" data-anchor-id="slide-21-explaining-the-gender-wage-gap"><span class="header-section-number">3.4.6.1</span> Slide 21: Explaining the gender wage gap</h4>
+<section id="explaining-the-gender-wage-gap-slides-2130" class="level3" data-number="3.5.6">
+<h3 data-number="3.5.6" class="anchored" data-anchor-id="explaining-the-gender-wage-gap-slides-2130"><span class="header-section-number">3.5.6</span> Explaining the gender wage gap (slides 21–30)</h3>
+<section id="slide-21-explaining-the-gender-wage-gap" class="level4" data-number="3.5.6.1">
+<h4 data-number="3.5.6.1" class="anchored" data-anchor-id="slide-21-explaining-the-gender-wage-gap"><span class="header-section-number">3.5.6.1</span> Slide 21: Explaining the gender wage gap</h4>
 <p>Section divider.</p>
 </section>
-<section id="slide-22-fitting-the-log-wage-profiles" class="level4" data-number="3.4.6.2">
-<h4 data-number="3.4.6.2" class="anchored" data-anchor-id="slide-22-fitting-the-log-wage-profiles"><span class="header-section-number">3.4.6.2</span> Slide 22: Fitting the log wage profiles</h4>
+<section id="slide-22-fitting-the-log-wage-profiles" class="level4" data-number="3.5.6.2">
+<h4 data-number="3.5.6.2" class="anchored" data-anchor-id="slide-22-fitting-the-log-wage-profiles"><span class="header-section-number">3.5.6.2</span> Slide 22: Fitting the log wage profiles</h4>
 <p>Complete the <code>reg1</code> code chunk to create Figure 3 by fitting the career profiles with a quadratic in age.</p>
 </section>
-<section id="slide-23-log-wage-profiles-with-quadratic-fits-8-points" class="level4" data-number="3.4.6.3">
-<h4 data-number="3.4.6.3" class="anchored" data-anchor-id="slide-23-log-wage-profiles-with-quadratic-fits-8-points"><span class="header-section-number">3.4.6.3</span> Slide 23: Log wage profiles with quadratic fits <em>(8 points)</em></h4>
+<section id="slide-23-log-wage-profiles-with-quadratic-fits-8-points" class="level4" data-number="3.5.6.3">
+<h4 data-number="3.5.6.3" class="anchored" data-anchor-id="slide-23-log-wage-profiles-with-quadratic-fits-8-points"><span class="header-section-number">3.5.6.3</span> Slide 23: Log wage profiles with quadratic fits <em>(8 points)</em></h4>
 <p>Complete the <code>reg1.5</code> chunk to display Figure 3.</p>
 </section>
-<section id="slide-24-gender-differences-in-education-8-points" class="level4" data-number="3.4.6.4">
-<h4 data-number="3.4.6.4" class="anchored" data-anchor-id="slide-24-gender-differences-in-education-8-points"><span class="header-section-number">3.4.6.4</span> Slide 24: Gender differences in education <em>(8 points)</em></h4>
+<section id="slide-24-gender-differences-in-education-8-points" class="level4" data-number="3.5.6.4">
+<h4 data-number="3.5.6.4" class="anchored" data-anchor-id="slide-24-gender-differences-in-education-8-points"><span class="header-section-number">3.5.6.4</span> Slide 24: Gender differences in education <em>(8 points)</em></h4>
 <p>Complete the <code>ed_vars</code> code chunk to create and display Table 3 (educational attainment by gender).</p>
 </section>
-<section id="slide-25-gender-differences-in-demographics-8-points" class="level4" data-number="3.4.6.5">
-<h4 data-number="3.4.6.5" class="anchored" data-anchor-id="slide-25-gender-differences-in-demographics-8-points"><span class="header-section-number">3.4.6.5</span> Slide 25: Gender differences in demographics <em>(8 points)</em></h4>
+<section id="slide-25-gender-differences-in-demographics-8-points" class="level4" data-number="3.5.6.5">
+<h4 data-number="3.5.6.5" class="anchored" data-anchor-id="slide-25-gender-differences-in-demographics-8-points"><span class="header-section-number">3.5.6.5</span> Slide 25: Gender differences in demographics <em>(8 points)</em></h4>
 <p>Complete the <code>demo_vars</code> code chunk to create and display Table 4 (demographic characteristics by gender).</p>
 </section>
-<section id="slide-26-documenting-differences-in-characteristics-4-points" class="level4" data-number="3.4.6.6">
-<h4 data-number="3.4.6.6" class="anchored" data-anchor-id="slide-26-documenting-differences-in-characteristics-4-points"><span class="header-section-number">3.4.6.6</span> Slide 26: Documenting differences in characteristics <em>(4 points)</em></h4>
+<section id="slide-26-documenting-differences-in-characteristics-4-points" class="level4" data-number="3.5.6.6">
+<h4 data-number="3.5.6.6" class="anchored" data-anchor-id="slide-26-documenting-differences-in-characteristics-4-points"><span class="header-section-number">3.5.6.6</span> Slide 26: Documenting differences in characteristics <em>(4 points)</em></h4>
 <ul>
 <li>Summarize the educational attainment differences presented in Table 3</li>
 <li>Summarize the differences in demographic characteristics presented in Table 4</li>
 </ul>
 <p>Limit your documentation to <strong>6 lines of text</strong> on the slide.</p>
 </section>
-<section id="slide-27-controlling-for-education-and-demographic-characteristics" class="level4" data-number="3.4.6.7">
-<h4 data-number="3.4.6.7" class="anchored" data-anchor-id="slide-27-controlling-for-education-and-demographic-characteristics"><span class="header-section-number">3.4.6.7</span> Slide 27: Controlling for education and demographic characteristics</h4>
+<section id="slide-27-controlling-for-education-and-demographic-characteristics" class="level4" data-number="3.5.6.7">
+<h4 data-number="3.5.6.7" class="anchored" data-anchor-id="slide-27-controlling-for-education-and-demographic-characteristics"><span class="header-section-number">3.5.6.7</span> Slide 27: Controlling for education and demographic characteristics</h4>
 <p>Complete the <code>reg2a</code> code chunk to create:</p>
 <ul>
 <li>The <code>singles</code> subset of the analysis data</li>
@@ -588,16 +682,19 @@ Important
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Pro tip
+<span class="screen-reader-only">Tip</span>Pro tips
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Moving from top to bottom in the <code>models</code> object, the list of controls grows as indicated by the name of the model — with the exception of the final model “Only Singles”, which estimates the same relationship as the “Add Person” model but on the new subset.</p>
+<ul>
+<li>Moving from top to bottom in the <code>models</code> object, the list of controls grows as indicated by the name of the model — with the exception of the final model “Only Singles”, which estimates the same relationship as the “Add Person” model but on the new subset.</li>
+<li>To decide whether a variable belongs in the “Add Person” or “Add Household” model, ask yourself: <em>“Can I define this variable for a particular individual irrespective of other individuals who may or may not exist in their life?”</em> If yes → Person. If no (it depends on someone else, like a spouse or a child) → Household.</li>
+</ul>
 </div>
 </div>
 </section>
-<section id="slide-28-reporting-the-results" class="level4" data-number="3.4.6.8">
-<h4 data-number="3.4.6.8" class="anchored" data-anchor-id="slide-28-reporting-the-results"><span class="header-section-number">3.4.6.8</span> Slide 28: Reporting the results</h4>
+<section id="slide-28-reporting-the-results" class="level4" data-number="3.5.6.8">
+<h4 data-number="3.5.6.8" class="anchored" data-anchor-id="slide-28-reporting-the-results"><span class="header-section-number">3.5.6.8</span> Slide 28: Reporting the results</h4>
 <p>Complete the <code>reg2b</code> code chunk to create Table 5. This involves:</p>
 <ul>
 <li>Constructing the coefficient map object to display only the gender and age coefficient estimates</li>
@@ -618,12 +715,12 @@ Important
 </div>
 </div>
 </section>
-<section id="slide-29-explaining-the-gender-wage-gap-8-points" class="level4" data-number="3.4.6.9">
-<h4 data-number="3.4.6.9" class="anchored" data-anchor-id="slide-29-explaining-the-gender-wage-gap-8-points"><span class="header-section-number">3.4.6.9</span> Slide 29: Explaining the gender wage gap <em>(8 points)</em></h4>
+<section id="slide-29-explaining-the-gender-wage-gap-8-points" class="level4" data-number="3.5.6.9">
+<h4 data-number="3.5.6.9" class="anchored" data-anchor-id="slide-29-explaining-the-gender-wage-gap-8-points"><span class="header-section-number">3.5.6.9</span> Slide 29: Explaining the gender wage gap <em>(8 points)</em></h4>
 <p>Complete the <code>reg2.5</code> chunk to display Table 5.</p>
 </section>
-<section id="slide-30-documenting-the-findings-4-points" class="level4" data-number="3.4.6.10">
-<h4 data-number="3.4.6.10" class="anchored" data-anchor-id="slide-30-documenting-the-findings-4-points"><span class="header-section-number">3.4.6.10</span> Slide 30: Documenting the findings <em>(4 points)</em></h4>
+<section id="slide-30-documenting-the-findings-4-points" class="level4" data-number="3.5.6.10">
+<h4 data-number="3.5.6.10" class="anchored" data-anchor-id="slide-30-documenting-the-findings-4-points"><span class="header-section-number">3.5.6.10</span> Slide 30: Documenting the findings <em>(4 points)</em></h4>
 <p>Summarize how the estimated average gender wage gap changes as you add education, personal, and household characteristics to the regression — and then how it changes when the sample is restricted to singles.</p>
 <p>Limit your documentation to <strong>6 lines of text</strong> on the slide.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -641,14 +738,14 @@ Important
 </div>
 </section>
 </section>
-<section id="conclusion-slides-3132" class="level3" data-number="3.4.7">
-<h3 data-number="3.4.7" class="anchored" data-anchor-id="conclusion-slides-3132"><span class="header-section-number">3.4.7</span> Conclusion (slides 31–32)</h3>
-<section id="slide-31-conclusion" class="level4" data-number="3.4.7.1">
-<h4 data-number="3.4.7.1" class="anchored" data-anchor-id="slide-31-conclusion"><span class="header-section-number">3.4.7.1</span> Slide 31: Conclusion</h4>
+<section id="conclusion-slides-3132" class="level3" data-number="3.5.7">
+<h3 data-number="3.5.7" class="anchored" data-anchor-id="conclusion-slides-3132"><span class="header-section-number">3.5.7</span> Conclusion (slides 31–32)</h3>
+<section id="slide-31-conclusion" class="level4" data-number="3.5.7.1">
+<h4 data-number="3.5.7.1" class="anchored" data-anchor-id="slide-31-conclusion"><span class="header-section-number">3.5.7.1</span> Slide 31: Conclusion</h4>
 <p>Section divider.</p>
 </section>
-<section id="slide-32-summary-4-points" class="level4" data-number="3.4.7.2">
-<h4 data-number="3.4.7.2" class="anchored" data-anchor-id="slide-32-summary-4-points"><span class="header-section-number">3.4.7.2</span> Slide 32: Summary <em>(4 points)</em></h4>
+<section id="slide-32-summary-4-points" class="level4" data-number="3.5.7.2">
+<h4 data-number="3.5.7.2" class="anchored" data-anchor-id="slide-32-summary-4-points"><span class="header-section-number">3.5.7.2</span> Slide 32: Summary <em>(4 points)</em></h4>
 <p>Briefly summarize the objective of the project and its main findings. Note:</p>
 <ul>
 <li>The sample on which your analysis is based</li>
@@ -659,24 +756,24 @@ Important
 <p>Limit your documentation to <strong>7 lines of text</strong> on the slide.</p>
 </section>
 </section>
-<section id="appendix-slides-3335" class="level3" data-number="3.4.8">
-<h3 data-number="3.4.8" class="anchored" data-anchor-id="appendix-slides-3335"><span class="header-section-number">3.4.8</span> Appendix (slides 33–35)</h3>
-<section id="slide-33-appendix" class="level4" data-number="3.4.8.1">
-<h4 data-number="3.4.8.1" class="anchored" data-anchor-id="slide-33-appendix"><span class="header-section-number">3.4.8.1</span> Slide 33: Appendix</h4>
+<section id="appendix-slides-3335" class="level3" data-number="3.5.8">
+<h3 data-number="3.5.8" class="anchored" data-anchor-id="appendix-slides-3335"><span class="header-section-number">3.5.8</span> Appendix (slides 33–35)</h3>
+<section id="slide-33-appendix" class="level4" data-number="3.5.8.1">
+<h4 data-number="3.5.8.1" class="anchored" data-anchor-id="slide-33-appendix"><span class="header-section-number">3.5.8.1</span> Slide 33: Appendix</h4>
 <p>Section divider.</p>
 </section>
-<section id="slide-34-data-documentation" class="level4" data-number="3.4.8.2">
-<h4 data-number="3.4.8.2" class="anchored" data-anchor-id="slide-34-data-documentation"><span class="header-section-number">3.4.8.2</span> Slide 34: Data documentation</h4>
+<section id="slide-34-data-documentation" class="level4" data-number="3.5.8.2">
+<h4 data-number="3.5.8.2" class="anchored" data-anchor-id="slide-34-data-documentation"><span class="header-section-number">3.5.8.2</span> Slide 34: Data documentation</h4>
 <p>Complete the <code>var_doc</code> code chunk to create a table of the main variables used in this project with their definitions.</p>
 </section>
-<section id="slide-35-list-of-main-variables-with-definitions-4-points" class="level4" data-number="3.4.8.3">
-<h4 data-number="3.4.8.3" class="anchored" data-anchor-id="slide-35-list-of-main-variables-with-definitions-4-points"><span class="header-section-number">3.4.8.3</span> Slide 35: List of main variables with definitions <em>(4 points)</em></h4>
+<section id="slide-35-list-of-main-variables-with-definitions-4-points" class="level4" data-number="3.5.8.3">
+<h4 data-number="3.5.8.3" class="anchored" data-anchor-id="slide-35-list-of-main-variables-with-definitions-4-points"><span class="header-section-number">3.5.8.3</span> Slide 35: List of main variables with definitions <em>(4 points)</em></h4>
 <p>Once you complete the <code>var_doc</code> chunk on the previous slide, set <code>eval = TRUE</code> on this slide to render the table of main variables with their definitions.</p>
 </section>
 </section>
 </section>
-<section id="submission" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="submission"><span class="header-section-number">3.5</span> Submission</h2>
+<section id="submission" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="submission"><span class="header-section-number">3.6</span> Submission</h2>
 <p>See the <a href="./submission.html">Submission chapter</a> for:</p>
 <ul>
 <li>Filename convention (<code>firstname_lastname_project.pdf</code>)</li>
@@ -685,8 +782,8 @@ Important
 <li>The 35-slide visual reference</li>
 </ul>
 </section>
-<section id="common-pitfalls" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="common-pitfalls"><span class="header-section-number">3.6</span> Common pitfalls</h2>
+<section id="common-pitfalls" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="common-pitfalls"><span class="header-section-number">3.7</span> Common pitfalls</h2>
 <p>The recurring failure modes for the Main Project are catalogued in <a href="./common-errors.html">Common Errors</a>. The ones most specific to the Main Project (vs.&nbsp;the Pre-project) are:</p>
 <ul>
 <li><strong>Variable name confusion</strong> — defining <code>cpsmar_a</code> but referencing <code>cpsmar_e</code> (or vice versa) in a later chunk. See <a href="./common-errors.html#variable-name-confusion">Common Errors §6.3.2</a>.</li>
@@ -696,8 +793,8 @@ Important
 </ul>
 <p>When in doubt, see <a href="./common-errors.html">Common Errors</a> — most issues have already been documented.</p>
 </section>
-<section id="what-happens-next" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="what-happens-next"><span class="header-section-number">3.7</span> What happens next</h2>
+<section id="what-happens-next" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="what-happens-next"><span class="header-section-number">3.8</span> What happens next</h2>
 <ul>
 <li>For the optional Project Progress Check at Week 4, see <a href="./progress-check.html">Chapter 5: Progress Check</a>.</li>
 <li>When the Final Project deadline arrives, see <a href="./submission.html">Chapter 6: Submission</a> for the save-as-PDF walkthrough and the filename convention.</li>

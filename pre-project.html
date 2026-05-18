@@ -321,20 +321,34 @@ Important
 <p>Replace <code>firstname lastname</code> with your <strong>first and last name</strong>, e.g.:</p>
 <pre><code>author: "Jane Doe"</code></pre>
 <p>Don’t change anything else in the YAML. This is the most common place students introduce formatting errors.</p>
+<p>The canonical pre-project YAML block (for reference and recovery if yours gets corrupted):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"BUSN 5000 :: Pre-Project Exercise"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> Measuring Labor Force Participation</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"First Name Last Name"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    | Summer 2026</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    | (updated `r format(Sys.time(), '%d %b %y')`)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ioslides_presentation</span><span class="kw">:</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> css/project_slidedeck.css</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">widescreen</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">urlcolor</span><span class="kw">:</span><span class="at"> </span><span class="st">"#004E60"</span><span class="co">  # Use hex code for Olympic blue from visual UGA guide</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="step-5-complete-the-code-chunk-on-slide-2" class="level3" data-number="2.2.5">
 <h3 data-number="2.2.5" class="anchored" data-anchor-id="step-5-complete-the-code-chunk-on-slide-2"><span class="header-section-number">2.2.5</span> Step 5: Complete the code chunk on Slide 2</h3>
 <p>Slide 2 is titled “Read <code>LF.csv</code> and print its contents.” The code chunk looks like:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"out"</span>, <span class="st">"LF.csv"</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(__)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"out"</span>, <span class="st">"LF.csv"</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(__)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If you’ve never seen R code before, here’s what’s happening line by line:</p>
 <ul>
 <li><strong>Line 1.</strong> <code>lf &lt;- read_csv(here("out", "LF.csv"))</code> does three things at once. <code>read_csv("...")</code> is a function that reads a CSV file. <code>here("out", "LF.csv")</code> builds the file path <code>out/LF.csv</code> relative to your project root — this is why you ran <code>LF.R</code> first; it created the <code>LF.csv</code> that this line is reading. And <code>lf &lt;- ...</code> takes the result and stores it in a new <strong>object</strong> named <code>lf</code>. The arrow <code>&lt;-</code> is R’s assignment operator (you’ll see it used the same way most other languages use <code>=</code>).</li>
 <li><strong>Line 2.</strong> <code>print(...)</code> prints whatever you put inside the parentheses to the slide output. The blank <code>__</code> is where you tell R <em>what</em> to print.</li>
 </ul>
 <p>Replace <code>__</code> with the object you want to print. Since you just read the contents into <code>lf</code>, the answer is <strong><code>lf</code></strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"out"</span>, <span class="st">"LF.csv"</span>))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(lf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"out"</span>, <span class="st">"LF.csv"</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(lf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then change the chunk option <code>eval = FALSE</code> to <code>eval = TRUE</code> at the top of the chunk. This tells R Markdown to actually run the chunk when you knit (it’s set to <code>FALSE</code> by default so the template knits before you complete it).</p>
 <p>Run the chunk (click the small green play button at the top-right of the chunk) to verify it works. You should see the <code>lf</code> data frame printed in the console — six columns named <code>E</code>, <code>U</code>, <code>LF</code>, <code>NILF</code>, <code>Pop</code>, and <code>LFPR</code>, with one row of numbers.</p>
 <p><strong>Write down those six numbers</strong> — you’ll use them in the next step.</p>
