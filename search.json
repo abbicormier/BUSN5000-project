@@ -224,17 +224,67 @@
     "href": "submission.html",
     "title": "5  Submission",
     "section": "",
-    "text": "5.1 Outline (to be written)\nThis chapter covers how to submit your work to Gradescope without losing points to formatting.",
+    "text": "5.1 Filename conventions\nThis chapter covers how to submit your work to Gradescope without losing points to formatting. The same workflow applies to all three project artifacts you submit: the Pre-project, the optional Project Progress Check, and the Final Project.\nIf you only read one section of this chapter, read the Saving HTML as PDF section. The vast majority of submission errors come from skipping or mangling this step.\nEach of the three project artifacts has a required filename. Use lowercase for first and last name, underscores between words, and the .pdf extension.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
     ]
   },
   {
-    "objectID": "submission.html#outline-to-be-written",
-    "href": "submission.html#outline-to-be-written",
+    "objectID": "submission.html#filename-conventions",
+    "href": "submission.html#filename-conventions",
     "title": "5  Submission",
     "section": "",
-    "text": "Filename convention (sectiontime_lastname_firstname_*.pdf)\nPDF format (landscape, color, formatting preserved)\nThe HTML → PDF workflow (not knit-to-PDF)\nBrowser-specific save-as-PDF tips\nWhat “100% compliant with the knitted template” means in practice\nDeadlines and late-submission policy\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.",
+    "text": "Artifact\nFilename pattern\nExample\n\n\n\n\nPre-project\nfirstname_lastname_pre.pdf\njane_doe_pre.pdf\n\n\nProject Progress Check\nfirstname_lastname_progress.pdf\njane_doe_progress.pdf\n\n\nFinal Project\nfirstname_lastname_project.pdf\njane_doe_project.pdf\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWrong filename = wrong submission = grading script won’t find your file. Triple-check the filename before uploading to Gradescope.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
+    ]
+  },
+  {
+    "objectID": "submission.html#late-submission-policy",
+    "href": "submission.html#late-submission-policy",
+    "title": "5  Submission",
+    "section": "5.2 Late submission policy",
+    "text": "5.2 Late submission policy\nPer the syllabus: late submissions will not be accepted for the Pre-project, the Project Progress Check, or the Final Project. The relevant deadlines are on the course schedule. There are no extensions and no late-credit options.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
+    ]
+  },
+  {
+    "objectID": "submission.html#the-submission-workflow-at-a-glance",
+    "href": "submission.html#the-submission-workflow-at-a-glance",
+    "title": "5  Submission",
+    "section": "5.3 The submission workflow at a glance",
+    "text": "5.3 The submission workflow at a glance\nEach submission goes through the same three steps:\n\nKnit your .Rmd to HTML inside RStudio (the Knit button in the editor pane).\nSave the resulting HTML page as a PDF using your browser’s print-to-PDF function (instructions per browser below).\nUpload the PDF to the corresponding Gradescope assignment under the correct filename.\n\n\n\n\n\n\n\nWarningDo not knit directly to PDF\n\n\n\nKnitting straight to PDF from R Markdown uses a different rendering path (LaTeX) that strips the CSS-based slide formatting we use. The output will not match the reference and will be rejected as a formatting violation.\nYou must knit to HTML, then save the HTML as PDF.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
+    ]
+  },
+  {
+    "objectID": "submission.html#saving-html-as-pdf",
+    "href": "submission.html#saving-html-as-pdf",
+    "title": "5  Submission",
+    "section": "5.4 Saving HTML as PDF",
+    "text": "5.4 Saving HTML as PDF\nAfter knitting, the HTML output opens in your browser (or in RStudio’s Viewer pane — if it opens there, click the small icon at the top of the Viewer to open it in your default browser).\nIn every browser, the print dialog is what you use to save as PDF. The settings you need are roughly the same across browsers:\n\nDestination: “Save as PDF”\nLayout / Orientation: Landscape\nColor: Color (not Black and White)\nMargins: Default or None\nPages per sheet: 1\nBackground graphics: Enabled (this is the easy-to-miss one — without it, the colored UGA styling disappears)\n\nPer-browser walkthroughs below.\n\n5.4.1 Google Chrome (and Microsoft Edge)\nEdge uses the same print dialog as Chrome — these steps work for both.\n\nClick the three vertical dots in the top-right of the browser.\nClick Print.\nMatch the settings shown below — most importantly, Destination = Save as PDF, Layout = Landscape, and More settings → Background graphics = checked.\n\n\n\n\nChrome print dialog settings\n\n\n\nClick Save. Use the correct filename when prompted (see Filename conventions).\n\n\n\n5.4.2 Firefox\n\nClick the three horizontal lines (the “hamburger” menu) in the top-right of the browser.\nClick Print.\nMatch the settings shown below across the two screens. Key settings: Destination = Save to PDF, Orientation = Landscape, and Options → Print backgrounds = checked.\n\n\n\n\nFirefox print settings — page 1\n\n\n\n\n\nFirefox print settings — page 2\n\n\n\nClick Save and use the correct filename.\n\n\n\n5.4.3 Safari\n\nClick File in the top-left menu bar.\nClick Print.\nMatch the settings shown below across the two screens. Key settings: Orientation = Landscape, Print backgrounds = checked, and the PDF dropdown in the bottom-left must be set to Save as PDF (not Print).\n\n\n\n\nSafari print settings — page 1\n\n\n\n\n\nSafari print settings — page 2\n\n\n\nClick Save and use the correct filename.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
+    ]
+  },
+  {
+    "objectID": "submission.html#pre-project-reference-what-your-three-slides-should-look-like",
+    "href": "submission.html#pre-project-reference-what-your-three-slides-should-look-like",
+    "title": "5  Submission",
+    "section": "5.5 Pre-project reference: what your three slides should look like",
+    "text": "5.5 Pre-project reference: what your three slides should look like\nBelow are the three pre-project slides rendered correctly. Your knitted PDF should match these for formatting (fonts, colors, slide layout, code chunk styling). The content will differ — your name will be on the title slide and the numbers in your print-out and your fill-ins will reflect your LF.csv.\n\n\n\n\n\n\nNote\n\n\n\nThe images below show legacy examples (date stamp from a prior semester, comma in the name placeholder). They are reference for the slide format, not the exact text content. Your version will show Summer 2026, your name without a comma, and the current CPS numbers.\n\n\n\n5.5.1 Reference slide 1 — Title slide\n\n\n\nTitle slide reference\n\n\nWhat yours should look like:\n\nTitle and subtitle as shown\nYour first and last name on the author line\nSummer 2026 date\n\n\n\n5.5.2 Reference slide 2 — Read LF.csv and print its contents\n\n\n\nLF print-out slide reference\n\n\nWhat yours should look like:\n\nThe code chunk visible (formatted with the UGA code-block style)\nThe lf data frame printed below it with six named columns\n\n\n\n5.5.3 Reference slide 3 — Document the contents of LF.csv\n\n\n\nCommunication slide reference\n\n\nWhat yours should look like:\n\nThe paragraph fully filled in, no remaining _____ blanks\nValues rounded to two decimal places\nNumbers matching your out/LF.csv (not numbers copied from this reference)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
+    ]
+  },
+  {
+    "objectID": "submission.html#if-your-output-doesnt-match-the-reference",
+    "href": "submission.html#if-your-output-doesnt-match-the-reference",
+    "title": "5  Submission",
+    "section": "5.6 If your output doesn’t match the reference",
+    "text": "5.6 If your output doesn’t match the reference\nMost formatting mismatches come from a handful of recurring mistakes. See the Common Errors chapter for the diagnosis and fix for each — including:\n\nCSS in the wrong folder\nWrong orientation (portrait instead of landscape)\nKnit-to-PDF instead of HTML → PDF\nYAML edits that break the rendering\nBackground graphics not enabled in the print dialog\n\nIf you’ve checked all of those and still see a difference, email the teaching team with your .Rmd attached and the print dialog settings you used.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
     ]

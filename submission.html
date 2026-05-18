@@ -171,7 +171,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#outline-to-be-written" id="toc-outline-to-be-written" class="nav-link active" data-scroll-target="#outline-to-be-written"><span class="header-section-number">5.1</span> Outline (to be written)</a></li>
+  <li><a href="#filename-conventions" id="toc-filename-conventions" class="nav-link active" data-scroll-target="#filename-conventions"><span class="header-section-number">5.1</span> Filename conventions</a></li>
+  <li><a href="#late-submission-policy" id="toc-late-submission-policy" class="nav-link" data-scroll-target="#late-submission-policy"><span class="header-section-number">5.2</span> Late submission policy</a></li>
+  <li><a href="#the-submission-workflow-at-a-glance" id="toc-the-submission-workflow-at-a-glance" class="nav-link" data-scroll-target="#the-submission-workflow-at-a-glance"><span class="header-section-number">5.3</span> The submission workflow at a glance</a></li>
+  <li><a href="#saving-html-as-pdf" id="toc-saving-html-as-pdf" class="nav-link" data-scroll-target="#saving-html-as-pdf"><span class="header-section-number">5.4</span> Saving HTML as PDF</a>
+  <ul class="collapse">
+  <li><a href="#google-chrome-and-microsoft-edge" id="toc-google-chrome-and-microsoft-edge" class="nav-link" data-scroll-target="#google-chrome-and-microsoft-edge"><span class="header-section-number">5.4.1</span> Google Chrome (and Microsoft Edge)</a></li>
+  <li><a href="#firefox" id="toc-firefox" class="nav-link" data-scroll-target="#firefox"><span class="header-section-number">5.4.2</span> Firefox</a></li>
+  <li><a href="#safari" id="toc-safari" class="nav-link" data-scroll-target="#safari"><span class="header-section-number">5.4.3</span> Safari</a></li>
+  </ul></li>
+  <li><a href="#pre-project-reference-what-your-three-slides-should-look-like" id="toc-pre-project-reference-what-your-three-slides-should-look-like" class="nav-link" data-scroll-target="#pre-project-reference-what-your-three-slides-should-look-like"><span class="header-section-number">5.5</span> Pre-project reference: what your three slides should look like</a>
+  <ul class="collapse">
+  <li><a href="#reference-slide-1-title-slide" id="toc-reference-slide-1-title-slide" class="nav-link" data-scroll-target="#reference-slide-1-title-slide"><span class="header-section-number">5.5.1</span> Reference slide 1 — Title slide</a></li>
+  <li><a href="#reference-slide-2-read-lf.csv-and-print-its-contents" id="toc-reference-slide-2-read-lf.csv-and-print-its-contents" class="nav-link" data-scroll-target="#reference-slide-2-read-lf.csv-and-print-its-contents"><span class="header-section-number">5.5.2</span> Reference slide 2 — Read <code>LF.csv</code> and print its contents</a></li>
+  <li><a href="#reference-slide-3-document-the-contents-of-lf.csv" id="toc-reference-slide-3-document-the-contents-of-lf.csv" class="nav-link" data-scroll-target="#reference-slide-3-document-the-contents-of-lf.csv"><span class="header-section-number">5.5.3</span> Reference slide 3 — Document the contents of <code>LF.csv</code></a></li>
+  </ul></li>
+  <li><a href="#if-your-output-doesnt-match-the-reference" id="toc-if-your-output-doesnt-match-the-reference" class="nav-link" data-scroll-target="#if-your-output-doesnt-match-the-reference"><span class="header-section-number">5.6</span> If your output doesn’t match the reference</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/abbicormier/BUSN5000-project/edit/main/submission.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/abbicormier/BUSN5000-project/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -197,17 +212,164 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter covers how to submit your work to Gradescope without losing points to formatting.</p>
-<section id="outline-to-be-written" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="outline-to-be-written"><span class="header-section-number">5.1</span> Outline (to be written)</h2>
+<p>This chapter covers how to submit your work to Gradescope without losing points to formatting. The same workflow applies to all three project artifacts you submit: the <strong>Pre-project</strong>, the optional <strong>Project Progress Check</strong>, and the <strong>Final Project</strong>.</p>
+<p>If you only read one section of this chapter, read the <a href="#saving-html-as-pdf">Saving HTML as PDF</a> section. The vast majority of submission errors come from skipping or mangling this step.</p>
+<section id="filename-conventions" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="filename-conventions"><span class="header-section-number">5.1</span> Filename conventions</h2>
+<p>Each of the three project artifacts has a required filename. Use <strong>lowercase</strong> for first and last name, <strong>underscores</strong> between words, and the <strong><code>.pdf</code></strong> extension.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Artifact</th>
+<th>Filename pattern</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pre-project</td>
+<td><code>firstname_lastname_pre.pdf</code></td>
+<td><code>jane_doe_pre.pdf</code></td>
+</tr>
+<tr class="even">
+<td>Project Progress Check</td>
+<td><code>firstname_lastname_progress.pdf</code></td>
+<td><code>jane_doe_progress.pdf</code></td>
+</tr>
+<tr class="odd">
+<td>Final Project</td>
+<td><code>firstname_lastname_project.pdf</code></td>
+<td><code>jane_doe_project.pdf</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wrong filename = wrong submission = grading script won’t find your file. Triple-check the filename before uploading to Gradescope.</p>
+</div>
+</div>
+</section>
+<section id="late-submission-policy" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="late-submission-policy"><span class="header-section-number">5.2</span> Late submission policy</h2>
+<p>Per the syllabus: <strong>late submissions will not be accepted</strong> for the Pre-project, the Project Progress Check, or the Final Project. The relevant deadlines are on the course schedule. There are no extensions and no late-credit options.</p>
+</section>
+<section id="the-submission-workflow-at-a-glance" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="the-submission-workflow-at-a-glance"><span class="header-section-number">5.3</span> The submission workflow at a glance</h2>
+<p>Each submission goes through the same three steps:</p>
+<ol type="1">
+<li><strong>Knit</strong> your <code>.Rmd</code> to HTML inside RStudio (the <strong>Knit</strong> button in the editor pane).</li>
+<li><strong>Save</strong> the resulting HTML page as a PDF using your browser’s print-to-PDF function (instructions per browser below).</li>
+<li><strong>Upload</strong> the PDF to the corresponding Gradescope assignment under the correct filename.</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Do not knit directly to PDF
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Knitting straight to PDF from R Markdown uses a different rendering path (LaTeX) that strips the CSS-based slide formatting we use. The output will not match the reference and will be rejected as a formatting violation.</p>
+<p>You <strong>must</strong> knit to HTML, then save the HTML as PDF.</p>
+</div>
+</div>
+</section>
+<section id="saving-html-as-pdf" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="saving-html-as-pdf"><span class="header-section-number">5.4</span> Saving HTML as PDF</h2>
+<p>After knitting, the HTML output opens in your browser (or in RStudio’s Viewer pane — if it opens there, click the small icon at the top of the Viewer to open it in your default browser).</p>
+<p>In every browser, the print dialog is what you use to save as PDF. The settings you need are roughly the same across browsers:</p>
 <ul>
-<li>Filename convention (<code>sectiontime_lastname_firstname_*.pdf</code>)</li>
-<li>PDF format (landscape, color, formatting preserved)</li>
-<li>The HTML → PDF workflow (not knit-to-PDF)</li>
-<li>Browser-specific save-as-PDF tips</li>
-<li>What “100% compliant with the knitted template” means in practice</li>
-<li>Deadlines and late-submission policy</li>
+<li><strong>Destination:</strong> “Save as PDF”</li>
+<li><strong>Layout / Orientation:</strong> <strong>Landscape</strong></li>
+<li><strong>Color:</strong> Color (not Black and White)</li>
+<li><strong>Margins:</strong> Default or None</li>
+<li><strong>Pages per sheet:</strong> 1</li>
+<li><strong>Background graphics:</strong> <strong>Enabled</strong> (this is the easy-to-miss one — without it, the colored UGA styling disappears)</li>
 </ul>
+<p>Per-browser walkthroughs below.</p>
+<section id="google-chrome-and-microsoft-edge" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="google-chrome-and-microsoft-edge"><span class="header-section-number">5.4.1</span> Google Chrome (and Microsoft Edge)</h3>
+<p>Edge uses the same print dialog as Chrome — these steps work for both.</p>
+<ol type="1">
+<li>Click the three vertical dots in the top-right of the browser.</li>
+<li>Click <strong>Print</strong>.</li>
+<li>Match the settings shown below — most importantly, <strong>Destination = Save as PDF</strong>, <strong>Layout = Landscape</strong>, and <strong>More settings → Background graphics = checked</strong>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/chrome_print.png" class="img-fluid figure-img" alt="Chrome print dialog with Destination set to Save as PDF, Layout set to Landscape, and Background graphics enabled"></p>
+<figcaption>Chrome print dialog settings</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click <strong>Save</strong>. Use the correct filename when prompted (see <a href="#filename-conventions">Filename conventions</a>).</li>
+</ol>
+</section>
+<section id="firefox" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="firefox"><span class="header-section-number">5.4.2</span> Firefox</h3>
+<ol type="1">
+<li>Click the three horizontal lines (the “hamburger” menu) in the top-right of the browser.</li>
+<li>Click <strong>Print</strong>.</li>
+<li>Match the settings shown below across the two screens. Key settings: <strong>Destination = Save to PDF</strong>, <strong>Orientation = Landscape</strong>, and <strong>Options → Print backgrounds = checked</strong>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/firefox_print_1.png" class="img-fluid figure-img" alt="Firefox print dialog with Destination set to Save to PDF and Orientation set to Landscape"></p>
+<figcaption>Firefox print settings — page 1</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/firefox_print_2.png" class="img-fluid figure-img" alt="Firefox print dialog showing the Options panel with Print backgrounds enabled"></p>
+<figcaption>Firefox print settings — page 2</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click <strong>Save</strong> and use the correct filename.</li>
+</ol>
+</section>
+<section id="safari" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="safari"><span class="header-section-number">5.4.3</span> Safari</h3>
+<ol type="1">
+<li>Click <strong>File</strong> in the top-left menu bar.</li>
+<li>Click <strong>Print</strong>.</li>
+<li>Match the settings shown below across the two screens. Key settings: <strong>Orientation = Landscape</strong>, <strong>Print backgrounds = checked</strong>, and the <strong>PDF dropdown in the bottom-left</strong> must be set to <strong>Save as PDF</strong> (not Print).</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/safari_print_1.png" class="img-fluid figure-img" alt="Safari print dialog with Orientation set to Landscape and Print backgrounds enabled"></p>
+<figcaption>Safari print settings — page 1</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/safari_print_2.png" class="img-fluid figure-img" alt="Safari print dialog with the PDF dropdown set to Save as PDF"></p>
+<figcaption>Safari print settings — page 2</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click <strong>Save</strong> and use the correct filename.</li>
+</ol>
+</section>
+</section>
+<section id="pre-project-reference-what-your-three-slides-should-look-like" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="pre-project-reference-what-your-three-slides-should-look-like"><span class="header-section-number">5.5</span> Pre-project reference: what your three slides should look like</h2>
+<p>Below are the three pre-project slides rendered correctly. Your knitted PDF should match these for <strong>formatting</strong> (fonts, colors, slide layout, code chunk styling). The <strong>content</strong> will differ — your name will be on the title slide and the numbers in your print-out and your fill-ins will reflect your <code>LF.csv</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -218,9 +380,65 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.</p>
+<p>The images below show legacy examples (date stamp from a prior semester, comma in the name placeholder). They are reference for the slide <em>format</em>, not the exact text content. Your version will show Summer 2026, your name without a comma, and the current CPS numbers.</p>
 </div>
 </div>
+<section id="reference-slide-1-title-slide" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="reference-slide-1-title-slide"><span class="header-section-number">5.5.1</span> Reference slide 1 — Title slide</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/ref_slide_1_title.png" class="img-fluid figure-img" alt="Pre-project title slide showing 'BUSN 5000 :: Pre-Project Exercise', subtitle 'Measuring Labor Force Participation', placeholder for student name, and date"></p>
+<figcaption>Title slide reference</figcaption>
+</figure>
+</div>
+<p>What yours should look like:</p>
+<ul>
+<li>Title and subtitle as shown</li>
+<li>Your first and last name on the author line</li>
+<li>Summer 2026 date</li>
+</ul>
+</section>
+<section id="reference-slide-2-read-lf.csv-and-print-its-contents" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="reference-slide-2-read-lf.csv-and-print-its-contents"><span class="header-section-number">5.5.2</span> Reference slide 2 — Read <code>LF.csv</code> and print its contents</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/ref_slide_2_lf.png" class="img-fluid figure-img" alt="Pre-project slide showing the read_csv code chunk and the resulting LF data frame printed in the slide"></p>
+<figcaption>LF print-out slide reference</figcaption>
+</figure>
+</div>
+<p>What yours should look like:</p>
+<ul>
+<li>The code chunk visible (formatted with the UGA code-block style)</li>
+<li>The <code>lf</code> data frame printed below it with six named columns</li>
+</ul>
+</section>
+<section id="reference-slide-3-document-the-contents-of-lf.csv" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="reference-slide-3-document-the-contents-of-lf.csv"><span class="header-section-number">5.5.3</span> Reference slide 3 — Document the contents of <code>LF.csv</code></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/ref_slide_3_comm.png" class="img-fluid figure-img" alt="Pre-project slide showing the documentation paragraph about LFPR with all six blanks filled in"></p>
+<figcaption>Communication slide reference</figcaption>
+</figure>
+</div>
+<p>What yours should look like:</p>
+<ul>
+<li>The paragraph fully filled in, no remaining <code>_____</code> blanks</li>
+<li>Values rounded to two decimal places</li>
+<li>Numbers matching your <code>out/LF.csv</code> (not numbers copied from this reference)</li>
+</ul>
+</section>
+</section>
+<section id="if-your-output-doesnt-match-the-reference" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="if-your-output-doesnt-match-the-reference"><span class="header-section-number">5.6</span> If your output doesn’t match the reference</h2>
+<p>Most formatting mismatches come from a handful of recurring mistakes. See the <a href="./common-errors.html">Common Errors</a> chapter for the diagnosis and fix for each — including:</p>
+<ul>
+<li>CSS in the wrong folder</li>
+<li>Wrong orientation (portrait instead of landscape)</li>
+<li>Knit-to-PDF instead of HTML → PDF</li>
+<li>YAML edits that break the rendering</li>
+<li>Background graphics not enabled in the print dialog</li>
+</ul>
+<p>If you’ve checked all of those and still see a difference, email the teaching team with your <code>.Rmd</code> attached and the print dialog settings you used.</p>
 
 
 </section>
