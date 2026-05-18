@@ -19,16 +19,21 @@ Each entry follows the same pattern: **Symptom**, **Cause**, **Fix**.
 
 ## Setup errors
 
-### CSS in the wrong folder
+### CSS not loading
 
 **Symptom:** Your knitted slides have no UGA styling — plain text,
 no colors, default fonts.
 
-**Cause:** `project_slidedeck.css` is anywhere other than
-`Project/css/`.
+**Cause:** Either (a) `project_slidedeck.css` is anywhere other
+than `Project/css/`, or (b) the `.Rmd` file you're knitting isn't
+in your `Project/` root (e.g., you left it in your Downloads
+folder), so the relative path `css/project_slidedeck.css` in the
+Rmd's YAML can't find the CSS.
 
-**Fix:** Move the file into `Project/css/`. Re-knit. Visual example
-of what this looks like:
+**Fix:** Confirm both files are in the right places: the CSS in
+`Project/css/` AND the `.Rmd` in your `Project/` root. Open RStudio
+by double-clicking `Project.Rproj`, then re-knit. Visual example of
+what the bad output looks like:
 [Wrong CSS](#output-format-errors).
 
 ### Working from your Downloads folder
@@ -119,9 +124,21 @@ layout, missing CSS, wrong document class, no slide breaks.
 line (e.g., the `output:` value, the `css:` reference, the
 `widescreen:` setting).
 
-**Fix:** Restore the YAML to its original values, leaving only the
-`author:` line as your edit. If unsure, open a fresh copy of
-`pre_project.Rmd` or `project.Rmd` and copy the YAML block over.
+**Fix:**
+
+1. Download a fresh copy of the relevant Rmd
+   (`pre_project.Rmd` or `project.Rmd`) from the file pack on
+   eLC. Save it somewhere temporary like your Downloads folder —
+   not in your `Project/` directory.
+2. Open the fresh copy. Copy the entire YAML block (the section
+   between the two `---` markers at the top of the file).
+3. Open your working Rmd. Replace your current YAML with the YAML
+   you just copied.
+4. Re-add your name on the `author:` line.
+5. **Delete the fresh Rmd copy** from your Downloads folder so you
+   don't accidentally start working in it instead of your real
+   file.
+6. Re-knit.
 
 ### Using the Knit dropdown instead of the Knit button
 
@@ -150,7 +167,9 @@ text, gray gradients, default browser fonts.
 **Cause:** `project_slidedeck.css` was not found at knit time
 (usually because it's not in `Project/css/`).
 
-**Fix:** Verify the CSS file is in `Project/css/`. Re-knit.
+**Fix:** Verify the CSS file is in `Project/css/`. Verify the Rmd
+you are working on is in `Project/`, not somewhere else (like
+`Downloads/`). Re-knit.
 
 ![Wrong CSS example](assets/bad_wrong_css.png){fig-alt="Slide with plain text, no UGA styling, default fonts and gray gradients"}
 
@@ -161,8 +180,9 @@ text, gray gradients, default browser fonts.
 **Cause:** Both CSS is missing and the print dialog saved as
 portrait.
 
-**Fix:** Move CSS to `Project/css/`, re-knit, then save with
-**Landscape** orientation.
+**Fix:** Move CSS to `Project/css/`. Verify the Rmd you are working
+on is in `Project/`, not somewhere else (like `Downloads/`).
+Re-knit, then save with **Landscape** orientation.
 
 ![Wrong CSS, wrong orientation example](assets/bad_wrong_css_orientation.png){fig-alt="Portrait-oriented slide deck with no UGA styling"}
 
@@ -209,6 +229,10 @@ above, isolated here as an example.)
 underlying causes as the "Wrong CSS + wrong orientation" case,
 isolated here as a distinct example pattern.
 
+**Fix:** Move CSS to `Project/css/`. Verify the Rmd you are working
+on is in `Project/`, not somewhere else (like `Downloads/`).
+Re-knit, then save with **Landscape** orientation.
+
 ![Portrait + wrong CSS example](assets/bad_portrait_wrong_css.png){fig-alt="Portrait-oriented slide deck with no UGA styling"}
 
 ### LaTeX slides (knit-to-PDF, slide format)
@@ -220,7 +244,11 @@ styling — different fonts, different layout, no UGA brand colors.
 slide output, overriding the Rmd's HTML-based ioslides format.
 
 **Fix:** Use the Knit button (not the dropdown). The Rmd's YAML
-specifies `ioslides_presentation` for a reason.
+specifies `ioslides_presentation` for a reason. If your YAML has
+also been modified (which often goes hand-in-hand with this
+error), restore it by following the 6-step process under
+[Editing the YAML beyond the author line](#editing-the-yaml-beyond-the-author-line).
+Then re-knit.
 
 ![LaTeX slides example](assets/bad_latex_slides.png){fig-alt="Slide deck rendered as LaTeX/Beamer instead of HTML ioslides"}
 
@@ -302,12 +330,14 @@ can't resolve it, here's how to ask for help.
 ## Communication policy (summarized from the syllabus)
 
 - **For content-related questions**, contact **TAL staff** first.
-  If TAL staff can't solve the problem, then email Abbi or Chris.
+  If TAL staff can't solve the problem, then email Abbi or
+  Dr. Cornwell.
 - **For administrative questions**, email **Abbi first**. She'll
-  loop in Chris if needed.
+  loop in Dr. Cornwell if needed.
 - **One thread per issue.** Don't send the same problem to both
-  Abbi and Chris on separate emails. We will loop the other in if
-  needed. Duplicate emails waste resources for your classmates.
+  Abbi and Dr. Cornwell on separate emails. We will loop the other
+  in if needed. Duplicate emails waste resources for your
+  classmates.
 - **No content review by email before the deadline.** We will not
   pre-grade or review your project ahead of the due date.
 - **Email format requirements:**
