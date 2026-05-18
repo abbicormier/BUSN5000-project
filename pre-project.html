@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-5-complete-the-code-chunk-on-slide-2" id="toc-step-5-complete-the-code-chunk-on-slide-2" class="nav-link" data-scroll-target="#step-5-complete-the-code-chunk-on-slide-2"><span class="header-section-number">2.2.5</span> Step 5: Complete the code chunk on Slide 2</a></li>
   <li><a href="#step-6-fill-in-the-paragraph-on-slide-3" id="toc-step-6-fill-in-the-paragraph-on-slide-3" class="nav-link" data-scroll-target="#step-6-fill-in-the-paragraph-on-slide-3"><span class="header-section-number">2.2.6</span> Step 6: Fill in the paragraph on Slide 3</a></li>
   <li><a href="#step-7-knit-the-rmd-to-html" id="toc-step-7-knit-the-rmd-to-html" class="nav-link" data-scroll-target="#step-7-knit-the-rmd-to-html"><span class="header-section-number">2.2.7</span> Step 7: Knit the Rmd to HTML</a></li>
-  <li><a href="#step-8-compare-your-output-to-the-knitted-template" id="toc-step-8-compare-your-output-to-the-knitted-template" class="nav-link" data-scroll-target="#step-8-compare-your-output-to-the-knitted-template"><span class="header-section-number">2.2.8</span> Step 8: Compare your output to the knitted template</a></li>
+  <li><a href="#step-8-compare-your-output-to-the-reference" id="toc-step-8-compare-your-output-to-the-reference" class="nav-link" data-scroll-target="#step-8-compare-your-output-to-the-reference"><span class="header-section-number">2.2.8</span> Step 8: Compare your output to the reference</a></li>
   <li><a href="#step-9-save-the-html-as-pdf" id="toc-step-9-save-the-html-as-pdf" class="nav-link" data-scroll-target="#step-9-save-the-html-as-pdf"><span class="header-section-number">2.2.9</span> Step 9: Save the HTML as PDF</a></li>
   <li><a href="#step-10-submit-to-gradescope" id="toc-step-10-submit-to-gradescope" class="nav-link" data-scroll-target="#step-10-submit-to-gradescope"><span class="header-section-number">2.2.10</span> Step 10: Submit to Gradescope</a></li>
   </ul></li>
@@ -252,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Installed the required R packages</li>
 <li>Set up the proper directory structure on your computer</li>
 <li>Learned how to knit your <code>.Rmd</code> to an HTML slide deck and save it in PDF format</li>
-<li>Earned <strong>5 bonus points</strong> on your Final Project score</li>
+<li>Earned the <strong>5% of your Project grade</strong> that the Pre-project is worth</li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -264,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The Pre-project is graded all-or-nothing. If your content is correct <strong>and</strong> your slide deck is 100% compliant with the formatting in <code>pre_project_knitted_template.html</code>, you earn the full 5 bonus points. Any deviation — content error, formatting error, wrong filename, anything — and you earn 0.</p>
+<p>The Pre-project is worth <strong>5% of your Project grade</strong>, graded all-or-nothing. If your content is correct <strong>and</strong> your slide deck is 100% compliant with the formatting in <code>pre_project_knitted_template.html</code>, you earn the full 5%. Any deviation — content error, formatting error, wrong filename, anything — and you earn 0.</p>
 <p>There is no partial credit on the Pre-project.</p>
 </div>
 </div>
@@ -317,8 +317,8 @@ Important
 <section id="step-4-fill-in-the-yaml-author-line" class="level3" data-number="2.2.4">
 <h3 data-number="2.2.4" class="anchored" data-anchor-id="step-4-fill-in-the-yaml-author-line"><span class="header-section-number">2.2.4</span> Step 4: Fill in the YAML author line</h3>
 <p>Near the top of the file, find the YAML block (the section between the <code>---</code> markers). Look for this line:</p>
-<pre><code>author: "firstname, lastname"</code></pre>
-<p>Replace <code>firstname, lastname</code> with your <strong>first and last name</strong>, e.g.:</p>
+<pre><code>author: "firstname lastname"</code></pre>
+<p>Replace <code>firstname lastname</code> with your <strong>first and last name</strong>, e.g.:</p>
 <pre><code>author: "Jane Doe"</code></pre>
 <p>Don’t change anything else in the YAML. This is the most common place students introduce formatting errors.</p>
 </section>
@@ -327,7 +327,11 @@ Important
 <p>Slide 2 is titled “Read <code>LF.csv</code> and print its contents.” The code chunk looks like:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"out"</span>, <span class="st">"LF.csv"</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(__)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The first line reads <code>LF.csv</code> into an object called <code>lf</code>. The second line is incomplete — <code>__</code> is a blank for you to fill in.</p>
+<p>If you’ve never seen R code before, here’s what’s happening line by line:</p>
+<ul>
+<li><strong>Line 1.</strong> <code>lf &lt;- read_csv(here("out", "LF.csv"))</code> does three things at once. <code>read_csv("...")</code> is a function that reads a CSV file. <code>here("out", "LF.csv")</code> builds the file path <code>out/LF.csv</code> relative to your project root — this is why you ran <code>LF.R</code> first; it created the <code>LF.csv</code> that this line is reading. And <code>lf &lt;- ...</code> takes the result and stores it in a new <strong>object</strong> named <code>lf</code>. The arrow <code>&lt;-</code> is R’s assignment operator (you’ll see it used the same way most other languages use <code>=</code>).</li>
+<li><strong>Line 2.</strong> <code>print(...)</code> prints whatever you put inside the parentheses to the slide output. The blank <code>__</code> is where you tell R <em>what</em> to print.</li>
+</ul>
 <p>Replace <code>__</code> with the object you want to print. Since you just read the contents into <code>lf</code>, the answer is <strong><code>lf</code></strong>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"out"</span>, <span class="st">"LF.csv"</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(lf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -341,7 +345,8 @@ Important
 <blockquote class="blockquote">
 <p>The <code>LF.csv</code> file contains the results of the labor force participation rate (LFPR) calculation using the March 2024 CPS produced by the script, <code>LF.R</code>. The LFPR (_____) is the ratio of the labor force (_____) to the population (_____). The labor force is the sum of the employed (_____) and unemployed (_____). The population is the sum of the labor force and those not in the labor force (_____). The LFPR is expressed as a percentage.</p>
 </blockquote>
-<p>Fill in each blank with the corresponding value from <code>lf</code>, rounded to two decimal places:</p>
+<p>Each blank goes inside parentheses that follow a specific term — fill in the value of whatever term is named directly before the parentheses, rounded to two decimal places. For example, the first blank follows “the LFPR”, so it gets the LFPR value; the second follows “the labor force”, so it gets the labor force value; and so on.</p>
+<p>For reference, here’s the mapping from each blank to the matching column in your <code>lf</code> data frame:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -379,12 +384,12 @@ Important
 </section>
 <section id="step-7-knit-the-rmd-to-html" class="level3" data-number="2.2.7">
 <h3 data-number="2.2.7" class="anchored" data-anchor-id="step-7-knit-the-rmd-to-html"><span class="header-section-number">2.2.7</span> Step 7: Knit the Rmd to HTML</h3>
-<p>With your changes saved, click the <strong>Knit</strong> button at the top of the editor pane (or press Ctrl+Shift+K / Cmd+Shift+K).</p>
+<p>With your changes saved, click the <strong>Knit</strong> button at the top of the editor pane.</p>
 <p>The knit produces an HTML file in your <code>Project/</code> folder. It opens automatically in the RStudio Viewer or your default browser.</p>
 </section>
-<section id="step-8-compare-your-output-to-the-knitted-template" class="level3" data-number="2.2.8">
-<h3 data-number="2.2.8" class="anchored" data-anchor-id="step-8-compare-your-output-to-the-knitted-template"><span class="header-section-number">2.2.8</span> Step 8: Compare your output to the knitted template</h3>
-<p>In your <code>Project/</code> root, open <code>pre_project_knitted_template.html</code> in your browser. This is the reference of what your output should look like exactly — same fonts, same layout, same code chunk styling.</p>
+<section id="step-8-compare-your-output-to-the-reference" class="level3" data-number="2.2.8">
+<h3 data-number="2.2.8" class="anchored" data-anchor-id="step-8-compare-your-output-to-the-reference"><span class="header-section-number">2.2.8</span> Step 8: Compare your output to the reference</h3>
+<p>The <a href="./submission.html">Submission chapter</a> includes a PDF showing exactly what each of the three pre-project slides should look like when rendered correctly — same fonts, same layout, same code chunk styling. Open it side-by-side with your knitted output and confirm they match.</p>
 <p>If your output doesn’t match exactly, something is wrong. Common causes are listed in the <a href="./common-errors.html">Common Errors</a> chapter.</p>
 </section>
 <section id="step-9-save-the-html-as-pdf" class="level3" data-number="2.2.9">
