@@ -172,7 +172,7 @@ in any of the subfolders.
 ## Sort the Pre-project file pack into the right places
 
 When you download the Pre-project file pack from eLC, you'll get a
-flat bucket of 8 files. Your job is to figure out where each one
+flat bucket of 7 files. Your job is to figure out where each one
 belongs in your `Project/` directory. This isn't busywork — knowing
 which file goes where is itself part of what we want you to learn.
 
@@ -181,7 +181,6 @@ Here's the destination for each file in the pack:
 | File | Goes in |
 |------|---------|
 | `pre_project.Rmd` | `Project/` (root) |
-| `pre_project_knitted_template.html` | `Project/` (root) |
 | `preproject_instructions.pdf` | `Project/` (root) |
 | `LF.R` | `Project/r/` |
 | `project_slidedeck.css` | `Project/css/` |
@@ -194,8 +193,7 @@ After sorting, your folder should look like:
 ```
 Project/
 ├── pre_project.Rmd
-├── pre_project_knitted_template.html
-├── Pre-project Instructions.pdf
+├── preproject_instructions.pdf
 ├── data/
 │   ├── pppub24.csv
 │   └── hhpub24.csv

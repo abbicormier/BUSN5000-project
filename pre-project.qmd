@@ -8,16 +8,18 @@ it correctly, you'll have:
 - Set up the proper directory structure on your computer
 - Learned how to knit your `.Rmd` to an HTML slide deck and save it
   in PDF format
-- Earned **5 bonus points** on your Final Project score
+- Earned the **5% of your Project grade** that the Pre-project is
+  worth
 
 ::: {.callout-important}
 ## All-or-nothing
 
-The Pre-project is graded all-or-nothing. If your content is
-correct **and** your slide deck is 100% compliant with the
-formatting in `pre_project_knitted_template.html`, you earn the
-full 5 bonus points. Any deviation — content error, formatting
-error, wrong filename, anything — and you earn 0.
+The Pre-project is worth **5% of your Project grade**, graded
+all-or-nothing. If your content is correct **and** your slide
+deck is 100% compliant with the formatting in
+`pre_project_knitted_template.html`, you earn the full 5%. Any
+deviation — content error, formatting error, wrong filename,
+anything — and you earn 0.
 
 There is no partial credit on the Pre-project.
 :::
@@ -83,10 +85,10 @@ Near the top of the file, find the YAML block (the section between
 the `---` markers). Look for this line:
 
 ```
-author: "firstname, lastname"
+author: "firstname lastname"
 ```
 
-Replace `firstname, lastname` with your **first and last name**,
+Replace `firstname lastname` with your **first and last name**,
 e.g.:
 
 ```
@@ -106,8 +108,20 @@ lf <- read_csv(here("out", "LF.csv"))
 print(__)
 ```
 
-The first line reads `LF.csv` into an object called `lf`. The
-second line is incomplete — `__` is a blank for you to fill in.
+If you've never seen R code before, here's what's happening line by
+line:
+
+- **Line 1.** `lf <- read_csv(here("out", "LF.csv"))` does three
+  things at once. `read_csv("...")` is a function that reads a CSV
+  file. `here("out", "LF.csv")` builds the file path
+  `out/LF.csv` relative to your project root — this is why you ran
+  `LF.R` first; it created the `LF.csv` that this line is reading.
+  And `lf <- ...` takes the result and stores it in a new **object**
+  named `lf`. The arrow `<-` is R's assignment operator (you'll see
+  it used the same way most other languages use `=`).
+- **Line 2.** `print(...)` prints whatever you put inside the
+  parentheses to the slide output. The blank `__` is where you tell
+  R *what* to print.
 
 Replace `__` with the object you want to print. Since you just read
 the contents into `lf`, the answer is **`lf`**:
@@ -145,8 +159,15 @@ paragraph reads:
 > sum of the labor force and those not in the labor force
 > (\_\_\_\_\_). The LFPR is expressed as a percentage.
 
-Fill in each blank with the corresponding value from `lf`,
-rounded to two decimal places:
+Each blank goes inside parentheses that follow a specific term —
+fill in the value of whatever term is named directly before the
+parentheses, rounded to two decimal places. For example, the first
+blank follows "the LFPR", so it gets the LFPR value; the second
+follows "the labor force", so it gets the labor force value; and so
+on.
+
+For reference, here's the mapping from each blank to the matching
+column in your `lf` data frame:
 
 | Blank | Value from `lf` |
 |---|---|
@@ -160,17 +181,18 @@ rounded to two decimal places:
 ### Step 7: Knit the Rmd to HTML
 
 With your changes saved, click the **Knit** button at the top of
-the editor pane (or press Ctrl+Shift+K / Cmd+Shift+K).
+the editor pane.
 
 The knit produces an HTML file in your `Project/` folder. It opens
 automatically in the RStudio Viewer or your default browser.
 
-### Step 8: Compare your output to the knitted template
+### Step 8: Compare your output to the reference
 
-In your `Project/` root, open `pre_project_knitted_template.html`
-in your browser. This is the reference of what your output should
-look like exactly — same fonts, same layout, same code chunk
-styling.
+The [Submission chapter](submission.qmd) includes a PDF showing
+exactly what each of the three pre-project slides should look like
+when rendered correctly — same fonts, same layout, same code chunk
+styling. Open it side-by-side with your knitted output and confirm
+they match.
 
 If your output doesn't match exactly, something is wrong. Common
 causes are listed in the [Common Errors](common-errors.qmd) chapter.
