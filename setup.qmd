@@ -145,10 +145,11 @@ re-install every time you knit.
 
 ## Create the subfolders inside `Project/`
 
-Inside your `BUSN 5000/Project/` folder, create these four
+Inside your `BUSN 5000/Project/` folder, create these five
 subfolders:
 
 - `data/`
+- `data_documentation/`
 - `out/`
 - `r/`
 - `css/`
@@ -160,6 +161,7 @@ BUSN 5000/
 ├── Homework/
 └── Project/
     ├── data/
+    ├── data_documentation/
     ├── out/
     ├── r/
     └── css/
@@ -181,11 +183,11 @@ Here's the destination for each file in the pack:
 | File | Goes in |
 |------|---------|
 | `pre_project.Rmd` | `Project/` (root) |
-| `preproject_instructions.pdf` | `Project/` (root) |
 | `LF.R` | `Project/r/` |
 | `project_slidedeck.css` | `Project/css/` |
 | `pppub24.csv` | `Project/data/` |
 | `hhpub24.csv` | `Project/data/` |
+| `cpsmar24_documentation.pdf` | `Project/data_documentation/` |
 | `check_setup_preproject.R` | `Project/r/` |
 
 After sorting, your folder should look like:
@@ -193,10 +195,11 @@ After sorting, your folder should look like:
 ```
 Project/
 ├── pre_project.Rmd
-├── preproject_instructions.pdf
 ├── data/
 │   ├── pppub24.csv
 │   └── hhpub24.csv
+├── data_documentation/
+│   └── cpsmar24_documentation.pdf
 ├── out/
 │   (empty for now — LF.R will write LF.csv here)
 ├── r/
