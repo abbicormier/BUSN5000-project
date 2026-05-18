@@ -22,20 +22,27 @@ something here. If setup is right, the rest of the project is much
 easier. If setup is wrong, every other step compounds the problem.
 :::
 
-## Two separate folders to keep straight
+## Create your BUSN 5000 folder
 
-You'll have **two** different folders for BUSN 5000:
+Before you do anything project-specific, set up a top-level
+**`BUSN 5000`** folder on your computer. Put it somewhere you'll
+remember — your `Documents` folder is a fine default.
 
-1. **Your BUSN 5000 folder** — a general place for homework
-   assignments and class materials. The Getting Started Day slides
-   cover this. *This chapter is not about that folder.*
-2. **Your Project folder** — a self-contained R project that holds
-   the Pre-project, Project Progress Check, and Final Project. Call
-   this folder `Project`. **This chapter is about this one.**
+Inside `BUSN 5000`, create two subfolders:
 
-Keep them separate. The Project folder is its own R project with
-its own subfolder structure; the BUSN 5000 HW folder is a plain
-folder.
+```
+BUSN 5000/
+├── Homework/
+└── Project/
+```
+
+- `Homework/` is where you'll save homework assignments and other
+  course materials over the semester.
+- `Project/` is the self-contained working directory for the
+  Pre-project, Project Progress Check, and Final Project.
+
+The rest of this chapter is about setting up `Project/`. We won't
+touch `Homework/` here.
 
 ## Install R and RStudio
 
@@ -113,44 +120,49 @@ to know which you have to pick the right R installer.
 
 ## Install the required R packages
 
-Open RStudio. In the Console pane (bottom-left), paste this single
-line and press Enter:
+Install all seven packages using the **Packages** pane in RStudio:
 
-```r
-install.packages(c("here", "tidyverse", "modelsummary", "ggpmisc", "car", "ggrepel", "kableExtra"))
-```
+1. Select the **Packages** tab in the bottom-right pane.
+2. Click **Install** at the top of that pane.
+3. In the "Install Packages" box, enter the package names
+   separated by spaces or commas:
 
-This installs all seven packages the Pre-project, Progress Check,
-and Final Project will need. Installation takes a few minutes the
-first time — let it finish completely.
+   `here tidyverse modelsummary ggpmisc car ggrepel kableExtra`
+
+4. Make sure **Install dependencies** is checked.
+5. Click **Install**.
+
+Installation takes a few minutes the first time — let it finish
+completely.
 
 ::: {.callout-tip}
-You only install packages **once per machine**. After that, you
-load them with `library()` in your `.Rmd` (which the templates
-already handle). Don't put `install.packages()` calls inside a
-`.Rmd` — that would re-install every time you knit.
+You only install packages **once per machine**. After that, the
+templates load them with `library()` calls inside the Rmd setup
+chunks, which run every time you knit. Don't put
+`install.packages()` calls inside an `.Rmd` — that would
+re-install every time you knit.
 :::
 
-## Create the `Project` folder and its subfolders
+## Create the subfolders inside `Project/`
 
-1. Decide where on your computer your `Project` folder will live.
-   Anywhere is fine **except your Downloads folder** (see Common
-   mistakes below).
-2. Create a folder there called exactly `Project`.
-3. Inside `Project`, create these four subfolders:
-   - `data/`
-   - `out/`
-   - `r/`
-   - `css/`
+Inside your `BUSN 5000/Project/` folder, create these four
+subfolders:
+
+- `data/`
+- `out/`
+- `r/`
+- `css/`
 
 So your skeleton looks like:
 
 ```
-Project/
-├── data/
-├── out/
-├── r/
-└── css/
+BUSN 5000/
+├── Homework/
+└── Project/
+    ├── data/
+    ├── out/
+    ├── r/
+    └── css/
 ```
 
 You'll put files into these subfolders in the next step. The
@@ -215,16 +227,17 @@ That guarantees your working directory and paths are correct.
 
 ## Run the setup check
 
-In the RStudio Console, with `Project` loaded as the active
-project, type:
+1. In RStudio's **Files** pane (bottom-right), open the `r/`
+   subfolder.
+2. Click **`check_setup_preproject.R`** to open it in the editor.
+3. In the editor, **Select All** (Ctrl+A on Windows, Cmd+A on
+   Mac).
+4. Click the **Run** button in the top-right of the editor pane
+   (or press Ctrl+Enter / Cmd+Enter).
 
-```r
-source("r/check_setup_preproject.R")
-```
-
-The script verifies every required file is in its correct
-subfolder. You'll see one line per file: either ✓ (good) or ✗ with
-a specific instruction telling you what to fix.
+The script's output appears in the Console pane. You'll see one
+line per file: either ✓ (good) or ✗ with a specific instruction
+telling you what to fix.
 
 ::: {.callout-note}
 If you see any ✗, fix the listed problems and re-run the script.
@@ -282,6 +295,8 @@ You're set up. From here:
   [Chapter 4](main-project.qmd).
 - For the **Project Progress Check**, you continue working on the
   same main project files — see [Chapter 5](progress-check.qmd).
+- For supplementary materials on R, RStudio, AI tools, and coding
+  practices, see [R and AI Resources](r-ai-resources.qmd).
 
 Your `Project/` directory carries through the entire semester. You
 won't need to re-do Setup unless you're working from a new machine.
