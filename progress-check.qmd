@@ -108,8 +108,8 @@ These are the recurring failure modes from past semesters:
 
 1. **Touching the setup chunk.** Do not change `include = FALSE` to
    `include = TRUE` on the setup chunk. The `FALSE`/`TRUE` toggle
-   only applies to the *content* code chunks (`btl1`, `btl2`, `mi1`,
-   etc.), never the setup chunk.
+   only applies to editing the `eval =` argument in the *content*
+   code chunks (`btl1`, `btl2`, `mi1`, etc.), never the setup chunk.
 2. **Skipping the extract script.** You must run `cpsmar_e.R` (and
    have the pre-project data files carried over from the Pre-project)
    before knitting. The `.Rmd` reads the extract it produces.
