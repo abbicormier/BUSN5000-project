@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -206,14 +171,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#two-separate-folders-to-keep-straight" id="toc-two-separate-folders-to-keep-straight" class="nav-link active" data-scroll-target="#two-separate-folders-to-keep-straight"><span class="header-section-number">1.1</span> Two separate folders to keep straight</a></li>
+  <li><a href="#create-your-busn-5000-folder" id="toc-create-your-busn-5000-folder" class="nav-link active" data-scroll-target="#create-your-busn-5000-folder"><span class="header-section-number">1.1</span> Create your BUSN 5000 folder</a></li>
   <li><a href="#install-r-and-rstudio" id="toc-install-r-and-rstudio" class="nav-link" data-scroll-target="#install-r-and-rstudio"><span class="header-section-number">1.2</span> Install R and RStudio</a>
   <ul class="collapse">
   <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows"><span class="header-section-number">1.2.1</span> Windows</a></li>
   <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos"><span class="header-section-number">1.2.2</span> macOS</a></li>
   </ul></li>
   <li><a href="#install-the-required-r-packages" id="toc-install-the-required-r-packages" class="nav-link" data-scroll-target="#install-the-required-r-packages"><span class="header-section-number">1.3</span> Install the required R packages</a></li>
-  <li><a href="#create-the-project-folder-and-its-subfolders" id="toc-create-the-project-folder-and-its-subfolders" class="nav-link" data-scroll-target="#create-the-project-folder-and-its-subfolders"><span class="header-section-number">1.4</span> Create the <code>Project</code> folder and its subfolders</a></li>
+  <li><a href="#create-the-subfolders-inside-project" id="toc-create-the-subfolders-inside-project" class="nav-link" data-scroll-target="#create-the-subfolders-inside-project"><span class="header-section-number">1.4</span> Create the subfolders inside <code>Project/</code></a></li>
   <li><a href="#sort-the-pre-project-file-pack-into-the-right-places" id="toc-sort-the-pre-project-file-pack-into-the-right-places" class="nav-link" data-scroll-target="#sort-the-pre-project-file-pack-into-the-right-places"><span class="header-section-number">1.5</span> Sort the Pre-project file pack into the right places</a></li>
   <li><a href="#create-the-.rproj-file" id="toc-create-the-.rproj-file" class="nav-link" data-scroll-target="#create-the-.rproj-file"><span class="header-section-number">1.6</span> Create the <code>.Rproj</code> file</a></li>
   <li><a href="#run-the-setup-check" id="toc-run-the-setup-check" class="nav-link" data-scroll-target="#run-the-setup-check"><span class="header-section-number">1.7</span> Run the setup check</a></li>
@@ -272,14 +237,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Almost every “my project won’t knit” email we get traces back to something here. If setup is right, the rest of the project is much easier. If setup is wrong, every other step compounds the problem.</p>
 </div>
 </div>
-<section id="two-separate-folders-to-keep-straight" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="two-separate-folders-to-keep-straight"><span class="header-section-number">1.1</span> Two separate folders to keep straight</h2>
-<p>You’ll have <strong>two</strong> different folders for BUSN 5000:</p>
-<ol type="1">
-<li><strong>Your BUSN 5000 folder</strong> — a general place for homework assignments and class materials. The Getting Started Day slides cover this. <em>This chapter is not about that folder.</em></li>
-<li><strong>Your Project folder</strong> — a self-contained R project that holds the Pre-project, Project Progress Check, and Final Project. Call this folder <code>Project</code>. <strong>This chapter is about this one.</strong></li>
-</ol>
-<p>Keep them separate. The Project folder is its own R project with its own subfolder structure; the BUSN 5000 HW folder is a plain folder.</p>
+<section id="create-your-busn-5000-folder" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="create-your-busn-5000-folder"><span class="header-section-number">1.1</span> Create your BUSN 5000 folder</h2>
+<p>Before you do anything project-specific, set up a top-level <strong><code>BUSN 5000</code></strong> folder on your computer. Put it somewhere you’ll remember — your <code>Documents</code> folder is a fine default.</p>
+<p>Inside <code>BUSN 5000</code>, create two subfolders:</p>
+<pre><code>BUSN 5000/
+├── Homework/
+└── Project/</code></pre>
+<ul>
+<li><code>Homework/</code> is where you’ll save homework assignments and other course materials over the semester.</li>
+<li><code>Project/</code> is the self-contained working directory for the Pre-project, Project Progress Check, and Final Project.</li>
+</ul>
+<p>The rest of this chapter is about setting up <code>Project/</code>. We won’t touch <code>Homework/</code> here.</p>
 </section>
 <section id="install-r-and-rstudio" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="install-r-and-rstudio"><span class="header-section-number">1.2</span> Install R and RStudio</h2>
@@ -340,9 +309,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="install-the-required-r-packages" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="install-the-required-r-packages"><span class="header-section-number">1.3</span> Install the required R packages</h2>
-<p>Open RStudio. In the Console pane (bottom-left), paste this single line and press Enter:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"here"</span>, <span class="st">"tidyverse"</span>, <span class="st">"modelsummary"</span>, <span class="st">"ggpmisc"</span>, <span class="st">"car"</span>, <span class="st">"ggrepel"</span>, <span class="st">"kableExtra"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This installs all seven packages the Pre-project, Progress Check, and Final Project will need. Installation takes a few minutes the first time — let it finish completely.</p>
+<p>Install all seven packages using the <strong>Packages</strong> pane in RStudio:</p>
+<ol type="1">
+<li><p>Select the <strong>Packages</strong> tab in the bottom-right pane.</p></li>
+<li><p>Click <strong>Install</strong> at the top of that pane.</p></li>
+<li><p>In the “Install Packages” box, enter the package names separated by spaces or commas:</p>
+<p><code>here tidyverse modelsummary ggpmisc car ggrepel kableExtra</code></p></li>
+<li><p>Make sure <strong>Install dependencies</strong> is checked.</p></li>
+<li><p>Click <strong>Install</strong>.</p></li>
+</ol>
+<p>Installation takes a few minutes the first time — let it finish completely.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -353,29 +329,27 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You only install packages <strong>once per machine</strong>. After that, you load them with <code>library()</code> in your <code>.Rmd</code> (which the templates already handle). Don’t put <code>install.packages()</code> calls inside a <code>.Rmd</code> — that would re-install every time you knit.</p>
+<p>You only install packages <strong>once per machine</strong>. After that, the templates load them with <code>library()</code> calls inside the Rmd setup chunks, which run every time you knit. Don’t put <code>install.packages()</code> calls inside an <code>.Rmd</code> — that would re-install every time you knit.</p>
 </div>
 </div>
 </section>
-<section id="create-the-project-folder-and-its-subfolders" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="create-the-project-folder-and-its-subfolders"><span class="header-section-number">1.4</span> Create the <code>Project</code> folder and its subfolders</h2>
-<ol type="1">
-<li>Decide where on your computer your <code>Project</code> folder will live. Anywhere is fine <strong>except your Downloads folder</strong> (see Common mistakes below).</li>
-<li>Create a folder there called exactly <code>Project</code>.</li>
-<li>Inside <code>Project</code>, create these four subfolders:
+<section id="create-the-subfolders-inside-project" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="create-the-subfolders-inside-project"><span class="header-section-number">1.4</span> Create the subfolders inside <code>Project/</code></h2>
+<p>Inside your <code>BUSN 5000/Project/</code> folder, create these four subfolders:</p>
 <ul>
 <li><code>data/</code></li>
 <li><code>out/</code></li>
 <li><code>r/</code></li>
 <li><code>css/</code></li>
-</ul></li>
-</ol>
+</ul>
 <p>So your skeleton looks like:</p>
-<pre><code>Project/
-├── data/
-├── out/
-├── r/
-└── css/</code></pre>
+<pre><code>BUSN 5000/
+├── Homework/
+└── Project/
+    ├── data/
+    ├── out/
+    ├── r/
+    └── css/</code></pre>
 <p>You’ll put files into these subfolders in the next step. The <code>.Rmd</code> files themselves will live in the <code>Project/</code> root, <strong>not</strong> in any of the subfolders.</p>
 </section>
 <section id="sort-the-pre-project-file-pack-into-the-right-places" class="level2" data-number="1.5">
@@ -455,9 +429,13 @@ Tip
 </section>
 <section id="run-the-setup-check" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="run-the-setup-check"><span class="header-section-number">1.7</span> Run the setup check</h2>
-<p>In the RStudio Console, with <code>Project</code> loaded as the active project, type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"r/check_setup_preproject.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The script verifies every required file is in its correct subfolder. You’ll see one line per file: either ✓ (good) or ✗ with a specific instruction telling you what to fix.</p>
+<ol type="1">
+<li>In RStudio’s <strong>Files</strong> pane (bottom-right), open the <code>r/</code> subfolder.</li>
+<li>Click <strong><code>check_setup_preproject.R</code></strong> to open it in the editor.</li>
+<li>In the editor, <strong>Select All</strong> (Ctrl+A on Windows, Cmd+A on Mac).</li>
+<li>Click the <strong>Run</strong> button in the top-right of the editor pane (or press Ctrl+Enter / Cmd+Enter).</li>
+</ol>
+<p>The script’s output appears in the Console pane. You’ll see one line per file: either ✓ (good) or ✗ with a specific instruction telling you what to fix.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -503,6 +481,7 @@ Note
 <li>For the <strong>Pre-project</strong>, continue to <a href="./pre-project.html">Chapter 3</a>.</li>
 <li>For the <strong>Main Project</strong> (later in the semester), you’ll add more files to the same <code>Project/</code> folder — see <a href="./main-project.html">Chapter 4</a>.</li>
 <li>For the <strong>Project Progress Check</strong>, you continue working on the same main project files — see <a href="./progress-check.html">Chapter 5</a>.</li>
+<li>For supplementary materials on R, RStudio, AI tools, and coding practices, see <a href="./r-ai-resources.html">R and AI Resources</a>.</li>
 </ul>
 <p>Your <code>Project/</code> directory carries through the entire semester. You won’t need to re-do Setup unless you’re working from a new machine.</p>
 
