@@ -1,0 +1,293 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap');
+
+/* General styles */
+body {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 27px!important; /* Approximate 20pt font size */
+    line-height: 1.22!important; /* Set line-height as a multiplier of the font-size (27px * 1.2 = 32.4px leading) */
+}
+
+p {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 27px!important; /* Approximate 20pt font size */
+    line-height: 1.22!important; /* Set line-height as a multiplier of the font-size (27px * 1.2 = 32.4px leading) */
+    margin-bottom: 16px;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: "Roboto Slab", serif;
+    color: #BA0C2F;
+}
+
+.title, .subtitle {
+    font-family: "Roboto Slab", serif;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700; /* Use bold weight for titles */
+}
+
+.subtitle {
+    font-size: 1.75em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 400; /* Use normal weight for subtitles */
+}
+
+h2 {
+    font-size: 45px;
+    line-height: 55px;
+    letter-spacing: -2px;
+}
+
+.title-slide hgroup h1 {
+    font-size: 65px;
+    line-height: 1.4;
+    letter-spacing: -3px;
+    color: #000000;
+}
+
+.title-slide hgroup h2 {
+    font-size: 30px;
+    color: #9EA2A2; /* this is stegman */ 
+    font-weight: inherit;
+}
+
+/* Section slide styles */
+.section-slide {
+    background-color: #0056b3 !important;
+    color: white !important;
+    text-align: center !important;
+    padding: 100px 0 !important;
+}
+
+.section-slide h1 {
+    font-size: 3em !important;
+}
+
+/* Code and Preformatted Text */
+code {
+    background-color: #C8D8EB;
+    color: #000000;
+    padding: 2px 2px;
+    border-radius: 4px;
+    white-space: pre-wrap;       /* CSS3 */
+    white-space: -moz-pre-wrap;  /* Mozilla */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* IE 5.5+ */
+}
+
+pre {
+    font-size: 0.6em !important;
+    line-height: 1.1 !important;  
+    white-space: pre-wrap;       /* CSS3 */
+    white-space: -moz-pre-wrap;  /* Mozilla */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* IE 5.5+ */
+}
+
+/* Appendix Table Styles */
+.appendix-table {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.appendix-table table {
+    width: 100% !important;
+    table-layout: auto;
+    border-collapse: collapse;
+    word-wrap: break-word;
+}
+
+.appendix-table th, .appendix-table td {
+    padding: 1px !important;  /* Reduce padding to fit more content */
+    text-align: left;
+    font-size: 13px !important; /* Make the font size smaller to fit more content */
+    color: #000000 !important; /* Set td text color to black */
+}
+
+/* Table 5 Styles */
+.table-4 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%;
+    width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    padding: 20px; /* Add padding around the table */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.table-4 table {
+    width: 100% !important; /* Increase width to take more horizontal space */
+    max-width: 100%; /* Ensure the table does not overflow its container */
+    table-layout: auto;
+    border-collapse: collapse;
+    word-wrap: break-word;
+}
+
+.table-4 th {
+    font-size: 16px !important; /* Slightly larger font size */
+    padding: 5px 10px !important;  /* Add more padding to table cells */
+    text-align: left;
+}
+
+.table-4 td {
+    font-size: 14px !important;
+    padding: 2px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    color: #000000 !important; /* Set td text color to black */
+}
+
+.table-4 caption {
+    font-size: 22px !important;
+    color: #000000 !important; /* Set caption text color to black */
+}
+
+/* Table 4 Styles */
+.table-3 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%;
+    width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    padding: 20px; /* Add padding around the table */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.table-3 table {
+    width: 95% !important; /* Increase width to take more horizontal space */
+    max-width: 95%; /* Ensure the table does not overflow its container */
+    table-layout: fixed; /* Use fixed layout to evenly distribute column width */
+    border-collapse: collapse;
+    word-wrap: break-word;
+}
+
+.table-3 th {
+    font-size: 16px !important; /* Slightly larger font size */
+    padding: 10px 30px !important;  /* Add more padding to table cells */
+    text-align: center !important;
+    white-space: normal; /* Ensure text wraps properly */
+} 
+
+.table-3 td {
+    font-size: 14px !important; /* Slightly larger font size */
+    padding: 10px 30px !important;  /* Add more padding to table cells */
+    text-align: left !important;
+    white-space: normal; /* Ensure text wraps properly */
+    color: #000000 !important; /* Set td text color to black */
+}
+
+.table-3 caption {
+    font-size: 20px !important;
+    color: #000000 !important; /* Set caption text color to black */
+}
+
+/* Table 123 Specific Styles */
+.table-123 table {
+    width: 100% !important; /* Ensure the table takes the full width */
+    table-layout: auto;
+    border-collapse: collapse;
+    word-wrap: break-word;
+}
+
+.table-123 th {
+    font-size: 18px !important; /* Increase the font size for table cells */
+    padding: 10px 15px !important; /* Add padding to table cells */
+    text-align: left;
+}
+
+.table-123 td {
+    font-size: 16px !important; /* Increase the font size for table cells */
+    padding: 10px 15px !important; /* Add padding to table cells */
+    text-align: left;
+    color: #000000 !important; /* Set td text color to black */
+}
+
+.table-123 caption {
+    font-size: 22px;
+    color: #000000 !important; /* Set caption text color to black */
+}
+
+.appendix-code pre{
+    font-size: 0.5em !important;
+}
+
+/* No Title Slide Styles */
+.no-title-slide h1, .no-title-slide h2 {
+    display: none;
+}
+
+.no-title-slide, .no-title-slide .slide-content, .no-title-slide *, .no-title-slide .reveal, .no-title-slide .slides, .no-title-slide .slides > section, .no-title-slide .reveal .slides > section, .no-title-slide table {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.no-title-slide .reveal .slides > section {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Adjust to align content vertically as needed */
+    align-items: center; /* Adjust to align content horizontally as needed */
+}
+
+/* Custom scrollbar thumb color */
+::-webkit-scrollbar-thumb {
+    background-color: #9EA2A2 !important;
+}
+
+/* Make the background of every slide white */
+slides > slide {
+    background: #ffffff;
+    background-color: #ffffff;
+}
+
+/* Make the appendix slide initial column dawg red */
+table.rmdtable th {
+    background: #BA0C2F !important;
+    color: #ffffff !important;
+}
+
+/* Making the code chunks UGA beige */
+.prettyprint {
+    background-color: #D6D2C4;
+}
+
+.prettyprint .str, .prettyprint .atv {
+    color: #004E60;
+}
+
+.prettyprint .pln {
+    color: #000000;
+}
+
+.prettyprint .lit {
+    color: #E4002B;
+}
+
+/* Making the section slides look nice */
+slides > slide.dark {
+    background: #9EA2A2 !important; /* this is stegman */ 
+}
+
+td[style*="box-shadow"] {
+     box-shadow: none !important;
+   }

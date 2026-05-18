@@ -1,0 +1,60 @@
+---
+title: "BUSN 5000 :: Pre-Project Exercise"
+subtitle: Measuring Labor Force Participation
+author: "First Name Last Name"
+date: |
+    | Summer 2026
+    | (updated `r format(Sys.time(), '%d %b %y')`)
+output:
+  ioslides_presentation:
+    css: css/project_slidedeck.css
+    widescreen: false
+urlcolor: "#004E60"  # Use hex code for Olympic blue from visual UGA guide
+---
+
+```{r setup, include=FALSE}
+# Attach packages
+library(readr)         # For read_csv
+library(here)          # For easy file referencing in project workflows
+# library(tidyverse)     # To use the tidy packages
+# library(modelsummary)  # To make pretty tables
+# library(ggpmisc)       # To annotate plot fits
+# library(car)           # For `linearHypothesis`
+# library(ggrepel)       # For text annotations
+# library(kableExtra)    # For table formatting
+
+# Set global options
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE
+  )
+
+# Turn off scientific notation
+options(scipen = 999)
+
+# Defensive check: confirm LF.R has been run before this Rmd is
+# knit. If out/LF.csv is missing, the next chunk would fail with
+# a generic "cannot open the connection" error; we stop here with
+# a more helpful message that points the student at the fix.
+if (!file.exists(here::here("out", "LF.csv"))) {
+  stop(
+    "out/LF.csv was not found. The pre-project Rmd reads this ",
+    "file, but it doesn't exist yet. Open r/LF.R, Select All, ",
+    "click Run, then knit this Rmd. See the Setup chapter of ",
+    "the Project Guide for a refresher: ",
+    "https://abbicormier.github.io/BUSN5000-project/setup.html"
+  )
+}
+```
+
+## Read `LF.csv` and print its contents
+
+```{r, eval = FALSE}
+lf <- read_csv(here("out", "LF.csv"))
+print(__)
+```
+
+## Document the contents of `LF.csv`
+
+The `LF.csv` file contains the results of the labor force participation rate (LFPR) calculation using the March 2024 CPS produced by the script, `LF.R`. The LFPR (_____) is the ratio of the labor force (_____) to the population (_____). The labor force is the sum of the employed (_____) and unemployed (_____). The population is the sum of the labor force and those not in the labor force (_____). The LFPR is expressed as a percentage.
