@@ -5,9 +5,9 @@ losing points to formatting. The same workflow applies to all three
 project artifacts you submit: the **Pre-project**, the optional
 **Project Progress Check**, and the **Final Project**.
 
-If you only read one section of this chapter, read the
-[Saving HTML as PDF](#saving-html-as-pdf) section. The vast majority
-of submission errors come from skipping or mangling this step.
+In the past four years, the vast majority of pre-projects, project
+progress checks, and final projects that earned a 0 were the result
+of something done wrong here.
 
 ## Filename conventions
 
@@ -22,8 +22,11 @@ words, and the **`.pdf`** extension.
 | Final Project | `firstname_lastname_project.pdf` | `jane_doe_project.pdf` |
 
 ::: {.callout-important}
-Wrong filename = wrong submission = grading script won't find your
-file. Triple-check the filename before uploading to Gradescope.
+Use the filename pattern exactly as written. It keeps your three
+submissions distinct in your project folder (so a later one
+doesn't overwrite an earlier one), and it makes each artifact easy
+to locate when you need to refer back to it. Required, not
+optional.
 :::
 
 ## Late submission policy
@@ -39,6 +42,15 @@ Each submission goes through the same three steps:
 
 1. **Knit** your `.Rmd` to HTML inside RStudio (the **Knit** button
    in the editor pane).
+
+   ::: {.callout-important}
+   Click the **Knit** button itself, not the small dropdown arrow
+   next to it. The dropdown offers "Knit to HTML / PDF / Word"
+   options that override the output format we've configured in the
+   Rmd's YAML — picking one will overwrite our formatting and your
+   output will be rejected.
+   :::
+
 2. **Save** the resulting HTML page as a PDF using your browser's
    print-to-PDF function (instructions per browser below).
 3. **Upload** the PDF to the corresponding Gradescope assignment
@@ -49,7 +61,7 @@ Each submission goes through the same three steps:
 
 Knitting straight to PDF from R Markdown uses a different rendering
 path (LaTeX) that strips the CSS-based slide formatting we use. The
-output will not match the reference and will be rejected as a
+output will not match the reference and **will receive a 0%** as a
 formatting violation.
 
 You **must** knit to HTML, then save the HTML as PDF.
@@ -166,6 +178,106 @@ What yours should look like:
 - Numbers matching your `out/LF.csv` (not numbers copied from this
   reference)
 
+## Final Project reference: what your 35 slides should look like
+
+Below are the 35 final-project slides rendered correctly. Your
+knitted PDF should match these for **formatting** (fonts, colors,
+slide layout, tables, figures). The **content** will reflect your
+own work — your name on the title slide, your written sections,
+your data outputs, and your figures.
+
+::: {.callout-note}
+The images below show legacy examples (date stamp from a prior
+semester). The format is what to match. Your version will show
+Summer 2026 and current CPS numbers.
+:::
+
+### Front matter (slides 1–2)
+
+![Slide 1: Title](assets/project_slide-01.png){fig-alt="Title slide of the BUSN 5000 final project"}
+
+![Slide 2: Academic Honesty Statement](assets/project_slide-02.png){fig-alt="Academic Honesty Statement slide with signature line"}
+
+### Introduction (slides 3–4)
+
+![Slide 3: Introduction (section divider)](assets/project_slide-03.png){fig-alt="Section divider slide for Introduction"}
+
+![Slide 4: Overview](assets/project_slide-04.png){fig-alt="Project overview slide"}
+
+### Data (slides 5–8)
+
+![Slide 5: Data (section divider)](assets/project_slide-05.png){fig-alt="Section divider slide for Data"}
+
+![Slide 6: March 2024 CPS](assets/project_slide-06.png){fig-alt="March 2024 CPS description slide"}
+
+![Slide 7: March 2024 CPS Extract](assets/project_slide-07.png){fig-alt="March 2024 CPS Extract description slide with read_data code chunk"}
+
+![Slide 8: Analysis sample](assets/project_slide-08.png){fig-alt="Analysis sample slide with btl1 code chunk"}
+
+### Baseline earnings distributions (slides 9–12)
+
+![Slide 9: Baseline earnings distributions (section divider)](assets/project_slide-09.png){fig-alt="Section divider slide for Baseline earnings distributions"}
+
+![Slide 10: Plotting earnings distributions](assets/project_slide-10.png){fig-alt="Plotting earnings distributions slide with btl2 code chunk"}
+
+![Slide 11: Distribution of earnings by gender (Figure 1)](assets/project_slide-11.png){fig-alt="Figure 1: Distribution of earnings by gender"}
+
+![Slide 12: Baseline comparisons](assets/project_slide-12.png){fig-alt="Baseline comparisons write-up slide"}
+
+### The career gender gap (slides 13–20)
+
+![Slide 13: The career gender gap (section divider)](assets/project_slide-13.png){fig-alt="Section divider slide for The career gender gap"}
+
+![Slide 14: Wages and hours differences (Table 1)](assets/project_slide-14.png){fig-alt="Table 1: Wages and hours by gender"}
+
+![Slide 15: Documenting the differences](assets/project_slide-15.png){fig-alt="Documenting the differences write-up slide"}
+
+![Slide 16: Plotting career log wage profiles](assets/project_slide-16.png){fig-alt="Plotting career log wage profiles slide with mi2 code chunk"}
+
+![Slide 17: Career log wage profiles (Figure 2)](assets/project_slide-17.png){fig-alt="Figure 2: Career log-wage profiles for women and men"}
+
+![Slide 18: Estimating wage differences over a career](assets/project_slide-18.png){fig-alt="Estimating wage differences over a career slide with mi3 code chunk"}
+
+![Slide 19: Evolution of the gender wage gap (Table 2)](assets/project_slide-19.png){fig-alt="Table 2: Percent wage differences, first 30 years"}
+
+![Slide 20: Discussing the gender wage gap evolution](assets/project_slide-20.png){fig-alt="Discussing the gender wage gap evolution write-up slide"}
+
+### Explaining the gender wage gap (slides 21–30)
+
+![Slide 21: Explaining the gender wage gap (section divider)](assets/project_slide-21.png){fig-alt="Section divider slide for Explaining the gender wage gap"}
+
+![Slide 22: Fitting the log wage profiles](assets/project_slide-22.png){fig-alt="Fitting the log wage profiles slide with reg1 code chunk"}
+
+![Slide 23: Log wage profiles with quadratic fits (Figure 3)](assets/project_slide-23.png){fig-alt="Figure 3: Career log-wage profiles with quadratic fits"}
+
+![Slide 24: Gender differences in education (Table 3)](assets/project_slide-24.png){fig-alt="Table 3: Educational attainment by gender"}
+
+![Slide 25: Gender differences in demographics (Table 4)](assets/project_slide-25.png){fig-alt="Table 4: Demographic characteristics by gender"}
+
+![Slide 26: Documenting differences in characteristics](assets/project_slide-26.png){fig-alt="Documenting differences in characteristics write-up slide"}
+
+![Slide 27: Controlling for education and demographic characteristics](assets/project_slide-27.png){fig-alt="Controlling for education and demographic characteristics slide with reg2a code chunk"}
+
+![Slide 28: Reporting the results](assets/project_slide-28.png){fig-alt="Reporting the results slide with reg2b code chunk"}
+
+![Slide 29: Explaining the gender wage gap (Table 5)](assets/project_slide-29.png){fig-alt="Table 5: OLS estimates of the gender wage gap"}
+
+![Slide 30: Documenting the findings](assets/project_slide-30.png){fig-alt="Documenting the findings write-up slide"}
+
+### Conclusion (slides 31–32)
+
+![Slide 31: Conclusion (section divider)](assets/project_slide-31.png){fig-alt="Section divider slide for Conclusion"}
+
+![Slide 32: Summary](assets/project_slide-32.png){fig-alt="Summary slide"}
+
+### Appendix (slides 33–35)
+
+![Slide 33: Appendix (section divider)](assets/project_slide-33.png){fig-alt="Section divider slide for Appendix"}
+
+![Slide 34: Data documentation](assets/project_slide-34.png){fig-alt="Data documentation slide with var_doc code chunk"}
+
+![Slide 35: List of main variables with definitions](assets/project_slide-35.png){fig-alt="List of main variables with definitions table"}
+
 ## If your output doesn't match the reference
 
 Most formatting mismatches come from a handful of recurring
@@ -180,5 +292,6 @@ fix for each — including:
 - Background graphics not enabled in the print dialog
 
 If you've checked all of those and still see a difference, email
-the teaching team with your `.Rmd` attached and the print dialog
-settings you used.
+the teaching team. Attach **both** your `.Rmd` file and the `.pdf`
+you generated (the one with the wrong output), and include the
+print dialog settings you used.
