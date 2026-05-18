@@ -224,7 +224,7 @@
     "href": "submission.html",
     "title": "5  Submission",
     "section": "",
-    "text": "5.1 Filename conventions\nThis chapter covers how to submit your work to Gradescope without losing points to formatting. The same workflow applies to all three project artifacts you submit: the Pre-project, the optional Project Progress Check, and the Final Project.\nIf you only read one section of this chapter, read the Saving HTML as PDF section. The vast majority of submission errors come from skipping or mangling this step.\nEach of the three project artifacts has a required filename. Use lowercase for first and last name, underscores between words, and the .pdf extension.",
+    "text": "5.1 Filename conventions\nThis chapter covers how to submit your work to Gradescope without losing points to formatting. The same workflow applies to all three project artifacts you submit: the Pre-project, the optional Project Progress Check, and the Final Project.\nIn the past four years, the vast majority of pre-projects, project progress checks, and final projects that earned a 0 were the result of something done wrong here.\nEach of the three project artifacts has a required filename. Use lowercase for first and last name, underscores between words, and the .pdf extension.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
     ]
@@ -234,7 +234,7 @@
     "href": "submission.html#filename-conventions",
     "title": "5  Submission",
     "section": "",
-    "text": "Artifact\nFilename pattern\nExample\n\n\n\n\nPre-project\nfirstname_lastname_pre.pdf\njane_doe_pre.pdf\n\n\nProject Progress Check\nfirstname_lastname_progress.pdf\njane_doe_progress.pdf\n\n\nFinal Project\nfirstname_lastname_project.pdf\njane_doe_project.pdf\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWrong filename = wrong submission = grading script won’t find your file. Triple-check the filename before uploading to Gradescope.",
+    "text": "Artifact\nFilename pattern\nExample\n\n\n\n\nPre-project\nfirstname_lastname_pre.pdf\njane_doe_pre.pdf\n\n\nProject Progress Check\nfirstname_lastname_progress.pdf\njane_doe_progress.pdf\n\n\nFinal Project\nfirstname_lastname_project.pdf\njane_doe_project.pdf\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nUse the filename pattern exactly as written. It keeps your three submissions distinct in your project folder (so a later one doesn’t overwrite an earlier one), and it makes each artifact easy to locate when you need to refer back to it. Required, not optional.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
     ]
@@ -254,7 +254,7 @@
     "href": "submission.html#the-submission-workflow-at-a-glance",
     "title": "5  Submission",
     "section": "5.3 The submission workflow at a glance",
-    "text": "5.3 The submission workflow at a glance\nEach submission goes through the same three steps:\n\nKnit your .Rmd to HTML inside RStudio (the Knit button in the editor pane).\nSave the resulting HTML page as a PDF using your browser’s print-to-PDF function (instructions per browser below).\nUpload the PDF to the corresponding Gradescope assignment under the correct filename.\n\n\n\n\n\n\n\nWarningDo not knit directly to PDF\n\n\n\nKnitting straight to PDF from R Markdown uses a different rendering path (LaTeX) that strips the CSS-based slide formatting we use. The output will not match the reference and will be rejected as a formatting violation.\nYou must knit to HTML, then save the HTML as PDF.",
+    "text": "5.3 The submission workflow at a glance\nEach submission goes through the same three steps:\n\nKnit your .Rmd to HTML inside RStudio (the Knit button in the editor pane).\n\n\n\n\n\n\nImportant\n\n\n\nClick the Knit button itself, not the small dropdown arrow next to it. The dropdown offers “Knit to HTML / PDF / Word” options that override the output format we’ve configured in the Rmd’s YAML — picking one will overwrite our formatting and your output will be rejected.\n\n\nSave the resulting HTML page as a PDF using your browser’s print-to-PDF function (instructions per browser below).\nUpload the PDF to the corresponding Gradescope assignment under the correct filename.\n\n\n\n\n\n\n\nWarningDo not knit directly to PDF\n\n\n\nKnitting straight to PDF from R Markdown uses a different rendering path (LaTeX) that strips the CSS-based slide formatting we use. The output will not match the reference and will receive a 0% as a formatting violation.\nYou must knit to HTML, then save the HTML as PDF.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
     ]
@@ -280,11 +280,21 @@
     ]
   },
   {
+    "objectID": "submission.html#final-project-reference-what-your-35-slides-should-look-like",
+    "href": "submission.html#final-project-reference-what-your-35-slides-should-look-like",
+    "title": "5  Submission",
+    "section": "5.6 Final Project reference: what your 35 slides should look like",
+    "text": "5.6 Final Project reference: what your 35 slides should look like\nBelow are the 35 final-project slides rendered correctly. Your knitted PDF should match these for formatting (fonts, colors, slide layout, tables, figures). The content will reflect your own work — your name on the title slide, your written sections, your data outputs, and your figures.\n\n\n\n\n\n\nNote\n\n\n\nThe images below show legacy examples (date stamp from a prior semester). The format is what to match. Your version will show Summer 2026 and current CPS numbers.\n\n\n\n5.6.1 Front matter (slides 1–2)\n\n\n\nSlide 1: Title\n\n\n\n\n\nSlide 2: Academic Honesty Statement\n\n\n\n\n5.6.2 Introduction (slides 3–4)\n\n\n\nSlide 3: Introduction (section divider)\n\n\n\n\n\nSlide 4: Overview\n\n\n\n\n5.6.3 Data (slides 5–8)\n\n\n\nSlide 5: Data (section divider)\n\n\n\n\n\nSlide 6: March 2024 CPS\n\n\n\n\n\nSlide 7: March 2024 CPS Extract\n\n\n\n\n\nSlide 8: Analysis sample\n\n\n\n\n5.6.4 Baseline earnings distributions (slides 9–12)\n\n\n\nSlide 9: Baseline earnings distributions (section divider)\n\n\n\n\n\nSlide 10: Plotting earnings distributions\n\n\n\n\n\nSlide 11: Distribution of earnings by gender (Figure 1)\n\n\n\n\n\nSlide 12: Baseline comparisons\n\n\n\n\n5.6.5 The career gender gap (slides 13–20)\n\n\n\nSlide 13: The career gender gap (section divider)\n\n\n\n\n\nSlide 14: Wages and hours differences (Table 1)\n\n\n\n\n\nSlide 15: Documenting the differences\n\n\n\n\n\nSlide 16: Plotting career log wage profiles\n\n\n\n\n\nSlide 17: Career log wage profiles (Figure 2)\n\n\n\n\n\nSlide 18: Estimating wage differences over a career\n\n\n\n\n\nSlide 19: Evolution of the gender wage gap (Table 2)\n\n\n\n\n\nSlide 20: Discussing the gender wage gap evolution\n\n\n\n\n5.6.6 Explaining the gender wage gap (slides 21–30)\n\n\n\nSlide 21: Explaining the gender wage gap (section divider)\n\n\n\n\n\nSlide 22: Fitting the log wage profiles\n\n\n\n\n\nSlide 23: Log wage profiles with quadratic fits (Figure 3)\n\n\n\n\n\nSlide 24: Gender differences in education (Table 3)\n\n\n\n\n\nSlide 25: Gender differences in demographics (Table 4)\n\n\n\n\n\nSlide 26: Documenting differences in characteristics\n\n\n\n\n\nSlide 27: Controlling for education and demographic characteristics\n\n\n\n\n\nSlide 28: Reporting the results\n\n\n\n\n\nSlide 29: Explaining the gender wage gap (Table 5)\n\n\n\n\n\nSlide 30: Documenting the findings\n\n\n\n\n5.6.7 Conclusion (slides 31–32)\n\n\n\nSlide 31: Conclusion (section divider)\n\n\n\n\n\nSlide 32: Summary\n\n\n\n\n5.6.8 Appendix (slides 33–35)\n\n\n\nSlide 33: Appendix (section divider)\n\n\n\n\n\nSlide 34: Data documentation\n\n\n\n\n\nSlide 35: List of main variables with definitions",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
+    ]
+  },
+  {
     "objectID": "submission.html#if-your-output-doesnt-match-the-reference",
     "href": "submission.html#if-your-output-doesnt-match-the-reference",
     "title": "5  Submission",
-    "section": "5.6 If your output doesn’t match the reference",
-    "text": "5.6 If your output doesn’t match the reference\nMost formatting mismatches come from a handful of recurring mistakes. See the Common Errors chapter for the diagnosis and fix for each — including:\n\nCSS in the wrong folder\nWrong orientation (portrait instead of landscape)\nKnit-to-PDF instead of HTML → PDF\nYAML edits that break the rendering\nBackground graphics not enabled in the print dialog\n\nIf you’ve checked all of those and still see a difference, email the teaching team with your .Rmd attached and the print dialog settings you used.",
+    "section": "5.7 If your output doesn’t match the reference",
+    "text": "5.7 If your output doesn’t match the reference\nMost formatting mismatches come from a handful of recurring mistakes. See the Common Errors chapter for the diagnosis and fix for each — including:\n\nCSS in the wrong folder\nWrong orientation (portrait instead of landscape)\nKnit-to-PDF instead of HTML → PDF\nYAML edits that break the rendering\nBackground graphics not enabled in the print dialog\n\nIf you’ve checked all of those and still see a difference, email the teaching team. Attach both your .Rmd file and the .pdf you generated (the one with the wrong output), and include the print dialog settings you used.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
     ]

@@ -186,7 +186,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#reference-slide-2-read-lf.csv-and-print-its-contents" id="toc-reference-slide-2-read-lf.csv-and-print-its-contents" class="nav-link" data-scroll-target="#reference-slide-2-read-lf.csv-and-print-its-contents"><span class="header-section-number">5.5.2</span> Reference slide 2 — Read <code>LF.csv</code> and print its contents</a></li>
   <li><a href="#reference-slide-3-document-the-contents-of-lf.csv" id="toc-reference-slide-3-document-the-contents-of-lf.csv" class="nav-link" data-scroll-target="#reference-slide-3-document-the-contents-of-lf.csv"><span class="header-section-number">5.5.3</span> Reference slide 3 — Document the contents of <code>LF.csv</code></a></li>
   </ul></li>
-  <li><a href="#if-your-output-doesnt-match-the-reference" id="toc-if-your-output-doesnt-match-the-reference" class="nav-link" data-scroll-target="#if-your-output-doesnt-match-the-reference"><span class="header-section-number">5.6</span> If your output doesn’t match the reference</a></li>
+  <li><a href="#final-project-reference-what-your-35-slides-should-look-like" id="toc-final-project-reference-what-your-35-slides-should-look-like" class="nav-link" data-scroll-target="#final-project-reference-what-your-35-slides-should-look-like"><span class="header-section-number">5.6</span> Final Project reference: what your 35 slides should look like</a>
+  <ul class="collapse">
+  <li><a href="#front-matter-slides-12" id="toc-front-matter-slides-12" class="nav-link" data-scroll-target="#front-matter-slides-12"><span class="header-section-number">5.6.1</span> Front matter (slides 1–2)</a></li>
+  <li><a href="#introduction-slides-34" id="toc-introduction-slides-34" class="nav-link" data-scroll-target="#introduction-slides-34"><span class="header-section-number">5.6.2</span> Introduction (slides 3–4)</a></li>
+  <li><a href="#data-slides-58" id="toc-data-slides-58" class="nav-link" data-scroll-target="#data-slides-58"><span class="header-section-number">5.6.3</span> Data (slides 5–8)</a></li>
+  <li><a href="#baseline-earnings-distributions-slides-912" id="toc-baseline-earnings-distributions-slides-912" class="nav-link" data-scroll-target="#baseline-earnings-distributions-slides-912"><span class="header-section-number">5.6.4</span> Baseline earnings distributions (slides 9–12)</a></li>
+  <li><a href="#the-career-gender-gap-slides-1320" id="toc-the-career-gender-gap-slides-1320" class="nav-link" data-scroll-target="#the-career-gender-gap-slides-1320"><span class="header-section-number">5.6.5</span> The career gender gap (slides 13–20)</a></li>
+  <li><a href="#explaining-the-gender-wage-gap-slides-2130" id="toc-explaining-the-gender-wage-gap-slides-2130" class="nav-link" data-scroll-target="#explaining-the-gender-wage-gap-slides-2130"><span class="header-section-number">5.6.6</span> Explaining the gender wage gap (slides 21–30)</a></li>
+  <li><a href="#conclusion-slides-3132" id="toc-conclusion-slides-3132" class="nav-link" data-scroll-target="#conclusion-slides-3132"><span class="header-section-number">5.6.7</span> Conclusion (slides 31–32)</a></li>
+  <li><a href="#appendix-slides-3335" id="toc-appendix-slides-3335" class="nav-link" data-scroll-target="#appendix-slides-3335"><span class="header-section-number">5.6.8</span> Appendix (slides 33–35)</a></li>
+  </ul></li>
+  <li><a href="#if-your-output-doesnt-match-the-reference" id="toc-if-your-output-doesnt-match-the-reference" class="nav-link" data-scroll-target="#if-your-output-doesnt-match-the-reference"><span class="header-section-number">5.7</span> If your output doesn’t match the reference</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/abbicormier/BUSN5000-project/edit/main/submission.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/abbicormier/BUSN5000-project/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -213,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This chapter covers how to submit your work to Gradescope without losing points to formatting. The same workflow applies to all three project artifacts you submit: the <strong>Pre-project</strong>, the optional <strong>Project Progress Check</strong>, and the <strong>Final Project</strong>.</p>
-<p>If you only read one section of this chapter, read the <a href="#saving-html-as-pdf">Saving HTML as PDF</a> section. The vast majority of submission errors come from skipping or mangling this step.</p>
+<p>In the past four years, the vast majority of pre-projects, project progress checks, and final projects that earned a 0 were the result of something done wrong here.</p>
 <section id="filename-conventions" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="filename-conventions"><span class="header-section-number">5.1</span> Filename conventions</h2>
 <p>Each of the three project artifacts has a required filename. Use <strong>lowercase</strong> for first and last name, <strong>underscores</strong> between words, and the <strong><code>.pdf</code></strong> extension.</p>
@@ -258,7 +269,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Wrong filename = wrong submission = grading script won’t find your file. Triple-check the filename before uploading to Gradescope.</p>
+<p>Use the filename pattern exactly as written. It keeps your three submissions distinct in your project folder (so a later one doesn’t overwrite an earlier one), and it makes each artifact easy to locate when you need to refer back to it. Required, not optional.</p>
 </div>
 </div>
 </section>
@@ -270,9 +281,22 @@ Important
 <h2 data-number="5.3" class="anchored" data-anchor-id="the-submission-workflow-at-a-glance"><span class="header-section-number">5.3</span> The submission workflow at a glance</h2>
 <p>Each submission goes through the same three steps:</p>
 <ol type="1">
-<li><strong>Knit</strong> your <code>.Rmd</code> to HTML inside RStudio (the <strong>Knit</strong> button in the editor pane).</li>
-<li><strong>Save</strong> the resulting HTML page as a PDF using your browser’s print-to-PDF function (instructions per browser below).</li>
-<li><strong>Upload</strong> the PDF to the corresponding Gradescope assignment under the correct filename.</li>
+<li><p><strong>Knit</strong> your <code>.Rmd</code> to HTML inside RStudio (the <strong>Knit</strong> button in the editor pane).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Click the <strong>Knit</strong> button itself, not the small dropdown arrow next to it. The dropdown offers “Knit to HTML / PDF / Word” options that override the output format we’ve configured in the Rmd’s YAML — picking one will overwrite our formatting and your output will be rejected.</p>
+</div>
+</div></li>
+<li><p><strong>Save</strong> the resulting HTML page as a PDF using your browser’s print-to-PDF function (instructions per browser below).</p></li>
+<li><p><strong>Upload</strong> the PDF to the corresponding Gradescope assignment under the correct filename.</p></li>
 </ol>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -284,7 +308,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Knitting straight to PDF from R Markdown uses a different rendering path (LaTeX) that strips the CSS-based slide formatting we use. The output will not match the reference and will be rejected as a formatting violation.</p>
+<p>Knitting straight to PDF from R Markdown uses a different rendering path (LaTeX) that strips the CSS-based slide formatting we use. The output will not match the reference and <strong>will receive a 0%</strong> as a formatting violation.</p>
 <p>You <strong>must</strong> knit to HTML, then save the HTML as PDF.</p>
 </div>
 </div>
@@ -428,8 +452,259 @@ Note
 </ul>
 </section>
 </section>
-<section id="if-your-output-doesnt-match-the-reference" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="if-your-output-doesnt-match-the-reference"><span class="header-section-number">5.6</span> If your output doesn’t match the reference</h2>
+<section id="final-project-reference-what-your-35-slides-should-look-like" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="final-project-reference-what-your-35-slides-should-look-like"><span class="header-section-number">5.6</span> Final Project reference: what your 35 slides should look like</h2>
+<p>Below are the 35 final-project slides rendered correctly. Your knitted PDF should match these for <strong>formatting</strong> (fonts, colors, slide layout, tables, figures). The <strong>content</strong> will reflect your own work — your name on the title slide, your written sections, your data outputs, and your figures.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The images below show legacy examples (date stamp from a prior semester). The format is what to match. Your version will show Summer 2026 and current CPS numbers.</p>
+</div>
+</div>
+<section id="front-matter-slides-12" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="front-matter-slides-12"><span class="header-section-number">5.6.1</span> Front matter (slides 1–2)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-01.png" class="img-fluid figure-img" alt="Title slide of the BUSN 5000 final project"></p>
+<figcaption>Slide 1: Title</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-02.png" class="img-fluid figure-img" alt="Academic Honesty Statement slide with signature line"></p>
+<figcaption>Slide 2: Academic Honesty Statement</figcaption>
+</figure>
+</div>
+</section>
+<section id="introduction-slides-34" class="level3" data-number="5.6.2">
+<h3 data-number="5.6.2" class="anchored" data-anchor-id="introduction-slides-34"><span class="header-section-number">5.6.2</span> Introduction (slides 3–4)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-03.png" class="img-fluid figure-img" alt="Section divider slide for Introduction"></p>
+<figcaption>Slide 3: Introduction (section divider)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-04.png" class="img-fluid figure-img" alt="Project overview slide"></p>
+<figcaption>Slide 4: Overview</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-slides-58" class="level3" data-number="5.6.3">
+<h3 data-number="5.6.3" class="anchored" data-anchor-id="data-slides-58"><span class="header-section-number">5.6.3</span> Data (slides 5–8)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-05.png" class="img-fluid figure-img" alt="Section divider slide for Data"></p>
+<figcaption>Slide 5: Data (section divider)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-06.png" class="img-fluid figure-img" alt="March 2024 CPS description slide"></p>
+<figcaption>Slide 6: March 2024 CPS</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-07.png" class="img-fluid figure-img" alt="March 2024 CPS Extract description slide with read_data code chunk"></p>
+<figcaption>Slide 7: March 2024 CPS Extract</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-08.png" class="img-fluid figure-img" alt="Analysis sample slide with btl1 code chunk"></p>
+<figcaption>Slide 8: Analysis sample</figcaption>
+</figure>
+</div>
+</section>
+<section id="baseline-earnings-distributions-slides-912" class="level3" data-number="5.6.4">
+<h3 data-number="5.6.4" class="anchored" data-anchor-id="baseline-earnings-distributions-slides-912"><span class="header-section-number">5.6.4</span> Baseline earnings distributions (slides 9–12)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-09.png" class="img-fluid figure-img" alt="Section divider slide for Baseline earnings distributions"></p>
+<figcaption>Slide 9: Baseline earnings distributions (section divider)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-10.png" class="img-fluid figure-img" alt="Plotting earnings distributions slide with btl2 code chunk"></p>
+<figcaption>Slide 10: Plotting earnings distributions</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-11.png" class="img-fluid figure-img" alt="Figure 1: Distribution of earnings by gender"></p>
+<figcaption>Slide 11: Distribution of earnings by gender (Figure 1)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-12.png" class="img-fluid figure-img" alt="Baseline comparisons write-up slide"></p>
+<figcaption>Slide 12: Baseline comparisons</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-career-gender-gap-slides-1320" class="level3" data-number="5.6.5">
+<h3 data-number="5.6.5" class="anchored" data-anchor-id="the-career-gender-gap-slides-1320"><span class="header-section-number">5.6.5</span> The career gender gap (slides 13–20)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-13.png" class="img-fluid figure-img" alt="Section divider slide for The career gender gap"></p>
+<figcaption>Slide 13: The career gender gap (section divider)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-14.png" class="img-fluid figure-img" alt="Table 1: Wages and hours by gender"></p>
+<figcaption>Slide 14: Wages and hours differences (Table 1)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-15.png" class="img-fluid figure-img" alt="Documenting the differences write-up slide"></p>
+<figcaption>Slide 15: Documenting the differences</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-16.png" class="img-fluid figure-img" alt="Plotting career log wage profiles slide with mi2 code chunk"></p>
+<figcaption>Slide 16: Plotting career log wage profiles</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-17.png" class="img-fluid figure-img" alt="Figure 2: Career log-wage profiles for women and men"></p>
+<figcaption>Slide 17: Career log wage profiles (Figure 2)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-18.png" class="img-fluid figure-img" alt="Estimating wage differences over a career slide with mi3 code chunk"></p>
+<figcaption>Slide 18: Estimating wage differences over a career</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-19.png" class="img-fluid figure-img" alt="Table 2: Percent wage differences, first 30 years"></p>
+<figcaption>Slide 19: Evolution of the gender wage gap (Table 2)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-20.png" class="img-fluid figure-img" alt="Discussing the gender wage gap evolution write-up slide"></p>
+<figcaption>Slide 20: Discussing the gender wage gap evolution</figcaption>
+</figure>
+</div>
+</section>
+<section id="explaining-the-gender-wage-gap-slides-2130" class="level3" data-number="5.6.6">
+<h3 data-number="5.6.6" class="anchored" data-anchor-id="explaining-the-gender-wage-gap-slides-2130"><span class="header-section-number">5.6.6</span> Explaining the gender wage gap (slides 21–30)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-21.png" class="img-fluid figure-img" alt="Section divider slide for Explaining the gender wage gap"></p>
+<figcaption>Slide 21: Explaining the gender wage gap (section divider)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-22.png" class="img-fluid figure-img" alt="Fitting the log wage profiles slide with reg1 code chunk"></p>
+<figcaption>Slide 22: Fitting the log wage profiles</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-23.png" class="img-fluid figure-img" alt="Figure 3: Career log-wage profiles with quadratic fits"></p>
+<figcaption>Slide 23: Log wage profiles with quadratic fits (Figure 3)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-24.png" class="img-fluid figure-img" alt="Table 3: Educational attainment by gender"></p>
+<figcaption>Slide 24: Gender differences in education (Table 3)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-25.png" class="img-fluid figure-img" alt="Table 4: Demographic characteristics by gender"></p>
+<figcaption>Slide 25: Gender differences in demographics (Table 4)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-26.png" class="img-fluid figure-img" alt="Documenting differences in characteristics write-up slide"></p>
+<figcaption>Slide 26: Documenting differences in characteristics</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-27.png" class="img-fluid figure-img" alt="Controlling for education and demographic characteristics slide with reg2a code chunk"></p>
+<figcaption>Slide 27: Controlling for education and demographic characteristics</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-28.png" class="img-fluid figure-img" alt="Reporting the results slide with reg2b code chunk"></p>
+<figcaption>Slide 28: Reporting the results</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-29.png" class="img-fluid figure-img" alt="Table 5: OLS estimates of the gender wage gap"></p>
+<figcaption>Slide 29: Explaining the gender wage gap (Table 5)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-30.png" class="img-fluid figure-img" alt="Documenting the findings write-up slide"></p>
+<figcaption>Slide 30: Documenting the findings</figcaption>
+</figure>
+</div>
+</section>
+<section id="conclusion-slides-3132" class="level3" data-number="5.6.7">
+<h3 data-number="5.6.7" class="anchored" data-anchor-id="conclusion-slides-3132"><span class="header-section-number">5.6.7</span> Conclusion (slides 31–32)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-31.png" class="img-fluid figure-img" alt="Section divider slide for Conclusion"></p>
+<figcaption>Slide 31: Conclusion (section divider)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-32.png" class="img-fluid figure-img" alt="Summary slide"></p>
+<figcaption>Slide 32: Summary</figcaption>
+</figure>
+</div>
+</section>
+<section id="appendix-slides-3335" class="level3" data-number="5.6.8">
+<h3 data-number="5.6.8" class="anchored" data-anchor-id="appendix-slides-3335"><span class="header-section-number">5.6.8</span> Appendix (slides 33–35)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-33.png" class="img-fluid figure-img" alt="Section divider slide for Appendix"></p>
+<figcaption>Slide 33: Appendix (section divider)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-34.png" class="img-fluid figure-img" alt="Data documentation slide with var_doc code chunk"></p>
+<figcaption>Slide 34: Data documentation</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/project_slide-35.png" class="img-fluid figure-img" alt="List of main variables with definitions table"></p>
+<figcaption>Slide 35: List of main variables with definitions</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="if-your-output-doesnt-match-the-reference" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="if-your-output-doesnt-match-the-reference"><span class="header-section-number">5.7</span> If your output doesn’t match the reference</h2>
 <p>Most formatting mismatches come from a handful of recurring mistakes. See the <a href="./common-errors.html">Common Errors</a> chapter for the diagnosis and fix for each — including:</p>
 <ul>
 <li>CSS in the wrong folder</li>
@@ -438,7 +713,7 @@ Note
 <li>YAML edits that break the rendering</li>
 <li>Background graphics not enabled in the print dialog</li>
 </ul>
-<p>If you’ve checked all of those and still see a difference, email the teaching team with your <code>.Rmd</code> attached and the print dialog settings you used.</p>
+<p>If you’ve checked all of those and still see a difference, email the teaching team. Attach <strong>both</strong> your <code>.Rmd</code> file and the <code>.pdf</code> you generated (the one with the wrong output), and include the print dialog settings you used.</p>
 
 
 </section>
