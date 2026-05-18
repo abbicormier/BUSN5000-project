@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -171,7 +206,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#outline-to-be-written" id="toc-outline-to-be-written" class="nav-link active" data-scroll-target="#outline-to-be-written"><span class="header-section-number">2.1</span> Outline (to be written)</a></li>
+  <li><a href="#what-youll-produce" id="toc-what-youll-produce" class="nav-link active" data-scroll-target="#what-youll-produce"><span class="header-section-number">2.1</span> What you’ll produce</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="header-section-number">2.2</span> Workflow</a>
+  <ul class="collapse">
+  <li><a href="#step-1-open-the-project-in-rstudio" id="toc-step-1-open-the-project-in-rstudio" class="nav-link" data-scroll-target="#step-1-open-the-project-in-rstudio"><span class="header-section-number">2.2.1</span> Step 1: Open the project in RStudio</a></li>
+  <li><a href="#step-2-run-lf.r" id="toc-step-2-run-lf.r" class="nav-link" data-scroll-target="#step-2-run-lf.r"><span class="header-section-number">2.2.2</span> Step 2: Run <code>LF.R</code></a></li>
+  <li><a href="#step-3-open-pre_project.rmd" id="toc-step-3-open-pre_project.rmd" class="nav-link" data-scroll-target="#step-3-open-pre_project.rmd"><span class="header-section-number">2.2.3</span> Step 3: Open <code>pre_project.Rmd</code></a></li>
+  <li><a href="#step-4-fill-in-the-yaml-author-line" id="toc-step-4-fill-in-the-yaml-author-line" class="nav-link" data-scroll-target="#step-4-fill-in-the-yaml-author-line"><span class="header-section-number">2.2.4</span> Step 4: Fill in the YAML author line</a></li>
+  <li><a href="#step-5-complete-the-code-chunk-on-slide-2" id="toc-step-5-complete-the-code-chunk-on-slide-2" class="nav-link" data-scroll-target="#step-5-complete-the-code-chunk-on-slide-2"><span class="header-section-number">2.2.5</span> Step 5: Complete the code chunk on Slide 2</a></li>
+  <li><a href="#step-6-fill-in-the-paragraph-on-slide-3" id="toc-step-6-fill-in-the-paragraph-on-slide-3" class="nav-link" data-scroll-target="#step-6-fill-in-the-paragraph-on-slide-3"><span class="header-section-number">2.2.6</span> Step 6: Fill in the paragraph on Slide 3</a></li>
+  <li><a href="#step-7-knit-the-rmd-to-html" id="toc-step-7-knit-the-rmd-to-html" class="nav-link" data-scroll-target="#step-7-knit-the-rmd-to-html"><span class="header-section-number">2.2.7</span> Step 7: Knit the Rmd to HTML</a></li>
+  <li><a href="#step-8-compare-your-output-to-the-knitted-template" id="toc-step-8-compare-your-output-to-the-knitted-template" class="nav-link" data-scroll-target="#step-8-compare-your-output-to-the-knitted-template"><span class="header-section-number">2.2.8</span> Step 8: Compare your output to the knitted template</a></li>
+  <li><a href="#step-9-save-the-html-as-pdf" id="toc-step-9-save-the-html-as-pdf" class="nav-link" data-scroll-target="#step-9-save-the-html-as-pdf"><span class="header-section-number">2.2.9</span> Step 9: Save the HTML as PDF</a></li>
+  <li><a href="#step-10-submit-to-gradescope" id="toc-step-10-submit-to-gradescope" class="nav-link" data-scroll-target="#step-10-submit-to-gradescope"><span class="header-section-number">2.2.10</span> Step 10: Submit to Gradescope</a></li>
+  </ul></li>
+  <li><a href="#common-pre-project-mistakes" id="toc-common-pre-project-mistakes" class="nav-link" data-scroll-target="#common-pre-project-mistakes"><span class="header-section-number">2.3</span> Common pre-project mistakes</a></li>
+  <li><a href="#what-happens-next" id="toc-what-happens-next" class="nav-link" data-scroll-target="#what-happens-next"><span class="header-section-number">2.4</span> What happens next</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/abbicormier/BUSN5000-project/edit/main/pre-project.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/abbicormier/BUSN5000-project/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -197,30 +247,171 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter covers the BUSN 5000 Pre-project Exercise.</p>
-<section id="outline-to-be-written" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="outline-to-be-written"><span class="header-section-number">2.1</span> Outline (to be written)</h2>
+<p>The Pre-project Exercise is a short, required exercise designed to get you and your computer ready for the Main Project. By completing it correctly, you’ll have:</p>
 <ul>
-<li>Purpose of the pre-project</li>
-<li>What you’ll produce (a 3-slide deck demonstrating setup)</li>
-<li>Step-by-step walkthrough</li>
-<li>Submission rubric (all-or-nothing 5 points; common formatting errors)</li>
-<li>Filename convention</li>
-<li>Common mistakes and how to avoid them</li>
+<li>Installed the required R packages</li>
+<li>Set up the proper directory structure on your computer</li>
+<li>Learned how to knit your <code>.Rmd</code> to an HTML slide deck and save it in PDF format</li>
+<li>Earned <strong>5 bonus points</strong> on your Final Project score</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Important</span>All-or-nothing
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.</p>
+<p>The Pre-project is graded all-or-nothing. If your content is correct <strong>and</strong> your slide deck is 100% compliant with the formatting in <code>pre_project_knitted_template.html</code>, you earn the full 5 bonus points. Any deviation — content error, formatting error, wrong filename, anything — and you earn 0.</p>
+<p>There is no partial credit on the Pre-project.</p>
 </div>
 </div>
+<p>This chapter assumes you’ve completed <a href="./setup.html">Setup</a>. If you haven’t created your <code>Project/</code> folder, sorted the file pack, created the <code>.Rproj</code>, and run <code>check_setup_preproject.R</code>, go do that first.</p>
+<section id="what-youll-produce" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="what-youll-produce"><span class="header-section-number">2.1</span> What you’ll produce</h2>
+<p>A 3-slide PDF slide deck:</p>
+<ol type="1">
+<li><strong>Title slide</strong> — auto-generated from the YAML block; just requires your name.</li>
+<li><strong>Read LF.csv and print its contents</strong> — one code chunk you complete.</li>
+<li><strong>Document the contents of LF.csv</strong> — one paragraph with six blanks to fill in.</li>
+</ol>
+<p>That’s it. Three slides.</p>
+</section>
+<section id="workflow" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="workflow"><span class="header-section-number">2.2</span> Workflow</h2>
+<p>The order matters. Follow these steps in sequence.</p>
+<section id="step-1-open-the-project-in-rstudio" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="step-1-open-the-project-in-rstudio"><span class="header-section-number">2.2.1</span> Step 1: Open the project in RStudio</h3>
+<p>Double-click <code>Project.Rproj</code> in your <code>BUSN 5000/Project/</code> folder. RStudio opens with the project loaded. You should see “Project” in the top-right corner of the RStudio window.</p>
+</section>
+<section id="step-2-run-lf.r" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="step-2-run-lf.r"><span class="header-section-number">2.2.2</span> Step 2: Run <code>LF.R</code></h3>
+<p><code>LF.R</code> reads the raw CPS data file (<code>pppub24.csv</code>), computes the labor force participation rate and its components, and writes the results to <code>out/LF.csv</code>. You need to run it before you can knit the Rmd.</p>
+<ol type="1">
+<li>In RStudio’s <strong>Files</strong> pane (bottom-right), open the <code>r/</code> subfolder.</li>
+<li>Click <strong><code>LF.R</code></strong> to open it in the editor.</li>
+<li><strong>Select All</strong> (Ctrl+A on Windows, Cmd+A on Mac).</li>
+<li>Click the <strong>Run</strong> button (or press Ctrl+Enter / Cmd+Enter).</li>
+</ol>
+<p>The console will print a message like <code>March 2024 LFPR = 62.7...</code>. If you see it, the script ran. A new file <code>LF.csv</code> now lives in your <code>out/</code> subfolder.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You must run <code>LF.R</code> <strong>before</strong> you knit <code>pre_project.Rmd</code>. The Rmd reads <code>out/LF.csv</code>; if that file doesn’t exist, the Rmd errors out.</p>
+</div>
+</div>
+</section>
+<section id="step-3-open-pre_project.rmd" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="step-3-open-pre_project.rmd"><span class="header-section-number">2.2.3</span> Step 3: Open <code>pre_project.Rmd</code></h3>
+<p>In the Files pane, click <code>pre_project.Rmd</code> (it lives in the <code>Project/</code> root, not in any subfolder). It opens in the editor.</p>
+</section>
+<section id="step-4-fill-in-the-yaml-author-line" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="step-4-fill-in-the-yaml-author-line"><span class="header-section-number">2.2.4</span> Step 4: Fill in the YAML author line</h3>
+<p>Near the top of the file, find the YAML block (the section between the <code>---</code> markers). Look for this line:</p>
+<pre><code>author: "firstname, lastname"</code></pre>
+<p>Replace <code>firstname, lastname</code> with your <strong>first and last name</strong>, e.g.:</p>
+<pre><code>author: "Jane Doe"</code></pre>
+<p>Don’t change anything else in the YAML. This is the most common place students introduce formatting errors.</p>
+</section>
+<section id="step-5-complete-the-code-chunk-on-slide-2" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="step-5-complete-the-code-chunk-on-slide-2"><span class="header-section-number">2.2.5</span> Step 5: Complete the code chunk on Slide 2</h3>
+<p>Slide 2 is titled “Read <code>LF.csv</code> and print its contents.” The code chunk looks like:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"out"</span>, <span class="st">"LF.csv"</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(__)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The first line reads <code>LF.csv</code> into an object called <code>lf</code>. The second line is incomplete — <code>__</code> is a blank for you to fill in.</p>
+<p>Replace <code>__</code> with the object you want to print. Since you just read the contents into <code>lf</code>, the answer is <strong><code>lf</code></strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"out"</span>, <span class="st">"LF.csv"</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(lf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then change the chunk option <code>eval = FALSE</code> to <code>eval = TRUE</code> at the top of the chunk. This tells R Markdown to actually run the chunk when you knit (it’s set to <code>FALSE</code> by default so the template knits before you complete it).</p>
+<p>Run the chunk (click the small green play button at the top-right of the chunk) to verify it works. You should see the <code>lf</code> data frame printed in the console — six columns named <code>E</code>, <code>U</code>, <code>LF</code>, <code>NILF</code>, <code>Pop</code>, and <code>LFPR</code>, with one row of numbers.</p>
+<p><strong>Write down those six numbers</strong> — you’ll use them in the next step.</p>
+</section>
+<section id="step-6-fill-in-the-paragraph-on-slide-3" class="level3" data-number="2.2.6">
+<h3 data-number="2.2.6" class="anchored" data-anchor-id="step-6-fill-in-the-paragraph-on-slide-3"><span class="header-section-number">2.2.6</span> Step 6: Fill in the paragraph on Slide 3</h3>
+<p>Slide 3 is titled “Document the contents of <code>LF.csv</code>.” It has a paragraph with six blanks (each blank is shown as <code>_____</code>). The paragraph reads:</p>
+<blockquote class="blockquote">
+<p>The <code>LF.csv</code> file contains the results of the labor force participation rate (LFPR) calculation using the March 2024 CPS produced by the script, <code>LF.R</code>. The LFPR (_____) is the ratio of the labor force (_____) to the population (_____). The labor force is the sum of the employed (_____) and unemployed (_____). The population is the sum of the labor force and those not in the labor force (_____). The LFPR is expressed as a percentage.</p>
+</blockquote>
+<p>Fill in each blank with the corresponding value from <code>lf</code>, rounded to two decimal places:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Blank</th>
+<th>Value from <code>lf</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LFPR</td>
+<td><code>LFPR</code></td>
+</tr>
+<tr class="even">
+<td>labor force</td>
+<td><code>LF</code></td>
+</tr>
+<tr class="odd">
+<td>population</td>
+<td><code>Pop</code></td>
+</tr>
+<tr class="even">
+<td>employed</td>
+<td><code>E</code></td>
+</tr>
+<tr class="odd">
+<td>unemployed</td>
+<td><code>U</code></td>
+</tr>
+<tr class="even">
+<td>not in labor force</td>
+<td><code>NILF</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-7-knit-the-rmd-to-html" class="level3" data-number="2.2.7">
+<h3 data-number="2.2.7" class="anchored" data-anchor-id="step-7-knit-the-rmd-to-html"><span class="header-section-number">2.2.7</span> Step 7: Knit the Rmd to HTML</h3>
+<p>With your changes saved, click the <strong>Knit</strong> button at the top of the editor pane (or press Ctrl+Shift+K / Cmd+Shift+K).</p>
+<p>The knit produces an HTML file in your <code>Project/</code> folder. It opens automatically in the RStudio Viewer or your default browser.</p>
+</section>
+<section id="step-8-compare-your-output-to-the-knitted-template" class="level3" data-number="2.2.8">
+<h3 data-number="2.2.8" class="anchored" data-anchor-id="step-8-compare-your-output-to-the-knitted-template"><span class="header-section-number">2.2.8</span> Step 8: Compare your output to the knitted template</h3>
+<p>In your <code>Project/</code> root, open <code>pre_project_knitted_template.html</code> in your browser. This is the reference of what your output should look like exactly — same fonts, same layout, same code chunk styling.</p>
+<p>If your output doesn’t match exactly, something is wrong. Common causes are listed in the <a href="./common-errors.html">Common Errors</a> chapter.</p>
+</section>
+<section id="step-9-save-the-html-as-pdf" class="level3" data-number="2.2.9">
+<h3 data-number="2.2.9" class="anchored" data-anchor-id="step-9-save-the-html-as-pdf"><span class="header-section-number">2.2.9</span> Step 9: Save the HTML as PDF</h3>
+<p>You don’t knit-to-PDF directly. Instead, you save the HTML output as a PDF using your browser’s Save As / Print to PDF function. See the <a href="./submission.html">Submission</a> chapter for the exact procedure and browser-specific tips.</p>
+</section>
+<section id="step-10-submit-to-gradescope" class="level3" data-number="2.2.10">
+<h3 data-number="2.2.10" class="anchored" data-anchor-id="step-10-submit-to-gradescope"><span class="header-section-number">2.2.10</span> Step 10: Submit to Gradescope</h3>
+<p>Submission filename: <strong><code>firstname_lastname_pre.pdf</code></strong> (e.g., <code>jane_doe_pre.pdf</code>).</p>
+<p>Upload to the <strong>Preproject 0 Exercise</strong> assignment in Gradescope.</p>
+</section>
+</section>
+<section id="common-pre-project-mistakes" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="common-pre-project-mistakes"><span class="header-section-number">2.3</span> Common pre-project mistakes</h2>
+<p>In addition to the Setup-stage mistakes in <a href="./common-errors.html">Common Errors</a> (CSS in the wrong folder, working from Downloads, knitting before running the R script), these pre-project-specific mistakes are the ones we see most:</p>
+<ol type="1">
+<li><p><strong>Leaving <code>eval = FALSE</code> after completing the code chunk.</strong> If <code>eval = FALSE</code>, the chunk doesn’t run when you knit, so the output doesn’t appear on the slide. Set it to <code>TRUE</code> once your code is correct.</p></li>
+<li><p><strong>Numbers in the paragraph don’t match <code>LF.csv</code>.</strong> This usually means a student copied numbers from a peer instead of running <code>LF.R</code> themselves. The numbers you fill in must come from your own <code>out/LF.csv</code> after running your own copy of <code>LF.R</code>.</p></li>
+<li><p><strong>YAML edits beyond the author line.</strong> Changing anything in the YAML besides the author name will break the knit format. Don’t touch the <code>title</code>, <code>subtitle</code>, <code>date</code>, <code>output</code>, <code>css</code>, or any other field.</p></li>
+<li><p><strong>CSS not correctly placed.</strong> If <code>project_slidedeck.css</code> is anywhere other than <code>Project/css/</code>, the knit produces an unstyled output that won’t match the template. See Mistake 1 in <a href="./common-errors.html">Common Errors</a>.</p></li>
+<li><p><strong>Saving the wrong way.</strong> The submission must be a PDF generated by saving the <em>HTML</em> output, not by knitting directly to PDF. See <a href="./submission.html">Submission</a> for the correct workflow.</p></li>
+</ol>
+<p>When in doubt, see <a href="./common-errors.html">Common Errors</a> — most issues have already been documented.</p>
+</section>
+<section id="what-happens-next" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="what-happens-next"><span class="header-section-number">2.4</span> What happens next</h2>
+<p>Once you’ve submitted the Pre-project, you’ve done the hardest part: your environment works. The Main Project will reuse the same <code>Project/</code> folder and the same workflow patterns. Continue to <a href="./main-project.html">Chapter 4: Main Project</a> when you’re ready.</p>
 
 
 </section>

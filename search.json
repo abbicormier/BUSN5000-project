@@ -134,17 +134,47 @@
     "href": "pre-project.html",
     "title": "2  Pre-project",
     "section": "",
-    "text": "2.1 Outline (to be written)\nThis chapter covers the BUSN 5000 Pre-project Exercise.",
+    "text": "2.1 What you’ll produce\nThe Pre-project Exercise is a short, required exercise designed to get you and your computer ready for the Main Project. By completing it correctly, you’ll have:\nThis chapter assumes you’ve completed Setup. If you haven’t created your Project/ folder, sorted the file pack, created the .Rproj, and run check_setup_preproject.R, go do that first.\nA 3-slide PDF slide deck:\nThat’s it. Three slides.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-project</span>"
     ]
   },
   {
-    "objectID": "pre-project.html#outline-to-be-written",
-    "href": "pre-project.html#outline-to-be-written",
+    "objectID": "pre-project.html#what-youll-produce",
+    "href": "pre-project.html#what-youll-produce",
     "title": "2  Pre-project",
     "section": "",
-    "text": "Purpose of the pre-project\nWhat you’ll produce (a 3-slide deck demonstrating setup)\nStep-by-step walkthrough\nSubmission rubric (all-or-nothing 5 points; common formatting errors)\nFilename convention\nCommon mistakes and how to avoid them\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.",
+    "text": "Title slide — auto-generated from the YAML block; just requires your name.\nRead LF.csv and print its contents — one code chunk you complete.\nDocument the contents of LF.csv — one paragraph with six blanks to fill in.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-project</span>"
+    ]
+  },
+  {
+    "objectID": "pre-project.html#workflow",
+    "href": "pre-project.html#workflow",
+    "title": "2  Pre-project",
+    "section": "2.2 Workflow",
+    "text": "2.2 Workflow\nThe order matters. Follow these steps in sequence.\n\n2.2.1 Step 1: Open the project in RStudio\nDouble-click Project.Rproj in your BUSN 5000/Project/ folder. RStudio opens with the project loaded. You should see “Project” in the top-right corner of the RStudio window.\n\n\n2.2.2 Step 2: Run LF.R\nLF.R reads the raw CPS data file (pppub24.csv), computes the labor force participation rate and its components, and writes the results to out/LF.csv. You need to run it before you can knit the Rmd.\n\nIn RStudio’s Files pane (bottom-right), open the r/ subfolder.\nClick LF.R to open it in the editor.\nSelect All (Ctrl+A on Windows, Cmd+A on Mac).\nClick the Run button (or press Ctrl+Enter / Cmd+Enter).\n\nThe console will print a message like March 2024 LFPR = 62.7.... If you see it, the script ran. A new file LF.csv now lives in your out/ subfolder.\n\n\n\n\n\n\nImportant\n\n\n\nYou must run LF.R before you knit pre_project.Rmd. The Rmd reads out/LF.csv; if that file doesn’t exist, the Rmd errors out.\n\n\n\n\n2.2.3 Step 3: Open pre_project.Rmd\nIn the Files pane, click pre_project.Rmd (it lives in the Project/ root, not in any subfolder). It opens in the editor.\n\n\n2.2.4 Step 4: Fill in the YAML author line\nNear the top of the file, find the YAML block (the section between the --- markers). Look for this line:\nauthor: \"firstname, lastname\"\nReplace firstname, lastname with your first and last name, e.g.:\nauthor: \"Jane Doe\"\nDon’t change anything else in the YAML. This is the most common place students introduce formatting errors.\n\n\n2.2.5 Step 5: Complete the code chunk on Slide 2\nSlide 2 is titled “Read LF.csv and print its contents.” The code chunk looks like:\nlf &lt;- read_csv(here(\"out\", \"LF.csv\"))\nprint(__)\nThe first line reads LF.csv into an object called lf. The second line is incomplete — __ is a blank for you to fill in.\nReplace __ with the object you want to print. Since you just read the contents into lf, the answer is lf:\nlf &lt;- read_csv(here(\"out\", \"LF.csv\"))\nprint(lf)\nThen change the chunk option eval = FALSE to eval = TRUE at the top of the chunk. This tells R Markdown to actually run the chunk when you knit (it’s set to FALSE by default so the template knits before you complete it).\nRun the chunk (click the small green play button at the top-right of the chunk) to verify it works. You should see the lf data frame printed in the console — six columns named E, U, LF, NILF, Pop, and LFPR, with one row of numbers.\nWrite down those six numbers — you’ll use them in the next step.\n\n\n2.2.6 Step 6: Fill in the paragraph on Slide 3\nSlide 3 is titled “Document the contents of LF.csv.” It has a paragraph with six blanks (each blank is shown as _____). The paragraph reads:\n\nThe LF.csv file contains the results of the labor force participation rate (LFPR) calculation using the March 2024 CPS produced by the script, LF.R. The LFPR (_____) is the ratio of the labor force (_____) to the population (_____). The labor force is the sum of the employed (_____) and unemployed (_____). The population is the sum of the labor force and those not in the labor force (_____). The LFPR is expressed as a percentage.\n\nFill in each blank with the corresponding value from lf, rounded to two decimal places:\n\n\n\nBlank\nValue from lf\n\n\n\n\nLFPR\nLFPR\n\n\nlabor force\nLF\n\n\npopulation\nPop\n\n\nemployed\nE\n\n\nunemployed\nU\n\n\nnot in labor force\nNILF\n\n\n\n\n\n2.2.7 Step 7: Knit the Rmd to HTML\nWith your changes saved, click the Knit button at the top of the editor pane (or press Ctrl+Shift+K / Cmd+Shift+K).\nThe knit produces an HTML file in your Project/ folder. It opens automatically in the RStudio Viewer or your default browser.\n\n\n2.2.8 Step 8: Compare your output to the knitted template\nIn your Project/ root, open pre_project_knitted_template.html in your browser. This is the reference of what your output should look like exactly — same fonts, same layout, same code chunk styling.\nIf your output doesn’t match exactly, something is wrong. Common causes are listed in the Common Errors chapter.\n\n\n2.2.9 Step 9: Save the HTML as PDF\nYou don’t knit-to-PDF directly. Instead, you save the HTML output as a PDF using your browser’s Save As / Print to PDF function. See the Submission chapter for the exact procedure and browser-specific tips.\n\n\n2.2.10 Step 10: Submit to Gradescope\nSubmission filename: firstname_lastname_pre.pdf (e.g., jane_doe_pre.pdf).\nUpload to the Preproject 0 Exercise assignment in Gradescope.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-project</span>"
+    ]
+  },
+  {
+    "objectID": "pre-project.html#common-pre-project-mistakes",
+    "href": "pre-project.html#common-pre-project-mistakes",
+    "title": "2  Pre-project",
+    "section": "2.3 Common pre-project mistakes",
+    "text": "2.3 Common pre-project mistakes\nIn addition to the Setup-stage mistakes in Common Errors (CSS in the wrong folder, working from Downloads, knitting before running the R script), these pre-project-specific mistakes are the ones we see most:\n\nLeaving eval = FALSE after completing the code chunk. If eval = FALSE, the chunk doesn’t run when you knit, so the output doesn’t appear on the slide. Set it to TRUE once your code is correct.\nNumbers in the paragraph don’t match LF.csv. This usually means a student copied numbers from a peer instead of running LF.R themselves. The numbers you fill in must come from your own out/LF.csv after running your own copy of LF.R.\nYAML edits beyond the author line. Changing anything in the YAML besides the author name will break the knit format. Don’t touch the title, subtitle, date, output, css, or any other field.\nCSS not correctly placed. If project_slidedeck.css is anywhere other than Project/css/, the knit produces an unstyled output that won’t match the template. See Mistake 1 in Common Errors.\nSaving the wrong way. The submission must be a PDF generated by saving the HTML output, not by knitting directly to PDF. See Submission for the correct workflow.\n\nWhen in doubt, see Common Errors — most issues have already been documented.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-project</span>"
+    ]
+  },
+  {
+    "objectID": "pre-project.html#what-happens-next",
+    "href": "pre-project.html#what-happens-next",
+    "title": "2  Pre-project",
+    "section": "2.4 What happens next",
+    "text": "2.4 What happens next\nOnce you’ve submitted the Pre-project, you’ve done the hardest part: your environment works. The Main Project will reuse the same Project/ folder and the same workflow patterns. Continue to Chapter 4: Main Project when you’re ready.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-project</span>"
     ]
