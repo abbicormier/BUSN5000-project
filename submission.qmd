@@ -1,18 +1,184 @@
 # Submission
 
 This chapter covers how to submit your work to Gradescope without
-losing points to formatting.
+losing points to formatting. The same workflow applies to all three
+project artifacts you submit: the **Pre-project**, the optional
+**Project Progress Check**, and the **Final Project**.
 
-## Outline (to be written)
+If you only read one section of this chapter, read the
+[Saving HTML as PDF](#saving-html-as-pdf) section. The vast majority
+of submission errors come from skipping or mangling this step.
 
-- Filename convention (`sectiontime_lastname_firstname_*.pdf`)
-- PDF format (landscape, color, formatting preserved)
-- The HTML → PDF workflow (not knit-to-PDF)
-- Browser-specific save-as-PDF tips
-- What "100% compliant with the knitted template" means in practice
-- Deadlines and late-submission policy
+## Filename conventions
+
+Each of the three project artifacts has a required filename. Use
+**lowercase** for first and last name, **underscores** between
+words, and the **`.pdf`** extension.
+
+| Artifact | Filename pattern | Example |
+|---|---|---|
+| Pre-project | `firstname_lastname_pre.pdf` | `jane_doe_pre.pdf` |
+| Project Progress Check | `firstname_lastname_progress.pdf` | `jane_doe_progress.pdf` |
+| Final Project | `firstname_lastname_project.pdf` | `jane_doe_project.pdf` |
+
+::: {.callout-important}
+Wrong filename = wrong submission = grading script won't find your
+file. Triple-check the filename before uploading to Gradescope.
+:::
+
+## Late submission policy
+
+Per the syllabus: **late submissions will not be accepted** for the
+Pre-project, the Project Progress Check, or the Final Project. The
+relevant deadlines are on the course schedule. There are no extensions
+and no late-credit options.
+
+## The submission workflow at a glance
+
+Each submission goes through the same three steps:
+
+1. **Knit** your `.Rmd` to HTML inside RStudio (the **Knit** button
+   in the editor pane).
+2. **Save** the resulting HTML page as a PDF using your browser's
+   print-to-PDF function (instructions per browser below).
+3. **Upload** the PDF to the corresponding Gradescope assignment
+   under the correct filename.
+
+::: {.callout-warning}
+## Do not knit directly to PDF
+
+Knitting straight to PDF from R Markdown uses a different rendering
+path (LaTeX) that strips the CSS-based slide formatting we use. The
+output will not match the reference and will be rejected as a
+formatting violation.
+
+You **must** knit to HTML, then save the HTML as PDF.
+:::
+
+## Saving HTML as PDF {#saving-html-as-pdf}
+
+After knitting, the HTML output opens in your browser (or in
+RStudio's Viewer pane — if it opens there, click the small icon at
+the top of the Viewer to open it in your default browser).
+
+In every browser, the print dialog is what you use to save as PDF.
+The settings you need are roughly the same across browsers:
+
+- **Destination:** "Save as PDF"
+- **Layout / Orientation:** **Landscape**
+- **Color:** Color (not Black and White)
+- **Margins:** Default or None
+- **Pages per sheet:** 1
+- **Background graphics:** **Enabled** (this is the easy-to-miss one
+  — without it, the colored UGA styling disappears)
+
+Per-browser walkthroughs below.
+
+### Google Chrome (and Microsoft Edge)
+
+Edge uses the same print dialog as Chrome — these steps work for
+both.
+
+1. Click the three vertical dots in the top-right of the browser.
+2. Click **Print**.
+3. Match the settings shown below — most importantly, **Destination
+   = Save as PDF**, **Layout = Landscape**, and **More settings →
+   Background graphics = checked**.
+
+![Chrome print dialog settings](assets/chrome_print.png){fig-alt="Chrome print dialog with Destination set to Save as PDF, Layout set to Landscape, and Background graphics enabled"}
+
+4. Click **Save**. Use the correct filename when prompted (see
+   [Filename conventions](#filename-conventions)).
+
+### Firefox
+
+1. Click the three horizontal lines (the "hamburger" menu) in the
+   top-right of the browser.
+2. Click **Print**.
+3. Match the settings shown below across the two screens. Key
+   settings: **Destination = Save to PDF**, **Orientation =
+   Landscape**, and **Options → Print backgrounds = checked**.
+
+![Firefox print settings — page 1](assets/firefox_print_1.png){fig-alt="Firefox print dialog with Destination set to Save to PDF and Orientation set to Landscape"}
+
+![Firefox print settings — page 2](assets/firefox_print_2.png){fig-alt="Firefox print dialog showing the Options panel with Print backgrounds enabled"}
+
+4. Click **Save** and use the correct filename.
+
+### Safari
+
+1. Click **File** in the top-left menu bar.
+2. Click **Print**.
+3. Match the settings shown below across the two screens. Key
+   settings: **Orientation = Landscape**, **Print backgrounds =
+   checked**, and the **PDF dropdown in the bottom-left** must be
+   set to **Save as PDF** (not Print).
+
+![Safari print settings — page 1](assets/safari_print_1.png){fig-alt="Safari print dialog with Orientation set to Landscape and Print backgrounds enabled"}
+
+![Safari print settings — page 2](assets/safari_print_2.png){fig-alt="Safari print dialog with the PDF dropdown set to Save as PDF"}
+
+4. Click **Save** and use the correct filename.
+
+## Pre-project reference: what your three slides should look like
+
+Below are the three pre-project slides rendered correctly. Your
+knitted PDF should match these for **formatting** (fonts, colors,
+slide layout, code chunk styling). The **content** will differ —
+your name will be on the title slide and the numbers in your
+print-out and your fill-ins will reflect your `LF.csv`.
 
 ::: {.callout-note}
-This chapter is a stub. Content will be filled in as part of Wave 2
-of the project rebuild.
+The images below show legacy examples (date stamp from a prior
+semester, comma in the name placeholder). They are reference for
+the slide *format*, not the exact text content. Your version will
+show Summer 2026, your name without a comma, and the current CPS
+numbers.
 :::
+
+### Reference slide 1 — Title slide
+
+![Title slide reference](assets/ref_slide_1_title.png){fig-alt="Pre-project title slide showing 'BUSN 5000 :: Pre-Project Exercise', subtitle 'Measuring Labor Force Participation', placeholder for student name, and date"}
+
+What yours should look like:
+
+- Title and subtitle as shown
+- Your first and last name on the author line
+- Summer 2026 date
+
+### Reference slide 2 — Read `LF.csv` and print its contents
+
+![LF print-out slide reference](assets/ref_slide_2_lf.png){fig-alt="Pre-project slide showing the read_csv code chunk and the resulting LF data frame printed in the slide"}
+
+What yours should look like:
+
+- The code chunk visible (formatted with the UGA code-block style)
+- The `lf` data frame printed below it with six named columns
+
+### Reference slide 3 — Document the contents of `LF.csv`
+
+![Communication slide reference](assets/ref_slide_3_comm.png){fig-alt="Pre-project slide showing the documentation paragraph about LFPR with all six blanks filled in"}
+
+What yours should look like:
+
+- The paragraph fully filled in, no remaining `_____` blanks
+- Values rounded to two decimal places
+- Numbers matching your `out/LF.csv` (not numbers copied from this
+  reference)
+
+## If your output doesn't match the reference
+
+Most formatting mismatches come from a handful of recurring
+mistakes. See the
+[Common Errors](common-errors.qmd) chapter for the diagnosis and
+fix for each — including:
+
+- CSS in the wrong folder
+- Wrong orientation (portrait instead of landscape)
+- Knit-to-PDF instead of HTML → PDF
+- YAML edits that break the rendering
+- Background graphics not enabled in the print dialog
+
+If you've checked all of those and still see a difference, email
+the teaching team with your `.Rmd` attached and the print dialog
+settings you used.
