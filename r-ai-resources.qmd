@@ -1,0 +1,147 @@
+# R and AI Resources
+
+A curated list of resources for learning and using R, and for
+working with AI as part of your data-science practice. Nothing here
+is required reading — but each item below has earned its place.
+Skim it now, bookmark it, and return as you go.
+
+## Resources for learning and using R
+
+### IDEs for R
+
+[RStudio](https://posit.co/download/rstudio-desktop/) remains the
+most widely used IDE for R, and, like R, it is open-source. Its
+"Help" tab is a gateway to a wide range of R and RStudio
+resources. However, Posit (the company behind RStudio) has released
+[Positron](https://positron.posit.co/), a next-generation IDE built
+for data science with both R and Python. Positron combines the
+familiar feel of RStudio with the extensibility of VS Code, and
+includes [built-in AI assistance](https://positron.posit.co/assistant)
+via Positron Assistant. If you're comfortable with RStudio, stick
+with it; if you're curious about a more modern interface or plan to
+work across R and Python, Positron is worth exploring.
+
+### Learning R
+
+Norm Matloff, a computer scientist and statistician at UC-Davis,
+has a nice,
+[fast introduction to (base) R](https://github.com/matloff/fasteR?tab=readme-ov-file#overview).
+He also has interesting takes on
+[base R vs the Tidyverse](https://matloff.github.io/TidyverseSkeptic/)
+and the
+[R vs Python debate](https://github.com/matloff/R-vs.-Python-for-Data-Science)
+in data science. For a more in-depth treatment, consult the widely
+used [R for Data Science](https://r4ds.hadley.nz/) by
+[Wickham](https://hadley.nz/) and
+[Grolemund](https://education.rstudio.com/author/garrett/). They
+will guide you through the [Tidyverse](https://www.tidyverse.org/).
+[Tidy Data Tutor](https://tidydatatutor.com/) helps you visualize
+your data analysis pipelines. James Scott has a
+[great introduction to R](https://bookdown.org/jgscott/DSGI/) that
+more clearly maps onto BUSN 5000.
+
+You will find a list of
+[econometrics packages](https://cran.r-project.org/web/views/Econometrics.html)
+for R at the
+[Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/web/views/Econometrics.html).
+You might prefer the
+[causal inference task view](https://cran.r-project.org/web/views/CausalInference.html)
+or
+[machine learning task view](https://cran.r-project.org/web/views/MachineLearning.html).
+
+Learning [R Markdown](https://rmarkdown.rstudio.com/) or
+[Quarto](https://quarto.org/) should go hand-in-hand with learning
+R. For R Markdown, get started
+[here](https://rmarkdown.rstudio.com/lesson-1.html) and keep a
+[cheatsheet](https://rmarkdown.rstudio.com/lesson-15.html) handy.
+You can get started with Quarto
+[here](https://quarto.org/docs/get-started/).
+
+### Workflow
+
+At least as important as learning R is understanding basic workflow
+principles. R-bloggers has a
+[beginner's guide](https://www.r-bloggers.com/2020/01/rstudio-projects-and-working-directories-a-beginners-guide/)
+using RStudio Projects. You can find some of the same principles in
+[chapter 2](https://socviz.co/gettingstarted.html) of
+[Kieran Healy's](https://kieranhealy.org/) Data Visualization
+[book](https://socviz.co/index.html#preface) (also linked on the
+course schedule).
+[Matt Gentzkow](https://www.matthewgentzkow.com/) and
+[Jesse Shapiro](https://shapiro.scholars.harvard.edu/) provide a
+[fuller take](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)
+on workflow principles from the perspective of academic social
+scientists (also posted on eLC). They even provide a
+[manual](https://github.com/gentzkow/ra-manual/wiki) for doing as
+they do.
+
+For a perspective specifically on coding practices in data science
+education, Pruim, Gîrjău, and Horton (2023) make the case in
+["Fostering Better Coding Practices for Data Scientists"](https://hdsr.mitpress.mit.edu/pub/8wsiqh1c/release/4)
+(*Harvard Data Science Review*) that good coding habits matter even
+for beginners. Their argument: it's far easier to learn good
+practices alongside R than to unlearn bad habits later. They
+organize their guidance into a practical top-10 list. Worth reading
+early in your data-science career.
+
+Suffice it to say that Healy's book is a great introduction to the
+wonders of [ggplot](https://ggplot2.tidyverse.org/index.html), which
+is not R, but indispensable to analysis done in R.
+
+## AI resources
+
+### Working with AI
+
+My take is that you should view AI chatbots, like
+[ChatGPT](https://openai.com/chatgpt/overview),
+[Claude](https://claude.ai/), and
+[Gemini](https://gemini.google.com/app), as exceedingly productive
+collaborators with whom you should learn to work, much like you
+would with a human. Unfortunately, there are no secret prompting
+strategies or special step-by-step manuals (also like with a
+human). For some practical guidance along these lines, I recommend
+that you follow
+[Ethan Mollick](https://mgmt.wharton.upenn.edu/profile/emollick/)'s
+[Substack](https://www.oneusefulthing.org/). If you want to swim in
+the deeper end of the pool, check out the Substack,
+[Don't Worry About the Vase](https://thezvi.substack.com/).
+
+### AI for coding
+
+One place gen AI really helps is in coding. You can get coding help
+from chat interfaces, but you may prefer a more integrated
+experience. Several options exist:
+
+- [Positron Assistant](https://positron.posit.co/assistant): If you
+  use Positron, this built-in AI assistant understands your R
+  environment, loaded data, and console history. It integrates
+  GitHub Copilot for code completions and Claude for chat and agent
+  mode.
+- [GitHub Copilot](https://docs.github.com/en/copilot): Works in
+  RStudio, VS Code, and other IDEs.
+  [Here](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-education-for-students/apply-to-github-education-as-a-student)
+  is how to get free access as a student.
+  [Here](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html)
+  are instructions for RStudio integration.
+- [Claude Code](https://www.anthropic.com/claude-code): A
+  command-line tool that can read and modify files in your project
+  directory, run commands, and understand your codebase context.
+  Simon Couch has written useful posts on
+  [using Claude Code for R package development](https://www.simonpcouch.com/blog/2025-03-26-claude-code/).
+- [Cursor](https://www.cursor.com/): An AI-first code editor built
+  on VS Code.
+
+Alternatively, you may find you can get by just
+[vibe coding](https://en.wikipedia.org/wiki/Vibe_coding) with a
+chatbot — describing what you want and iterating on the results.
+
+### Learning more about AI
+
+To learn more about AI, including a comparison of different models,
+check out
+[Generative AI for Beginners](https://learn.microsoft.com/en-us/shows/generative-ai-for-beginners/),
+a free course offered by
+[Microsoft Cloud Advocates](https://developer.microsoft.com/en-us/advocates/).
+[OpenAI](https://academy.openai.com/) and
+[Anthropic](https://www.anthropic.com/learn) have their own AI
+academies when you want to step it up.

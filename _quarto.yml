@@ -15,6 +15,7 @@ book:
     - progress-check.qmd
     - submission.qmd
     - common-errors.qmd
+    - r-ai-resources.qmd
   repo-url: https://github.com/abbicormier/BUSN5000-project
   repo-actions: [edit, issue]
   search: true

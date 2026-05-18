@@ -1,20 +1,287 @@
 # Setup
 
 This chapter walks you through getting your computer ready to do
-BUSN 5000 project work.
+BUSN 5000 project work. By the end of it, you should have:
 
-## Outline (to be written)
+- R and RStudio installed
+- All required R packages installed
+- A `Project/` folder on your computer with the correct subfolder
+  structure
+- Every file from the Pre-project file pack sorted into the right
+  place
+- An `.Rproj` file that opens RStudio into the project
+- A green report from the setup-check script
 
-- Installing R and RStudio
-- Installing the required R packages
-- Understanding the project directory structure you'll create
-- Where each file goes (the file-sort exercise)
-- Running the setup-check script
-- Opening the `.Rproj` file
-- Verifying everything works
+Plan to spend 30–45 minutes the first time through.
+
+::: {.callout-important}
+## Don't skip this
+
+Almost every "my project won't knit" email we get traces back to
+something here. If setup is right, the rest of the project is much
+easier. If setup is wrong, every other step compounds the problem.
+:::
+
+## Two separate folders to keep straight
+
+You'll have **two** different folders for BUSN 5000:
+
+1. **Your BUSN 5000 folder** — a general place for homework
+   assignments and class materials. The Getting Started Day slides
+   cover this. *This chapter is not about that folder.*
+2. **Your Project folder** — a self-contained R project that holds
+   the Pre-project, Project Progress Check, and Final Project. Call
+   this folder `Project`. **This chapter is about this one.**
+
+Keep them separate. The Project folder is its own R project with
+its own subfolder structure; the BUSN 5000 HW folder is a plain
+folder.
+
+## Install R and RStudio
+
+If you haven't already, install both. Follow the instructions for
+your operating system. Install R before RStudio.
+
+### Windows
+
+**Step 1: Install R**
+
+1. Go to the [CRAN R Project website](https://cran.r-project.org/).
+2. Click on "Download R for Windows".
+3. Click on "base" and then select the link labeled
+   "Download R x.x.x for Windows" (where x.x.x is the latest
+   version).
+4. Open the downloaded `.exe` file and follow the installation
+   prompts, accepting the defaults.
+
+**Step 2: Install RStudio**
+
+1. Visit the
+   [RStudio download page](https://posit.co/download/rstudio-desktop/).
+2. Click the link to download the Windows installer.
+3. Open the downloaded `.exe` file and complete the installation
+   using default settings.
+
+**Step 3: Verify the installation**
+
+1. Launch RStudio from the Start menu or desktop shortcut.
+2. In the Console pane, type `print("Hello, world!")` and press
+   Enter.
+3. If you see `[1] "Hello, world!"`, your installation is
+   successful.
+
+### macOS
+
+**First, identify your Mac's chip.** Newer Macs use Apple Silicon
+(M1, M2, M3, M4, etc.); older ones use Intel processors. You need
+to know which you have to pick the right R installer.
+
+1. Click the Apple menu (top-left corner) → **About This Mac**.
+2. Look at the **Chip** (Apple Silicon) or **Processor** (Intel)
+   line:
+   - If it says "Apple M1", "M2", "M3", "M4", or any Apple-labeled
+     chip, you have **Apple Silicon**. You want the `arm64`
+     installer.
+   - If it says "Intel Core ...", you have an **Intel Mac**. You
+     want the `x86_64` installer.
+
+**Step 1: Install R**
+
+1. Visit the [CRAN R Project website](https://cran.r-project.org/).
+2. Click on "Download R for macOS".
+3. Select the latest version matching your chip — either
+   `R-x.x.x-arm64.pkg` (Apple Silicon) or `R-x.x.x-x86_64.pkg`
+   (Intel).
+4. Open the downloaded `.pkg` file and follow the installation
+   prompts.
+
+**Step 2: Install RStudio**
+
+1. Go to the
+   [RStudio download page](https://posit.co/download/rstudio-desktop/).
+2. Click the link to download the macOS version of RStudio.
+3. Open the downloaded `.dmg` file and drag the RStudio icon to
+   your `Applications` folder.
+
+**Step 3: Verify the installation**
+
+1. Open RStudio from your `Applications` folder.
+2. In the Console pane, type `print("Hello, world!")` and press
+   Return.
+3. If you see `[1] "Hello, world!"`, your installation is
+   successful.
+
+## Install the required R packages
+
+Open RStudio. In the Console pane (bottom-left), paste this single
+line and press Enter:
+
+```r
+install.packages(c("here", "tidyverse", "modelsummary", "ggpmisc", "car", "ggrepel", "kableExtra"))
+```
+
+This installs all seven packages the Pre-project, Progress Check,
+and Final Project will need. Installation takes a few minutes the
+first time — let it finish completely.
+
+::: {.callout-tip}
+You only install packages **once per machine**. After that, you
+load them with `library()` in your `.Rmd` (which the templates
+already handle). Don't put `install.packages()` calls inside a
+`.Rmd` — that would re-install every time you knit.
+:::
+
+## Create the `Project` folder and its subfolders
+
+1. Decide where on your computer your `Project` folder will live.
+   Anywhere is fine **except your Downloads folder** (see Common
+   mistakes below).
+2. Create a folder there called exactly `Project`.
+3. Inside `Project`, create these four subfolders:
+   - `data/`
+   - `out/`
+   - `r/`
+   - `css/`
+
+So your skeleton looks like:
+
+```
+Project/
+├── data/
+├── out/
+├── r/
+└── css/
+```
+
+You'll put files into these subfolders in the next step. The
+`.Rmd` files themselves will live in the `Project/` root, **not**
+in any of the subfolders.
+
+## Sort the Pre-project file pack into the right places
+
+When you download the Pre-project file pack from eLC, you'll get a
+flat bucket of 8 files. Your job is to figure out where each one
+belongs in your `Project/` directory. This isn't busywork — knowing
+which file goes where is itself part of what we want you to learn.
+
+Here's the destination for each file in the pack:
+
+| File | Goes in |
+|------|---------|
+| `pre_project.Rmd` | `Project/` (root) |
+| `pre_project_knitted_template.html` | `Project/` (root) |
+| Pre-project Instructions (PDF) | `Project/` (root) |
+| `LF.R` | `Project/r/` |
+| `project_slidedeck.css` | `Project/css/` |
+| `pppub24.csv` | `Project/data/` |
+| `hhpub24.csv` | `Project/data/` |
+| `check_setup_preproject.R` | `Project/r/` |
+
+After sorting, your folder should look like:
+
+```
+Project/
+├── pre_project.Rmd
+├── pre_project_knitted_template.html
+├── Pre-project Instructions.pdf
+├── data/
+│   ├── pppub24.csv
+│   └── hhpub24.csv
+├── out/
+│   (empty for now — LF.R will write LF.csv here)
+├── r/
+│   ├── LF.R
+│   └── check_setup_preproject.R
+└── css/
+    └── project_slidedeck.css
+```
+
+## Create the `.Rproj` file
+
+The `.Rproj` file is what tells RStudio "this folder is an R
+project." It anchors all the relative paths the templates use.
+
+To create one:
+
+1. Open RStudio.
+2. **File → New Project**.
+3. Choose **Existing Directory**.
+4. Browse to your `Project/` folder. Click **Create Project**.
+5. RStudio re-opens with `Project` loaded as the active project.
+
+You'll see `Project.Rproj` appear in the `Project/` root. From now
+on, **always open RStudio by double-clicking that `.Rproj` file**.
+That guarantees your working directory and paths are correct.
+
+## Run the setup check
+
+In the RStudio Console, with `Project` loaded as the active
+project, type:
+
+```r
+source("r/check_setup_preproject.R")
+```
+
+The script verifies every required file is in its correct
+subfolder. You'll see one line per file: either ✓ (good) or ✗ with
+a specific instruction telling you what to fix.
 
 ::: {.callout-note}
-This chapter is a stub. Content will be filled in as part of Wave 2
-of the project rebuild. See `project_cleanup_findings.md` §10 in the
-working folder.
+If you see any ✗, fix the listed problems and re-run the script.
+Don't move past Setup until every line is a ✓.
 :::
+
+## Common setup mistakes
+
+In our experience, these are the three setup problems we see most
+often. Each one is preventable with a few seconds of attention.
+
+### Mistake 1: `project_slidedeck.css` in the wrong folder
+
+The CSS file styles your slide deck. If it's anywhere but
+`Project/css/project_slidedeck.css`, your knitted slides will lose
+all of their formatting and the submission will be rejected. The
+setup-check script will catch this, but it's a simple thing to get
+right on the first pass.
+
+### Mistake 2: Working from your Downloads folder
+
+If you double-click `pre_project.Rmd` directly from your Downloads
+folder, RStudio's working directory is Downloads, not your
+`Project/` folder. The `here()` paths in the `.Rmd` will resolve to
+the wrong place and you'll get cryptic "file not found" errors.
+
+**Always move the files into your `Project/` folder before opening
+them.** Your Downloads folder is a transit area, not a workspace.
+
+### Mistake 3: Knitting before running the R script
+
+The `.Rmd` reads output that the `LF.R` script (and later
+`cpsmar_e.R`) produces. If you haven't run the script yet, the
+output file doesn't exist, and the `.Rmd` errors out the moment it
+tries to read `out/LF.csv`.
+
+**Workflow order for each stage:**
+
+1. Open the `.Rproj`.
+2. Run the relevant R script (`LF.R` for pre-project,
+   `cpsmar_e.R` for main project).
+3. *Then* open the `.Rmd` and knit it.
+
+The setup-check script can confirm files exist, but only running
+the script confirms it actually produced the output the `.Rmd`
+needs.
+
+## What happens next
+
+You're set up. From here:
+
+- For the **Pre-project**, continue to [Chapter 3](pre-project.qmd).
+- For the **Main Project** (later in the semester), you'll add more
+  files to the same `Project/` folder — see
+  [Chapter 4](main-project.qmd).
+- For the **Project Progress Check**, you continue working on the
+  same main project files — see [Chapter 5](progress-check.qmd).
+
+Your `Project/` directory carries through the entire semester. You
+won't need to re-do Setup unless you're working from a new machine.
