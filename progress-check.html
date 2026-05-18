@@ -353,7 +353,7 @@ Important
 <h2 data-number="4.7" class="anchored" data-anchor-id="common-pitfalls"><span class="header-section-number">4.7</span> Common pitfalls</h2>
 <p>These are the recurring failure modes from past semesters:</p>
 <ol type="1">
-<li><strong>Touching the setup chunk.</strong> Do not change <code>include = FALSE</code> to <code>include = TRUE</code> on the setup chunk. The <code>FALSE</code>/<code>TRUE</code> toggle only applies to the <em>content</em> code chunks (<code>btl1</code>, <code>btl2</code>, <code>mi1</code>, etc.), never the setup chunk.</li>
+<li><strong>Touching the setup chunk.</strong> Do not change <code>include = FALSE</code> to <code>include = TRUE</code> on the setup chunk. The <code>FALSE</code>/<code>TRUE</code> toggle only applies to editing the <code>eval =</code> argument in the <em>content</em> code chunks (<code>btl1</code>, <code>btl2</code>, <code>mi1</code>, etc.), never the setup chunk.</li>
 <li><strong>Skipping the extract script.</strong> You must run <code>cpsmar_e.R</code> (and have the pre-project data files carried over from the Pre-project) before knitting. The <code>.Rmd</code> reads the extract it produces.</li>
 <li><strong>Variable name confusion.</strong> A common error: you save the analysis sample as <code>cpsmar_a</code> but then reference <code>cpsmar_e</code> in a later chunk (or vice versa). Read your code carefully and make sure each chunk references the right data frame.</li>
 <li><strong>CSS in the wrong folder.</strong> Same as the Pre-project — <code>project_slidedeck.css</code> must be in <code>Project/css/</code>. See <a href="./common-errors.html">Common Errors</a> for diagnosis.</li>
