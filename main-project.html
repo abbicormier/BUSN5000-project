@@ -325,15 +325,17 @@ window.Quarto = {
 <p>This chapter assumes you’ve completed <a href="./setup.html">Setup</a> and the <a href="./pre-project.html">Pre-project</a> and that your <code>Project/</code> directory already contains the pre-project assets (CSS file, <code>LF.R</code>, raw CSVs in <code>data/</code>, etc.). The Main Project pack adds a few more files to that same directory:</p>
 <ul>
 <li><code>project.Rmd</code> — the working file you’ll edit and knit</li>
-<li><code>cpsmar_e.R</code> — the R script that creates the project’s data extract from the raw CPS files</li>
-<li><code>cpsmar24_documentation.pdf</code> — the CPS codebook (variable definitions, value codes) <!--
+<li><code>cpsmar_e.R</code> — the R script that creates the project’s data extract from the raw CPS files <!--
 TODO: `Project_Progress_Check_Tables_and_Figures.pdf` was
 intentionally removed from this list. It is being gated so
 students only see it between the progress check deadline and the
 final project due date. The hosting/gating mechanism is still
 TBD — see notes.Rmd Wave 2 File packs.
+`project_progress_check_template.html` was also removed —
+redundant with the Final Project reference in the Submission
+chapter. `cpsmar24_documentation.pdf` was moved to the
+pre-project pack (paired with the data).
 --></li>
-<li><code>project_progress_check_template.html</code> — a partial knit showing the project’s initial tables and figures</li>
 <li><code>check_setup_project.R</code> — verifies your file sort for the main project</li>
 </ul>
 <p>Sort those into your existing <code>Project/</code> directory following the same conventions as the pre-project (Rmd in root, R scripts in <code>r/</code>, PDFs in root, etc.). Then run <code>check_setup_project.R</code> from RStudio (open the script, Select All, Run) to confirm everything’s in place.</p>
