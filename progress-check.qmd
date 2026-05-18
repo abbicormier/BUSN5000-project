@@ -1,21 +1,139 @@
 # Progress Check
 
-The Project Progress Check is an **optional bonus** opportunity that
-gives you feedback on your project halfway through and rewards
-progress.
+The Project Progress Check is an **optional** mid-project submission
+that gives you a small bonus on your Project grade in exchange for
+showing that the core tables and figures are on track. It's
+offered in Week 4 of the semester, halfway between the Pre-project
+and the Final Project.
 
-## Outline (to be written)
+You don't have to submit it. We strongly recommend that you do.
 
-- What the progress check is and isn't
-- Which slides are graded (Title, Academic Honesty, Distribution of
-  earnings by gender, Wages and hours differences, Career log wage
-  profiles, Evolution of the gender wage gap)
-- Scoring: 5 points (clean), 3 points (formatting clean / content
-  error), 0 (formatting error)
-- How to submit
-- How feedback is provided
+## Why bother
+
+Two reasons:
+
+1. **Bonus points.** A complete and correct progress check earns up
+   to **5 bonus points** on your Project grade (per the syllabus).
+2. **A safety net for the Pre-project.** If you earned a 0 on the
+   Pre-project, the progress check is your one opportunity to earn
+   those points back. Submit a clean progress check and the lost
+   pre-project points are recovered.
+
+Even if you passed the Pre-project, treating the progress check as
+required is the safer move — it forces you to confirm your
+formatting is right and your core figures are working well before
+the final deadline.
+
+## What you'll do
+
+The progress check is not a separate file or a separate document.
+You continue working on the same `project.Rmd` you started after
+finishing the Pre-project. On the progress check deadline, you save
+the in-progress `.Rmd` as a PDF (using the same workflow as the
+Pre-project and Final Project — see [Submission](submission.qmd))
+and upload it to the Project Progress Check assignment on
+Gradescope.
+
+There is no "progress check version" of the project. There's just
+the project, as it stands at the progress-check deadline.
+
+## What's graded
+
+The progress check covers **about two-thirds of the project's
+core tables and figures**. Specifically, we look at six slides:
+
+| Slide | Title | What we check |
+|---|---|---|
+| 1 | Title slide | Your name filled in (and overall formatting is correct) |
+| 2 | Academic Honesty Statement | Your name on the Signature line |
+| 11 | Distribution of earnings by gender | Figure 1 is visible, completed, and correct |
+| 14 | Wages and hours differences | Table 1 is visible, completed, and correct |
+| 17 | Career log wage profiles | Figure 2 is visible, completed, and correct |
+| 19 | Evolution of the gender wage gap | Table 2 is visible, completed, and correct |
 
 ::: {.callout-note}
-This chapter is a stub. Content will be filled in as part of Wave 2
-of the project rebuild.
+The slide numbers above match the canonical 35-slide layout
+documented in the [Final Project reference](submission.qmd) in the
+Submission chapter. Your deck must be 35 slides total even if many
+of the content slides are still placeholder.
 :::
+
+## Rubric
+
+Three possible outcomes:
+
+| Result | Score | Criteria |
+|---|---|---|
+| **Full credit** | 5 bonus points | All six graded slides are visible, completed, and correct, AND the deck is 100% compliant with the formatting requirements. |
+| **Partial credit** | 3 bonus points | The deck is 100% compliant with formatting, but at least one graded slide has a content error. |
+| **No credit** | 0 bonus points | Any formatting error (wrong CSS, wrong orientation, knit-to-PDF instead of HTML→PDF, etc.). |
+
+::: {.callout-important}
+Formatting errors are a hard zero. A perfectly correct content
+submission that's saved with the wrong orientation, lost CSS, or
+the wrong PDF workflow earns 0. Formatting first, then content.
+:::
+
+## What's *not* graded
+
+- **Written sections.** We do not read the prose write-ups (Overview,
+  Baseline comparisons, Documenting the differences, etc.) during
+  the progress check. Those are evaluated only in the Final Project
+  submission.
+- **Other tables and figures.** Slides 23, 24, 25, 29 (Table 3,
+  Table 4, Figure 3, Table 5) are not part of the progress check.
+  They're evaluated in the Final Project.
+
+This focus is intentional — the progress check is a checkpoint, not
+a full grade. Use the un-graded slides for trying things out,
+sketching write-ups, etc.
+
+## Submission
+
+- **Filename:** `firstname_lastname_progress.pdf` (e.g.,
+  `jane_doe_progress.pdf`).
+- **Format:** 35-slide PDF, landscape, formatting compliant with the
+  knitted reference in the [Submission chapter](submission.qmd).
+- **Deadline:** As listed on the course schedule. Late submissions
+  are not accepted.
+- **Gradescope assignment:** "Project Progress Check 0".
+
+The save-as-PDF workflow is identical to the Pre-project and Final
+Project. See [Submission](submission.qmd) for browser-by-browser
+print dialog settings.
+
+## Common pitfalls
+
+These are the recurring failure modes from past semesters:
+
+1. **Touching the setup chunk.** Do not change `include = FALSE` to
+   `include = TRUE` on the setup chunk. The `FALSE`/`TRUE` toggle
+   only applies to the *content* code chunks (`btl1`, `btl2`, `mi1`,
+   etc.), never the setup chunk.
+2. **Skipping the extract script.** You must run `cpsmar_e.R` (and
+   have the pre-project data files carried over from the Pre-project)
+   before knitting. The `.Rmd` reads the extract it produces.
+3. **Variable name confusion.** A common error: you save the
+   analysis sample as `cpsmar_a` but then reference `cpsmar_e` in a
+   later chunk (or vice versa). Read your code carefully and make
+   sure each chunk references the right data frame.
+4. **CSS in the wrong folder.** Same as the Pre-project — `project_slidedeck.css`
+   must be in `Project/css/`. See
+   [Common Errors](common-errors.qmd) for diagnosis.
+5. **Saving as PDF the wrong way.** Same as the Pre-project — you
+   must knit to HTML first, then save the HTML as a PDF via your
+   browser's print dialog (landscape orientation, background
+   graphics enabled). Knitting directly to PDF strips the CSS
+   formatting and earns a 0. See [Submission](submission.qmd) for
+   the per-browser walkthroughs.
+
+## What happens next
+
+After the progress check, you continue working on `project.Rmd`
+toward the Final Project deadline. The work you did for the
+progress check stays in place — you fill in the remaining tables,
+figures, and write-ups, then submit the complete deck as
+`firstname_lastname_project.pdf`. See
+[Chapter 4: Main Project](main-project.qmd) for the slide-by-slide
+walkthrough and [Submission](submission.qmd) for the final
+submission mechanics.
