@@ -182,7 +182,7 @@ Here's the destination for each file in the pack:
 |------|---------|
 | `pre_project.Rmd` | `Project/` (root) |
 | `pre_project_knitted_template.html` | `Project/` (root) |
-| Pre-project Instructions (PDF) | `Project/` (root) |
+| `preproject_instructions.pdf` | `Project/` (root) |
 | `LF.R` | `Project/r/` |
 | `project_slidedeck.css` | `Project/css/` |
 | `pppub24.csv` | `Project/data/` |
