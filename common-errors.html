@@ -174,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#how-to-use-this-chapter" id="toc-how-to-use-this-chapter" class="nav-link active" data-scroll-target="#how-to-use-this-chapter"><span class="header-section-number">6.1</span> How to use this chapter</a></li>
   <li><a href="#setup-errors" id="toc-setup-errors" class="nav-link" data-scroll-target="#setup-errors"><span class="header-section-number">6.2</span> Setup errors</a>
   <ul class="collapse">
-  <li><a href="#css-in-the-wrong-folder" id="toc-css-in-the-wrong-folder" class="nav-link" data-scroll-target="#css-in-the-wrong-folder"><span class="header-section-number">6.2.1</span> CSS in the wrong folder</a></li>
+  <li><a href="#css-not-loading" id="toc-css-not-loading" class="nav-link" data-scroll-target="#css-not-loading"><span class="header-section-number">6.2.1</span> CSS not loading</a></li>
   <li><a href="#working-from-your-downloads-folder" id="toc-working-from-your-downloads-folder" class="nav-link" data-scroll-target="#working-from-your-downloads-folder"><span class="header-section-number">6.2.2</span> Working from your Downloads folder</a></li>
   <li><a href="#required-files-missing-or-in-the-wrong-subfolder" id="toc-required-files-missing-or-in-the-wrong-subfolder" class="nav-link" data-scroll-target="#required-files-missing-or-in-the-wrong-subfolder"><span class="header-section-number">6.2.3</span> Required files missing or in the wrong subfolder</a></li>
   </ul></li>
@@ -246,11 +246,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="setup-errors" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="setup-errors"><span class="header-section-number">6.2</span> Setup errors</h2>
-<section id="css-in-the-wrong-folder" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="css-in-the-wrong-folder"><span class="header-section-number">6.2.1</span> CSS in the wrong folder</h3>
+<section id="css-not-loading" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="css-not-loading"><span class="header-section-number">6.2.1</span> CSS not loading</h3>
 <p><strong>Symptom:</strong> Your knitted slides have no UGA styling — plain text, no colors, default fonts.</p>
-<p><strong>Cause:</strong> <code>project_slidedeck.css</code> is anywhere other than <code>Project/css/</code>.</p>
-<p><strong>Fix:</strong> Move the file into <code>Project/css/</code>. Re-knit. Visual example of what this looks like: <a href="#output-format-errors">Wrong CSS</a>.</p>
+<p><strong>Cause:</strong> Either (a) <code>project_slidedeck.css</code> is anywhere other than <code>Project/css/</code>, or (b) the <code>.Rmd</code> file you’re knitting isn’t in your <code>Project/</code> root (e.g., you left it in your Downloads folder), so the relative path <code>css/project_slidedeck.css</code> in the Rmd’s YAML can’t find the CSS.</p>
+<p><strong>Fix:</strong> Confirm both files are in the right places: the CSS in <code>Project/css/</code> AND the <code>.Rmd</code> in your <code>Project/</code> root. Open RStudio by double-clicking <code>Project.Rproj</code>, then re-knit. Visual example of what the bad output looks like: <a href="#output-format-errors">Wrong CSS</a>.</p>
 </section>
 <section id="working-from-your-downloads-folder" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="working-from-your-downloads-folder"><span class="header-section-number">6.2.2</span> Working from your Downloads folder</h3>
@@ -298,7 +298,15 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="6.4.2" class="anchored" data-anchor-id="editing-the-yaml-beyond-the-author-line"><span class="header-section-number">6.4.2</span> Editing the YAML beyond the author line</h3>
 <p><strong>Symptom:</strong> The knit produces unexpected output — different layout, missing CSS, wrong document class, no slide breaks.</p>
 <p><strong>Cause:</strong> You changed something in the YAML besides the <code>author:</code> line (e.g., the <code>output:</code> value, the <code>css:</code> reference, the <code>widescreen:</code> setting).</p>
-<p><strong>Fix:</strong> Restore the YAML to its original values, leaving only the <code>author:</code> line as your edit. If unsure, open a fresh copy of <code>pre_project.Rmd</code> or <code>project.Rmd</code> and copy the YAML block over.</p>
+<p><strong>Fix:</strong></p>
+<ol type="1">
+<li>Download a fresh copy of the relevant Rmd (<code>pre_project.Rmd</code> or <code>project.Rmd</code>) from the file pack on eLC. Save it somewhere temporary like your Downloads folder — not in your <code>Project/</code> directory.</li>
+<li>Open the fresh copy. Copy the entire YAML block (the section between the two <code>---</code> markers at the top of the file).</li>
+<li>Open your working Rmd. Replace your current YAML with the YAML you just copied.</li>
+<li>Re-add your name on the <code>author:</code> line.</li>
+<li><strong>Delete the fresh Rmd copy</strong> from your Downloads folder so you don’t accidentally start working in it instead of your real file.</li>
+<li>Re-knit.</li>
+</ol>
 </section>
 <section id="using-the-knit-dropdown-instead-of-the-knit-button" class="level3" data-number="6.4.3">
 <h3 data-number="6.4.3" class="anchored" data-anchor-id="using-the-knit-dropdown-instead-of-the-knit-button"><span class="header-section-number">6.4.3</span> Using the Knit dropdown instead of the Knit button</h3>
@@ -314,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="6.5.1" class="anchored" data-anchor-id="wrong-css"><span class="header-section-number">6.5.1</span> Wrong CSS</h3>
 <p><strong>Symptom:</strong> Output is in landscape but has no UGA styling — plain text, gray gradients, default browser fonts.</p>
 <p><strong>Cause:</strong> <code>project_slidedeck.css</code> was not found at knit time (usually because it’s not in <code>Project/css/</code>).</p>
-<p><strong>Fix:</strong> Verify the CSS file is in <code>Project/css/</code>. Re-knit.</p>
+<p><strong>Fix:</strong> Verify the CSS file is in <code>Project/css/</code>. Verify the Rmd you are working on is in <code>Project/</code>, not somewhere else (like <code>Downloads/</code>). Re-knit.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/bad_wrong_css.png" class="img-fluid figure-img" alt="Slide with plain text, no UGA styling, default fonts and gray gradients"></p>
@@ -326,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="6.5.2" class="anchored" data-anchor-id="wrong-css-wrong-orientation"><span class="header-section-number">6.5.2</span> Wrong CSS + wrong orientation</h3>
 <p><strong>Symptom:</strong> Output is portrait AND has no UGA styling.</p>
 <p><strong>Cause:</strong> Both CSS is missing and the print dialog saved as portrait.</p>
-<p><strong>Fix:</strong> Move CSS to <code>Project/css/</code>, re-knit, then save with <strong>Landscape</strong> orientation.</p>
+<p><strong>Fix:</strong> Move CSS to <code>Project/css/</code>. Verify the Rmd you are working on is in <code>Project/</code>, not somewhere else (like <code>Downloads/</code>). Re-knit, then save with <strong>Landscape</strong> orientation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/bad_wrong_css_orientation.png" class="img-fluid figure-img" alt="Portrait-oriented slide deck with no UGA styling"></p>
@@ -373,6 +381,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="portrait-wrong-css" class="level3" data-number="6.5.6">
 <h3 data-number="6.5.6" class="anchored" data-anchor-id="portrait-wrong-css"><span class="header-section-number">6.5.6</span> Portrait + wrong CSS</h3>
 <p><strong>Symptom:</strong> Output is portrait AND has no UGA styling. Same underlying causes as the “Wrong CSS + wrong orientation” case, isolated here as a distinct example pattern.</p>
+<p><strong>Fix:</strong> Move CSS to <code>Project/css/</code>. Verify the Rmd you are working on is in <code>Project/</code>, not somewhere else (like <code>Downloads/</code>). Re-knit, then save with <strong>Landscape</strong> orientation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/bad_portrait_wrong_css.png" class="img-fluid figure-img" alt="Portrait-oriented slide deck with no UGA styling"></p>
@@ -384,7 +393,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="6.5.7" class="anchored" data-anchor-id="latex-slides-knit-to-pdf-slide-format"><span class="header-section-number">6.5.7</span> LaTeX slides (knit-to-PDF, slide format)</h3>
 <p><strong>Symptom:</strong> Output is a slide deck rendered with LaTeX/Beamer styling — different fonts, different layout, no UGA brand colors.</p>
 <p><strong>Cause:</strong> You used the Knit dropdown to select “Knit to PDF” with slide output, overriding the Rmd’s HTML-based ioslides format.</p>
-<p><strong>Fix:</strong> Use the Knit button (not the dropdown). The Rmd’s YAML specifies <code>ioslides_presentation</code> for a reason.</p>
+<p><strong>Fix:</strong> Use the Knit button (not the dropdown). The Rmd’s YAML specifies <code>ioslides_presentation</code> for a reason. If your YAML has also been modified (which often goes hand-in-hand with this error), restore it by following the 6-step process under <a href="#editing-the-yaml-beyond-the-author-line">Editing the YAML beyond the author line</a>. Then re-knit.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/bad_latex_slides.png" class="img-fluid figure-img" alt="Slide deck rendered as LaTeX/Beamer instead of HTML ioslides"></p>
@@ -458,9 +467,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>For content-related questions</strong>, contact <strong>TAL staff</strong> first. If TAL staff can’t solve the problem, then email Abbi or Chris.</li>
-<li><strong>For administrative questions</strong>, email <strong>Abbi first</strong>. She’ll loop in Chris if needed.</li>
-<li><strong>One thread per issue.</strong> Don’t send the same problem to both Abbi and Chris on separate emails. We will loop the other in if needed. Duplicate emails waste resources for your classmates.</li>
+<li><strong>For content-related questions</strong>, contact <strong>TAL staff</strong> first. If TAL staff can’t solve the problem, then email Abbi or Dr.&nbsp;Cornwell.</li>
+<li><strong>For administrative questions</strong>, email <strong>Abbi first</strong>. She’ll loop in Dr.&nbsp;Cornwell if needed.</li>
+<li><strong>One thread per issue.</strong> Don’t send the same problem to both Abbi and Dr.&nbsp;Cornwell on separate emails. We will loop the other in if needed. Duplicate emails waste resources for your classmates.</li>
 <li><strong>No content review by email before the deadline.</strong> We will not pre-grade or review your project ahead of the due date.</li>
 <li><strong>Email format requirements:</strong>
 <ul>
