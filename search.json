@@ -204,17 +204,87 @@
     "href": "progress-check.html",
     "title": "4  Progress Check",
     "section": "",
-    "text": "4.1 Outline (to be written)\nThe Project Progress Check is an optional bonus opportunity that gives you feedback on your project halfway through and rewards progress.",
+    "text": "4.1 Why bother\nThe Project Progress Check is an optional mid-project submission that gives you a small bonus on your Project grade in exchange for showing that the core tables and figures are on track. It’s offered in Week 4 of the semester, halfway between the Pre-project and the Final Project.\nYou don’t have to submit it. We strongly recommend that you do.\nTwo reasons:\nEven if you passed the Pre-project, treating the progress check as required is the safer move — it forces you to confirm your formatting is right and your core figures are working well before the final deadline.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
     ]
   },
   {
-    "objectID": "progress-check.html#outline-to-be-written",
-    "href": "progress-check.html#outline-to-be-written",
+    "objectID": "progress-check.html#why-bother",
+    "href": "progress-check.html#why-bother",
     "title": "4  Progress Check",
     "section": "",
-    "text": "What the progress check is and isn’t\nWhich slides are graded (Title, Academic Honesty, Distribution of earnings by gender, Wages and hours differences, Career log wage profiles, Evolution of the gender wage gap)\nScoring: 5 points (clean), 3 points (formatting clean / content error), 0 (formatting error)\nHow to submit\nHow feedback is provided\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.",
+    "text": "Bonus points. A complete and correct progress check earns up to 5 bonus points on your Project grade (per the syllabus).\nA safety net for the Pre-project. If you earned a 0 on the Pre-project, the progress check is your one opportunity to earn those points back. Submit a clean progress check and the lost pre-project points are recovered.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
+    ]
+  },
+  {
+    "objectID": "progress-check.html#what-youll-do",
+    "href": "progress-check.html#what-youll-do",
+    "title": "4  Progress Check",
+    "section": "4.2 What you’ll do",
+    "text": "4.2 What you’ll do\nThe progress check is not a separate file or a separate document. You continue working on the same project.Rmd you started after finishing the Pre-project. On the progress check deadline, you save the in-progress .Rmd as a PDF (using the same workflow as the Pre-project and Final Project — see Submission) and upload it to the Project Progress Check assignment on Gradescope.\nThere is no “progress check version” of the project. There’s just the project, as it stands at the progress-check deadline.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
+    ]
+  },
+  {
+    "objectID": "progress-check.html#whats-graded",
+    "href": "progress-check.html#whats-graded",
+    "title": "4  Progress Check",
+    "section": "4.3 What’s graded",
+    "text": "4.3 What’s graded\nThe progress check covers about two-thirds of the project’s core tables and figures. Specifically, we look at six slides:\n\n\n\n\n\n\n\n\nSlide\nTitle\nWhat we check\n\n\n\n\n1\nTitle slide\nYour name filled in (and overall formatting is correct)\n\n\n2\nAcademic Honesty Statement\nYour name on the Signature line\n\n\n11\nDistribution of earnings by gender\nFigure 1 is visible, completed, and correct\n\n\n14\nWages and hours differences\nTable 1 is visible, completed, and correct\n\n\n17\nCareer log wage profiles\nFigure 2 is visible, completed, and correct\n\n\n19\nEvolution of the gender wage gap\nTable 2 is visible, completed, and correct\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe slide numbers above match the canonical 35-slide layout documented in the Final Project reference in the Submission chapter. Your deck must be 35 slides total even if many of the content slides are still placeholder.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
+    ]
+  },
+  {
+    "objectID": "progress-check.html#rubric",
+    "href": "progress-check.html#rubric",
+    "title": "4  Progress Check",
+    "section": "4.4 Rubric",
+    "text": "4.4 Rubric\nThree possible outcomes:\n\n\n\n\n\n\n\n\nResult\nScore\nCriteria\n\n\n\n\nFull credit\n5 bonus points\nAll six graded slides are visible, completed, and correct, AND the deck is 100% compliant with the formatting requirements.\n\n\nPartial credit\n3 bonus points\nThe deck is 100% compliant with formatting, but at least one graded slide has a content error.\n\n\nNo credit\n0 bonus points\nAny formatting error (wrong CSS, wrong orientation, knit-to-PDF instead of HTML→PDF, etc.).\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFormatting errors are a hard zero. A perfectly correct content submission that’s saved with the wrong orientation, lost CSS, or the wrong PDF workflow earns 0. Formatting first, then content.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
+    ]
+  },
+  {
+    "objectID": "progress-check.html#whats-not-graded",
+    "href": "progress-check.html#whats-not-graded",
+    "title": "4  Progress Check",
+    "section": "4.5 What’s not graded",
+    "text": "4.5 What’s not graded\n\nWritten sections. We do not read the prose write-ups (Overview, Baseline comparisons, Documenting the differences, etc.) during the progress check. Those are evaluated only in the Final Project submission.\nOther tables and figures. Slides 23, 24, 25, 29 (Table 3, Table 4, Figure 3, Table 5) are not part of the progress check. They’re evaluated in the Final Project.\n\nThis focus is intentional — the progress check is a checkpoint, not a full grade. Use the un-graded slides for trying things out, sketching write-ups, etc.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
+    ]
+  },
+  {
+    "objectID": "progress-check.html#submission",
+    "href": "progress-check.html#submission",
+    "title": "4  Progress Check",
+    "section": "4.6 Submission",
+    "text": "4.6 Submission\n\nFilename: firstname_lastname_progress.pdf (e.g., jane_doe_progress.pdf).\nFormat: 35-slide PDF, landscape, formatting compliant with the knitted reference in the Submission chapter.\nDeadline: As listed on the course schedule. Late submissions are not accepted.\nGradescope assignment: “Project Progress Check 0”.\n\nThe save-as-PDF workflow is identical to the Pre-project and Final Project. See Submission for browser-by-browser print dialog settings.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
+    ]
+  },
+  {
+    "objectID": "progress-check.html#common-pitfalls",
+    "href": "progress-check.html#common-pitfalls",
+    "title": "4  Progress Check",
+    "section": "4.7 Common pitfalls",
+    "text": "4.7 Common pitfalls\nThese are the recurring failure modes from past semesters:\n\nTouching the setup chunk. Do not change include = FALSE to include = TRUE on the setup chunk. The FALSE/TRUE toggle only applies to the content code chunks (btl1, btl2, mi1, etc.), never the setup chunk.\nSkipping the extract script. You must run cpsmar_e.R (and have the pre-project data files carried over from the Pre-project) before knitting. The .Rmd reads the extract it produces.\nVariable name confusion. A common error: you save the analysis sample as cpsmar_a but then reference cpsmar_e in a later chunk (or vice versa). Read your code carefully and make sure each chunk references the right data frame.\nCSS in the wrong folder. Same as the Pre-project — project_slidedeck.css must be in Project/css/. See Common Errors for diagnosis.\nSaving as PDF the wrong way. Same as the Pre-project — you must knit to HTML first, then save the HTML as a PDF via your browser’s print dialog (landscape orientation, background graphics enabled). Knitting directly to PDF strips the CSS formatting and earns a 0. See Submission for the per-browser walkthroughs.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
+    ]
+  },
+  {
+    "objectID": "progress-check.html#what-happens-next",
+    "href": "progress-check.html#what-happens-next",
+    "title": "4  Progress Check",
+    "section": "4.8 What happens next",
+    "text": "4.8 What happens next\nAfter the progress check, you continue working on project.Rmd toward the Final Project deadline. The work you did for the progress check stays in place — you fill in the remaining tables, figures, and write-ups, then submit the complete deck as firstname_lastname_project.pdf. See Chapter 4: Main Project for the slide-by-slide walkthrough and Submission for the final submission mechanics.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
     ]
