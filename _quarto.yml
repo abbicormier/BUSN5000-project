@@ -24,7 +24,6 @@ format:
   html:
     theme:
       - cosmo
-      - _extensions/uga/uga.scss
       - styles.scss
     toc: true
     toc-depth: 3

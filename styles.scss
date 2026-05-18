@@ -1,39 +1,134 @@
 /*-- scss:defaults --*/
 
-// UGA color palette overrides for the book HTML output.
-// The base uga.scss in the extension is tuned for revealjs slides;
-// these overrides adapt the palette to a book context.
+// UGA palette (matches _extensions/uga/uga.scss)
+$dawg-red:     #BA0C2F;
+$dawg-black:   #000000;
+$dawg-white:   #FFFFFF;
+$dawg-grey:    #9EA2A2;
+$lake-herrick: #00A3AD;
+$olympic:      #004E60;
+$odyssey:      #C8D8EB;
+$creamery:     #D6D2C4;
+$light-gray:   #EEEEEE;
+$slate:        #333333;
 
-$primary:     #BA0C2F;  // Dawg Red
-$body-color:  #000000;  // Dawg Black
-$link-color:  #00A3AD;  // Lake Herrick teal
+// Fonts (match uga.scss exactly)
+$font-family-sans-serif: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-monospace:  'Source Code Pro', 'Fira Code', 'Monaco', 'Consolas', monospace;
+$headings-font-family:   'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headings-font-weight:   600;
+
+// Bootstrap overrides (flow into cosmo)
+$primary:    $dawg-red;
+$link-color: $lake-herrick;
+$body-color: $dawg-black;
+
+// Quarto book sidebar
+$sidebar-bg: $dawg-white;
+$sidebar-fg: $dawg-black;
+$sidebar-hl: $dawg-red;
+$navbar-bg:  $dawg-red;
+$navbar-fg:  $dawg-white;
 
 /*-- scss:rules --*/
 
-// Chapter and section heading colors
-.quarto-title-block h1.title {
-  color: #BA0C2F;
+// Load Source Sans Pro + Source Code Pro from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Source+Code+Pro:wght@400;500&display=swap');
+
+// Headings — all Dawg Red, semi-bold (matches uga.scss)
+.quarto-title-block .title,
+h1, h2, h3, h4, h5, h6 {
+  color: $dawg-red;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
+// h2 with red bottom border (matches uga.scss slide-title treatment)
 h2 {
-  color: #004E60; // Olympic blue
+  border-bottom: 3px solid $dawg-red;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.6em;
 }
 
-h3 {
-  color: #004E60;
+// Strong/bold in red
+strong, b {
+  color: $dawg-red;
+  font-weight: 600;
 }
 
-// Code blocks: subtle UGA-flavored treatment
-pre.sourceCode {
-  background-color: #F7F5F0; // Cream
-  border-left: 3px solid #BA0C2F;
+// Links — Lake Herrick with dotted underline
+a {
+  color: $lake-herrick;
+  text-decoration: none;
+  border-bottom: 1px dotted $lake-herrick;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+a:hover {
+  color: darken($lake-herrick, 10%);
+  border-bottom-color: darken($lake-herrick, 10%);
+}
+
+// Citations in dark blue
+a.citation, .citation a {
+  color: $olympic;
+  border-bottom-color: $olympic;
 }
 
 // Inline code
-code {
-  color: #BA0C2F;
+:not(pre) > code {
+  background-color: $light-gray;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: $slate;
 }
 
+// Code blocks
+pre, div.sourceCode, pre.sourceCode {
+  background-color: $light-gray;
+  border-left: 4px solid $dawg-red;
+  border-radius: 0 4px 4px 0;
+  padding: 0.8em 1em;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 pre code {
-  color: inherit;
+  background: none;
+  padding: 0;
+}
+
+// Blockquotes
+blockquote {
+  background-color: $creamery;
+  border-left: 5px solid $dawg-red;
+  padding: 0.8em 1.2em;
+  margin: 1em 0;
+  font-style: italic;
+  color: $slate;
+  border-radius: 0 4px 4px 0;
+}
+
+// Tables — Dawg Red header, creamery alternating rows
+table thead th, .table thead th {
+  background-color: $dawg-red !important;
+  color: $dawg-white !important;
+  font-weight: 600;
+  border-bottom: 2px solid darken($dawg-red, 10%) !important;
+}
+table tbody tr:nth-child(even) {
+  background-color: rgba($creamery, 0.4);
+}
+
+// Callouts in UGA colors
+.callout-note      { border-left-color: $olympic       !important; }
+.callout-tip       { border-left-color: $lake-herrick  !important; }
+.callout-important { border-left-color: $dawg-red      !important; }
+.callout-warning   { border-left-color: #d6a206        !important; }
+.callout-caution   { border-left-color: $dawg-red      !important; }
+
+// Sidebar active item
+.sidebar a.active,
+.sidebar-item-text.active {
+  color: $dawg-red;
+  font-weight: 600;
 }
