@@ -1,0 +1,128 @@
+% beamerthemeUGA.sty
+% University of Georgia Beamer Theme
+% Consistent with BUSN 5000 course materials (preamble_presentations.tex)
+%
+% Usage in RMarkdown YAML:
+%   output:
+%     beamer_presentation:
+%       theme: "Boadilla"
+%       colortheme: "default"
+%   header-includes:
+%     - \input{beamerthemeUGA.sty}
+%
+% Or for Quarto:
+%   format:
+%     beamer:
+%       theme: Boadilla
+%       include-in-header:
+%         - beamerthemeUGA.sty
+
+%% ============================================================================
+%% REQUIRED PACKAGES
+%% ============================================================================
+
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{tabularray}
+\usepackage{caption}
+\captionsetup{skip=0pt,belowskip=0pt}
+
+% TikZ for diagrams
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+%% ============================================================================
+%% COLOR DEFINITIONS
+%% ============================================================================
+
+% Primary palette
+\definecolor{darkred}{RGB}{186, 12, 47}        % Dawg Red (primary)
+\definecolor{dawgRed}{RGB}{186, 12, 47}        % Dawg Red (primary)
+\definecolor{dawgBlack}{RGB}{0, 0, 0}          % Dawg black (secondary)
+\definecolor{dawgwhite}{RGB}{255, 255, 255}    % Dawg white (background)
+\definecolor{dawggrey}{RGB}{158, 162, 162}     % Dawg Grey (tertiary)
+\definecolor{dawglakeherrick}{RGB}{0, 163, 173}  % Dawg teal (url)
+\definecolor{dawgolympic}{RGB}{0, 78, 96}      % Dawg dark blue
+\definecolor{dawgodyssey}{RGB}{200, 216, 235}  % Dawg light blue
+\definecolor{dawgcreamery}{RGB}{214, 210, 196} % Dawg cream
+
+%% ============================================================================
+%% COLOR THEME
+%% ============================================================================
+
+\setbeamercolor{palette primary}{bg=dawgRed,fg=dawgodyssey}
+\setbeamercolor{structure}{bg=dawgRed,fg=dawggrey}
+\setbeamercolor{section in toc}{bg=dawgRed, fg=dawgodyssey}
+\setbeamercolor{title}{bg=dawgRed,fg=dawgwhite}
+
+%% ============================================================================
+%% ITEM STYLING
+%% ============================================================================
+
+\setbeamertemplate{enumerate items}[default]
+\setlist[enumerate,1]{label=\text{\arabic*.}}
+\setbeamerfont{enumerate item}{size=\small,series=\bfseries}
+\setbeamercolor{enumerate item}{fg=black}
+\setlist[itemize,1]{label=$\bullet$, font=\color{black}}
+\setlist[itemize,2]{label=$\circ$, font=\color{black}}
+
+% Ensure compatibility with Beamer
+\makeatletter
+\def\labelenumi{\theenumi.}
+\makeatother
+
+%% ============================================================================
+%% HEADER/FOOTER COLORS
+%% ============================================================================
+
+\setbeamercolor{subsection in head/foot}{bg=dawgwhite,fg=dawgodyssey}
+\setbeamercolor{frametitle}{bg=dawgwhite, fg=dawgRed}
+\setbeamerfont{frametitle}{size=\LARGE}
+
+% Footer colors (three sections)
+\setbeamercolor{author in head/foot}{bg=dawgRed, fg=dawgwhite}
+\setbeamercolor{title in head/foot}{bg=dawgodyssey, fg=dawgBlack}
+\setbeamercolor{date in head/foot}{bg=dawglakeherrick, fg=dawgwhite}
+
+%% ============================================================================
+%% FOOTLINE TEMPLATE
+%% ============================================================================
+
+% Three-section footer: Author (red 40%) | Title (light blue 20%) | Date/Page (teal 40%)
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\inserttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+%% ============================================================================
+%% HYPERLINK SETUP
+%% ============================================================================
+
+\AtBeginDocument{
+% Section title colors
+\setbeamercolor{section title}{bg=dawgodyssey, fg=dawgBlack}
+\setbeamercolor{section name}{fg=dawgBlack}
+\setbeamercolor{part title}{bg=dawgRed,fg=dawgodyssey}
+\setbeamercolor{part name}{bg=dawgRed,fg=dawgodyssey}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={dawgBlack},
+  filecolor={dawgBlack},
+  citecolor={dawgolympic},
+  urlcolor={dawglakeherrick}
+}
+}

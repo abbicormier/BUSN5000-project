@@ -1,0 +1,33 @@
+# Preface {.unnumbered}
+
+Welcome to the **BUSN 5000 Project Guide** — the canonical reference
+for the Pre-project, Project Progress Check, and Final Project for
+BUSN 5000 (Intro to Data Science for Business and Economics) at the
+University of Georgia.
+
+This guide covers:
+
+- How to set up your computer and your project folder
+- What the pre-project is and how to complete it
+- What the main project is and how to complete it
+- What the progress check is and how it's graded
+- How to submit your work
+- How to recognize and recover from common errors
+
+The guide is the single source of truth. Announcements on eLC remind
+you of upcoming deadlines and point back here for the rules.
+
+## How to use this guide
+
+Read the chapters in order the first time through. After that, treat
+it as a reference — jump to whatever section you need. Each chapter
+has its own table of contents in the sidebar.
+
+If you find a section that's wrong, unclear, or out of date, please
+flag it via the "report an issue" link at the top of any page.
+
+## Acknowledgments
+
+The course materials in this guide are by **Chris Cornwell** and
+**Abbi Cormier**, with substantial contributions from the BUSN 5000
+teaching team across many semesters.

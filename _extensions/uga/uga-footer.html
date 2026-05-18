@@ -1,0 +1,82 @@
+<!--
+  UGA Three-Section Footer for reveal.js
+  Include this file in your Quarto YAML:
+    include-after-body:
+      - revealjs/uga-footer.html
+-->
+<script>
+(function() {
+  // Wait for window load to ensure Reveal.js is initialized
+  window.addEventListener('load', function() {
+    // Get metadata from Quarto/reveal
+    const getMetaContent = (name) => {
+      const meta = document.querySelector(`meta[name="${name}"]`);
+      return meta ? meta.getAttribute('content') : '';
+    };
+
+    // Try to get values from meta tags or title slide
+    let author = getMetaContent('author');
+    let title = getMetaContent('title') || document.title;
+    let date = getMetaContent('date');
+    let institute = getMetaContent('institute');
+
+    // Fallback: try to get from title slide elements
+    const titleSlide = document.querySelector('#title-slide, .title-slide');
+    if (titleSlide) {
+      if (!author) {
+        const authorEl = titleSlide.querySelector('.author, p.author');
+        author = authorEl ? authorEl.textContent.trim() : '';
+      }
+      if (!date) {
+        const dateEl = titleSlide.querySelector('.date, p.date');
+        date = dateEl ? dateEl.textContent.trim() : '';
+      }
+      if (!institute) {
+        const instEl = titleSlide.querySelector('.institute, p.institute');
+        institute = instEl ? instEl.textContent.trim() : '';
+      }
+    }
+
+    // Format author with institute if available
+    const authorDisplay = institute ? `${author} (${institute})` : author;
+
+    // Create footer element
+    const footer = document.createElement('div');
+    footer.className = 'uga-footer';
+    footer.innerHTML = `
+      <div class="footer-author">${authorDisplay}</div>
+      <div class="footer-title">${title}</div>
+      <div class="footer-info">
+        <span class="footer-date">${date}</span>
+        <span class="slide-number"></span>
+      </div>
+    `;
+
+    // Add to reveal container
+    const revealEl = document.querySelector('.reveal');
+    if (revealEl) {
+      revealEl.appendChild(footer);
+    }
+
+    // Update slide number function
+    const slideNumEl = footer.querySelector('.slide-number');
+    const updateSlideNumber = () => {
+      const total = Reveal.getTotalSlides();
+      const current = Reveal.getSlidePastCount() + 1;
+      slideNumEl.textContent = `${current} / ${total}`;
+    };
+
+    // Attach to Reveal events
+    if (typeof Reveal !== 'undefined') {
+      Reveal.on('ready', updateSlideNumber);
+      Reveal.on('slidechanged', updateSlideNumber);
+      // Update now if already ready
+      try {
+        if (Reveal.isReady()) {
+          updateSlideNumber();
+        }
+      } catch(e) {}
+    }
+  });
+})();
+</script>

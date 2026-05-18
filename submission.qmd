@@ -1,0 +1,18 @@
+# Submission
+
+This chapter covers how to submit your work to Gradescope without
+losing points to formatting.
+
+## Outline (to be written)
+
+- Filename convention (`sectiontime_lastname_firstname_*.pdf`)
+- PDF format (landscape, color, formatting preserved)
+- The HTML → PDF workflow (not knit-to-PDF)
+- Browser-specific save-as-PDF tips
+- What "100% compliant with the knitted template" means in practice
+- Deadlines and late-submission policy
+
+::: {.callout-note}
+This chapter is a stub. Content will be filled in as part of Wave 2
+of the project rebuild.
+:::

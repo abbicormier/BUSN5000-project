@@ -1,0 +1,453 @@
+% uga-tikz.tex
+% UGA TikZ Style Definitions
+% Consistent with BUSN 5000 course materials
+%
+% Include in your LaTeX/Quarto document:
+%   \input{uga-tikz.tex}
+%
+% Or add to YAML header:
+%   include-in-header:
+%     - uga-tikz.tex
+
+% Only load TikZ if not already loaded (e.g., by beamer)
+\makeatletter
+\@ifpackageloaded{tikz}{}{\usepackage{tikz}}
+\makeatother
+
+\usetikzlibrary{
+    arrows.meta,
+    shapes.geometric,
+    shapes.misc,
+    positioning,
+    calc,
+    fit,
+    backgrounds,
+    decorations.pathreplacing,
+    decorations.markings,
+    shadows,
+    patterns,
+    chains,
+    matrix,
+    mindmap,
+    trees
+}
+
+% =============================================================================
+% COLOR DEFINITIONS (matching beamerthemeUGA.sty)
+% =============================================================================
+% Define colors only if not already defined (safe for use with beamerthemeUGA.sty)
+
+\makeatletter
+\newcommand{\ugadefinecolor}[3]{%
+  \@ifundefined{\string\color@#1}{\definecolor{#1}{#2}{#3}}{}%
+}
+\makeatother
+
+% Primary colors (dawg naming convention)
+\ugadefinecolor{dawgRed}{RGB}{186,12,47}
+\ugadefinecolor{dawgBlack}{RGB}{0,0,0}
+\ugadefinecolor{dawgwhite}{RGB}{255,255,255}
+
+% Extended palette (BUSN 5000)
+\ugadefinecolor{dawggrey}{RGB}{158,162,162}
+\ugadefinecolor{dawglakeherrick}{RGB}{0,163,173}
+\ugadefinecolor{dawgolympic}{RGB}{0,78,96}
+\ugadefinecolor{dawgodyssey}{RGB}{200,216,235}
+\ugadefinecolor{dawgcreamery}{RGB}{214,210,196}
+
+% Legacy color names (for backward compatibility)
+\ugadefinecolor{BulldogRed}{HTML}{BA0C2F}
+\ugadefinecolor{ArchBlack}{HTML}{000000}
+\ugadefinecolor{ChapelBellWhite}{HTML}{FFFFFF}
+\ugadefinecolor{GloryRed}{HTML}{E4002B}
+\ugadefinecolor{HeritageRed}{HTML}{8B0A1E}
+\ugadefinecolor{WarmGray}{HTML}{6A6A6A}
+\ugadefinecolor{Silver}{HTML}{A7A9AC}
+\ugadefinecolor{Cream}{HTML}{F7F5F0}
+\ugadefinecolor{Slate}{HTML}{333333}
+\ugadefinecolor{LightGray}{HTML}{EEEEEE}
+
+% Sequential reds (additional colors for gradients)
+\ugadefinecolor{Red1}{HTML}{FADBD8}
+\ugadefinecolor{Red2}{HTML}{F1948A}
+\ugadefinecolor{Red3}{HTML}{E74C3C}
+\ugadefinecolor{Red4}{HTML}{BA0C2F}
+\ugadefinecolor{Red5}{HTML}{8B0A1E}
+\ugadefinecolor{Red6}{HTML}{5D0614}
+
+% =============================================================================
+% DEFAULT TIKZ SETTINGS
+% =============================================================================
+
+\tikzset{
+    % Default line settings
+    line width=0.6pt,
+    >=Stealth,
+    % Default text settings
+    font=\small
+}
+
+% =============================================================================
+% NODE STYLES
+% =============================================================================
+
+\tikzset{
+    % Basic box node
+    uga box/.style={
+        rectangle,
+        rounded corners=3pt,
+        draw=dawgRed,
+        fill=dawgcreamery,
+        thick,
+        minimum width=2.5cm,
+        minimum height=1cm,
+        align=center,
+        inner sep=8pt,
+        font=\small
+    },
+    % Emphasized box (red background)
+    uga box emphasis/.style={
+        rectangle,
+        rounded corners=3pt,
+        draw=dawgRed,
+        fill=dawgRed,
+        text=dawgwhite,
+        thick,
+        minimum width=2.5cm,
+        minimum height=1cm,
+        align=center,
+        inner sep=8pt,
+        font=\small\bfseries
+    },
+    % Muted box (gray)
+    uga box muted/.style={
+        rectangle,
+        rounded corners=3pt,
+        draw=dawggrey,
+        fill=LightGray,
+        thick,
+        minimum width=2.5cm,
+        minimum height=1cm,
+        align=center,
+        inner sep=8pt,
+        font=\small
+    },
+    % Teal box (Lake Herrick)
+    uga box teal/.style={
+        rectangle,
+        rounded corners=3pt,
+        draw=dawglakeherrick,
+        fill=dawgodyssey,
+        thick,
+        minimum width=2.5cm,
+        minimum height=1cm,
+        align=center,
+        inner sep=8pt,
+        font=\small
+    },
+    % Dark blue box (Olympic)
+    uga box blue/.style={
+        rectangle,
+        rounded corners=3pt,
+        draw=dawgolympic,
+        fill=dawgolympic,
+        text=dawgwhite,
+        thick,
+        minimum width=2.5cm,
+        minimum height=1cm,
+        align=center,
+        inner sep=8pt,
+        font=\small\bfseries
+    },
+    % Circle node
+    uga circle/.style={
+        circle,
+        draw=dawgRed,
+        fill=dawgcreamery,
+        thick,
+        minimum size=1.5cm,
+        align=center,
+        inner sep=4pt,
+        font=\small
+    },
+    % Emphasized circle
+    uga circle emphasis/.style={
+        circle,
+        draw=dawgRed,
+        fill=dawgRed,
+        text=dawgwhite,
+        thick,
+        minimum size=1.5cm,
+        align=center,
+        inner sep=4pt,
+        font=\small\bfseries
+    },
+    % Diamond/decision node
+    uga diamond/.style={
+        diamond,
+        draw=dawgRed,
+        fill=dawgcreamery,
+        thick,
+        minimum width=2cm,
+        minimum height=2cm,
+        align=center,
+        inner sep=2pt,
+        font=\small
+    },
+    % Small annotation node
+    uga label/.style={
+        font=\footnotesize,
+        color=dawggrey,
+        align=center
+    },
+    % Title/header node
+    uga title/.style={
+        font=\normalsize\bfseries,
+        color=dawgBlack,
+        align=center
+    },
+    % Process node (for flowcharts)
+    uga process/.style={
+        rectangle,
+        rounded corners=2pt,
+        draw=Slate,
+        fill=dawgwhite,
+        thick,
+        minimum width=3cm,
+        minimum height=0.8cm,
+        align=center,
+        inner sep=6pt,
+        font=\small
+    },
+    % I/O node (parallelogram)
+    uga io/.style={
+        trapezium,
+        trapezium left angle=70,
+        trapezium right angle=110,
+        draw=dawgRed,
+        fill=dawgcreamery,
+        thick,
+        minimum width=2.5cm,
+        minimum height=0.8cm,
+        align=center,
+        inner sep=6pt,
+        font=\small
+    },
+    % Database node (cylinder)
+    uga database/.style={
+        cylinder,
+        draw=dawggrey,
+        fill=LightGray,
+        thick,
+        shape border rotate=90,
+        aspect=0.3,
+        minimum width=2cm,
+        minimum height=1.5cm,
+        align=center,
+        font=\small
+    }
+}
+
+% =============================================================================
+% ARROW STYLES
+% =============================================================================
+
+\tikzset{
+    % Standard arrow
+    uga arrow/.style={-Stealth, thick, dawgRed},
+    % Muted arrow (for secondary connections)
+    uga arrow muted/.style={-Stealth, dawggrey, line width=0.5pt},
+    % Teal arrow
+    uga arrow teal/.style={-Stealth, thick, dawglakeherrick},
+    % Bidirectional arrow
+    uga arrow bi/.style={Stealth-Stealth, thick, dawgRed},
+    % Dashed arrow (for optional/conditional)
+    uga arrow dashed/.style={-Stealth, thick, dashed, dawggrey},
+    % Thick emphasis arrow
+    uga arrow emphasis/.style={-Stealth, line width=1.5pt, dawgRed},
+    % Line (no arrow head)
+    uga line/.style={thick, dawgRed},
+    % Muted line
+    uga line muted/.style={dawggrey, line width=0.5pt}
+}
+
+% =============================================================================
+% BACKGROUND STYLES
+% =============================================================================
+
+\tikzset{
+    % Background box for grouping
+    uga background/.style={
+        rectangle, rounded corners=5pt, draw=Silver,
+        fill=LightGray, fill opacity=0.5, inner sep=15pt
+    },
+    % Emphasized background
+    uga background emphasis/.style={
+        rectangle, rounded corners=5pt, draw=dawgRed,
+        fill=Red1, fill opacity=0.3, inner sep=15pt
+    },
+    % Teal background
+    uga background teal/.style={
+        rectangle, rounded corners=5pt, draw=dawglakeherrick,
+        fill=dawgodyssey, fill opacity=0.5, inner sep=15pt
+    }
+}
+
+% =============================================================================
+% DECORATION STYLES
+% =============================================================================
+
+\tikzset{
+    % Brace annotation
+    uga brace/.style={
+        decorate,
+        decoration={brace, amplitude=8pt, raise=4pt},
+        thick, dawgRed
+    },
+    % Highlight box around content
+    uga highlight/.style={draw=GloryRed, line width=1.5pt, rounded corners=2pt},
+    % Teal highlight
+    uga highlight teal/.style={draw=dawglakeherrick, line width=1.5pt, rounded corners=2pt}
+}
+
+% =============================================================================
+% MINDMAP STYLES
+% =============================================================================
+
+\tikzset{
+    uga mindmap/.style={
+        mindmap,
+        every node/.style={concept},
+        concept color=dawgRed,
+        root concept/.append style={
+            fill=dawgRed,
+            text=dawgwhite,
+            font=\large\bfseries,
+            minimum size=3cm
+        },
+        level 1 concept/.append style={
+            fill=dawgolympic,
+            text=dawgwhite,
+            font=\small\bfseries,
+            minimum size=2cm,
+            sibling angle=60
+        },
+        level 2 concept/.append style={
+            fill=dawggrey,
+            text=dawgwhite,
+            font=\footnotesize,
+            minimum size=1.5cm
+        }
+    }
+}
+
+% =============================================================================
+% TREE STYLES
+% =============================================================================
+
+\tikzset{
+    uga tree/.style={
+        every node/.style={
+            uga box,
+            minimum width=2cm,
+            minimum height=0.7cm
+        },
+        edge from parent/.style={
+            uga arrow,
+            draw=dawggrey
+        },
+        level 1/.style={sibling distance=4cm, level distance=1.5cm},
+        level 2/.style={sibling distance=2cm, level distance=1.5cm}
+    }
+}
+
+% =============================================================================
+% MATRIX STYLES
+% =============================================================================
+
+\tikzset{
+    uga matrix/.style={
+        matrix of nodes,
+        nodes={
+            rectangle,
+            draw=Silver,
+            minimum width=2cm,
+            minimum height=0.8cm,
+            align=center,
+            font=\small
+        },
+        row sep=-\pgflinewidth,
+        column sep=-\pgflinewidth,
+        row 1/.style={nodes={fill=dawgRed, text=dawgwhite, font=\small\bfseries}}
+    }
+}
+
+% =============================================================================
+% CHAIN STYLES (for process flows)
+% =============================================================================
+
+\tikzset{
+    uga chain/.style={
+        start chain=going right,
+        node distance=1cm,
+        every node/.style={
+            on chain,
+            uga box,
+            minimum width=2cm
+        },
+        every join/.style={
+            uga arrow
+        }
+    }
+}
+
+% =============================================================================
+% UTILITY COMMANDS
+% =============================================================================
+
+% Draw a legend
+% Usage: \ugalegend{x}{y}{{label1/color1},{label2/color2},...}
+\newcommand{\ugalegend}[3]{
+    \begin{scope}[shift={(#1,#2)}]
+        \foreach \label/\col [count=\i from 0] in {#3} {
+            \fill[\col] (0,-\i*0.5) rectangle (0.4,-\i*0.5-0.3);
+            \node[right, font=\footnotesize] at (0.5,-\i*0.5-0.15) {\label};
+        }
+    \end{scope}
+}
+
+% Draw a scale bar
+% Usage: \ugascalebar{x}{y}{length}{label}
+\newcommand{\ugascalebar}[4]{
+    \draw[thick, dawgRed] (#1,#2) -- ++(#3,0);
+    \draw[thick, dawgRed] (#1,#2-0.1) -- ++(0,0.2);
+    \draw[thick, dawgRed] (#1+#3,#2-0.1) -- ++(0,0.2);
+    \node[below, font=\footnotesize] at (#1+#3/2,#2-0.15) {#4};
+}
+
+% =============================================================================
+% EXAMPLE USAGE (commented out)
+% =============================================================================
+
+% Example flowchart:
+% \begin{tikzpicture}[node distance=2cm]
+%     \node[uga box] (start) {Start};
+%     \node[uga process, right=of start] (process) {Process};
+%     \node[uga diamond, right=of process] (decision) {OK?};
+%     \node[uga box emphasis, right=of decision] (end) {End};
+%
+%     \draw[uga arrow] (start) -- (process);
+%     \draw[uga arrow] (process) -- (decision);
+%     \draw[uga arrow] (decision) -- node[above, font=\footnotesize] {Yes} (end);
+%     \draw[uga arrow dashed] (decision) |- ++(0,-1.5) -| (process)
+%         node[pos=0.25, below, font=\footnotesize] {No};
+% \end{tikzpicture}
+
+% Example concept map:
+% \begin{tikzpicture}
+%     \node[uga circle emphasis] (center) {Core};
+%     \foreach \angle/\text in {0/A, 60/B, 120/C, 180/D, 240/E, 300/F} {
+%         \node[uga circle] at (\angle:2.5cm) {\text};
+%         \draw[uga line muted] (center) -- (\angle:2.5cm);
+%     }
+% \end{tikzpicture}

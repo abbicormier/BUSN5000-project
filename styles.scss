@@ -1,0 +1,39 @@
+/*-- scss:defaults --*/
+
+// UGA color palette overrides for the book HTML output.
+// The base uga.scss in the extension is tuned for revealjs slides;
+// these overrides adapt the palette to a book context.
+
+$primary:     #BA0C2F;  // Dawg Red
+$body-color:  #000000;  // Dawg Black
+$link-color:  #00A3AD;  // Lake Herrick teal
+
+/*-- scss:rules --*/
+
+// Chapter and section heading colors
+.quarto-title-block h1.title {
+  color: #BA0C2F;
+}
+
+h2 {
+  color: #004E60; // Olympic blue
+}
+
+h3 {
+  color: #004E60;
+}
+
+// Code blocks: subtle UGA-flavored treatment
+pre.sourceCode {
+  background-color: #F7F5F0; // Cream
+  border-left: 3px solid #BA0C2F;
+}
+
+// Inline code
+code {
+  color: #BA0C2F;
+}
+
+pre code {
+  color: inherit;
+}

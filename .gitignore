@@ -1,0 +1,19 @@
+# Quarto
+/_book/
+/.quarto/
+*.html.bak
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*~
+.vscode/
+.idea/

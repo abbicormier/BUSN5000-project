@@ -1,0 +1,146 @@
+% uga-doc.tex
+% University of Georgia PDF Document Style
+% For reports, white papers, and formal documents
+%
+% Usage in Quarto:
+%   format:
+%     pdf:
+%       include-in-header:
+%         - pdf/uga-doc.tex
+
+%% ============================================================================
+%% REQUIRED PACKAGES
+%% ============================================================================
+
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+%% ============================================================================
+%% COLOR DEFINITIONS (matching beamerthemeUGA.sty naming)
+%% ============================================================================
+
+\definecolor{dawgRed}{RGB}{186, 12, 47}
+\definecolor{dawgBlack}{RGB}{0, 0, 0}
+\definecolor{dawgwhite}{RGB}{255, 255, 255}
+\definecolor{dawggrey}{RGB}{158, 162, 162}
+\definecolor{dawglakeherrick}{RGB}{0, 163, 173}
+\definecolor{dawgolympic}{RGB}{0, 78, 96}
+\definecolor{dawgodyssey}{RGB}{200, 216, 235}
+\definecolor{dawgcreamery}{RGB}{214, 210, 196}
+\definecolor{Slate}{HTML}{333333}
+
+%% ============================================================================
+%% SECTION STYLING
+%% ============================================================================
+
+\allsectionsfont{\color{dawgRed}}
+
+%% ============================================================================
+%% TITLE STYLING
+%% ============================================================================
+
+\pretitle{\begin{center}\LARGE\bfseries\color{dawgRed}}
+\posttitle{\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\large}
+\postauthor{\end{center}}
+
+%% ============================================================================
+%% HEADER/FOOTER CONFIGURATION
+%% ============================================================================
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% Header
+\fancyhead[L]{\small\color{Slate}\leftmark}
+\fancyhead[R]{\small\color{Slate}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Footer
+\fancyfoot[C]{\small\color{Slate}Terry College of Business | University of Georgia}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%% ============================================================================
+%% CUSTOM ENVIRONMENTS (tcolorbox)
+%% ============================================================================
+
+% Highlight box - dawgRed accent for key findings
+\newtcolorbox{highlight}{%
+  colback=dawgRed!5,
+  colframe=dawgRed!50,
+  arc=3pt,
+  boxrule=0.5pt,
+  left=6pt, right=6pt, top=6pt, bottom=6pt,
+  breakable
+}
+
+% Key point box - gray with titled header
+\newtcolorbox{keypoint}{%
+  colback=dawggrey!5,
+  colframe=dawggrey!50,
+  arc=3pt,
+  boxrule=0.5pt,
+  left=6pt, right=6pt, top=6pt, bottom=6pt,
+  title={\textbf{Key Point}},
+  fonttitle=\color{dawgRed},
+  breakable
+}
+
+% Info box - teal accent for notes and tips
+\newtcolorbox{infobox}{%
+  colback=dawglakeherrick!5,
+  colframe=dawglakeherrick!50,
+  arc=3pt,
+  boxrule=0.5pt,
+  left=6pt, right=6pt, top=6pt, bottom=6pt,
+  breakable
+}
+
+% Example box - olympic blue for code examples and case studies
+\newtcolorbox{examplebox}{%
+  colback=dawgolympic!5,
+  colframe=dawgolympic!50,
+  arc=3pt,
+  boxrule=0.5pt,
+  left=6pt, right=6pt, top=6pt, bottom=6pt,
+  title={\textbf{Example}},
+  fonttitle=\color{dawgolympic},
+  breakable
+}
+
+%% ============================================================================
+%% HYPERLINK CONFIGURATION
+%% ============================================================================
+
+\usepackage[bookmarks=true,colorlinks=true]{hyperref}
+% Deferred so the brand colors win over Quarto/pandoc's own hyperref setup,
+% which is emitted after this included header and otherwise resets urlcolor.
+\AtBeginDocument{%
+  \hypersetup{
+    colorlinks=true,
+    linkcolor=dawgRed,
+    urlcolor=dawglakeherrick,
+    citecolor=dawgolympic
+  }%
+}
+
+%% ============================================================================
+%% PARAGRAPH SPACING
+%% ============================================================================
+
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}

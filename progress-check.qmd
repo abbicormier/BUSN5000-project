@@ -1,0 +1,21 @@
+# Progress Check
+
+The Project Progress Check is an **optional bonus** opportunity that
+gives you feedback on your project halfway through and rewards
+progress.
+
+## Outline (to be written)
+
+- What the progress check is and isn't
+- Which slides are graded (Title, Academic Honesty, Distribution of
+  earnings by gender, Wages and hours differences, Career log wage
+  profiles, Evolution of the gender wage gap)
+- Scoring: 5 points (clean), 3 points (formatting clean / content
+  error), 0 (formatting error)
+- How to submit
+- How feedback is provided
+
+::: {.callout-note}
+This chapter is a stub. Content will be filled in as part of Wave 2
+of the project rebuild.
+:::

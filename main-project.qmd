@@ -1,0 +1,19 @@
+# Main Project
+
+This chapter is the slide-by-slide guide to the BUSN 5000 Project:
+**Exploring Pay Differences between Women and Men**.
+
+## Outline (to be written)
+
+- Project overview and learning goals
+- Data: March 2024 CPS ASEC
+- The 35-slide deck structure
+- Slide-by-slide instructions (migrated from the current
+  Instructions HTML)
+- Point allocations per slide
+- Line limits and write-up rules
+
+::: {.callout-note}
+This chapter is a stub. Content will be filled in as part of Wave 2
+of the project rebuild.
+:::

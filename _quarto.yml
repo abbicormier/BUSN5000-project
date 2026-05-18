@@ -1,0 +1,48 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "BUSN 5000 Project Guide"
+  author: "Chris Cornwell and Abbi Cormier"
+  date: today
+  date-format: "MMMM D, YYYY"
+  chapters:
+    - index.qmd
+    - setup.qmd
+    - pre-project.qmd
+    - main-project.qmd
+    - progress-check.qmd
+    - submission.qmd
+    - common-errors.qmd
+  repo-url: https://github.com/abbicormier/BUSN5000-project
+  repo-actions: [edit, issue]
+  search: true
+  page-navigation: true
+
+format:
+  html:
+    theme:
+      - cosmo
+      - _extensions/uga/uga.scss
+      - styles.scss
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    fig-align: center
+  pdf:
+    documentclass: scrbook
+    papersize: letter
+    geometry: margin=1in
+    fontsize: 11pt
+    pdf-engine: xelatex
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    include-in-header:
+      - _extensions/uga/uga-doc.tex
+
+execute:
+  echo: true
+  warning: false
+  message: false

@@ -1,0 +1,23 @@
+# Common Errors and FAQ
+
+If something is broken, look here first.
+
+## Outline (to be written)
+
+- The "did setup work?" diagnostic (`check_setup.R`)
+- Common error catalog:
+  - CSS in the wrong folder
+  - `eval=FALSE` left on a completed chunk
+  - YAML edited
+  - Wrong working directory
+  - Missing packages
+  - Knit-to-PDF instead of HTML → PDF
+  - Incorrect filename on Gradescope
+- Communication policy (no content review by email; one thread per
+  issue; no same-issue cross-emails)
+- How to ask for help productively
+
+::: {.callout-note}
+This chapter is a stub. Content will be filled in as part of Wave 2
+of the project rebuild.
+:::

@@ -1,0 +1,20 @@
+# Setup
+
+This chapter walks you through getting your computer ready to do
+BUSN 5000 project work.
+
+## Outline (to be written)
+
+- Installing R and RStudio
+- Installing the required R packages
+- Understanding the project directory structure you'll create
+- Where each file goes (the file-sort exercise)
+- Running the setup-check script
+- Opening the `.Rproj` file
+- Verifying everything works
+
+::: {.callout-note}
+This chapter is a stub. Content will be filled in as part of Wave 2
+of the project rebuild. See `project_cleanup_findings.md` §10 in the
+working folder.
+:::

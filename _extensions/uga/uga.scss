@@ -1,0 +1,868 @@
+/**
+ * UGA reveal.js Theme
+ * University of Georgia branded theme for web presentations
+ * Consistent with BUSN 5000 course materials and beamer theme
+ *
+ * Usage in Quarto:
+ *   format:
+ *     revealjs:
+ *       theme: [default, revealjs/uga.scss]
+ */
+
+/*-- scss:defaults --*/
+
+// =============================================================================
+// COLOR DEFINITIONS
+// =============================================================================
+
+// Primary palette
+$dawg-red: #BA0C2F;
+$dawg-black: #000000;
+$dawg-white: #FFFFFF;
+$dawg-grey: #9EA2A2;
+
+// Extended palette (from BUSN 5000)
+$lake-herrick: #00A3AD;   // Teal - URLs
+$olympic: #004E60;        // Dark blue - citations
+$odyssey: #C8D8EB;        // Light blue - backgrounds
+$creamery: #D6D2C4;       // Cream - block backgrounds
+
+// Utility colors
+$light-gray: #EEEEEE;
+$mid-gray: #999999;
+$slate: #333333;
+
+// Legacy aliases
+$bulldog-red: $dawg-red;
+$arch-black: $dawg-black;
+
+// =============================================================================
+// BASE SETTINGS
+// =============================================================================
+
+// Background
+$backgroundColor: $dawg-white;
+$mainColor: $dawg-black;
+
+// Typography
+$mainFont: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headingFont: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$codeFont: 'Source Code Pro', 'Fira Code', 'Monaco', 'Consolas', monospace;
+
+$mainFontSize: 36px;
+$headingColor: $dawg-red;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+
+// Heading sizes
+$heading1Size: 2.2em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+// Links
+$linkColor: $lake-herrick;
+$linkColorHover: lighten($lake-herrick, 10%);
+
+// Selection
+$selectionBackgroundColor: rgba($dawg-red, 0.25);
+$selectionColor: $dawg-black;
+
+// Code
+$codeBackground: $light-gray;
+
+// Block quotes
+$blockquoteBorderColor: $dawg-red;
+$blockquoteBackground: $creamery;
+
+/*-- scss:rules --*/
+
+// =============================================================================
+// SLIDE STRUCTURE
+// =============================================================================
+
+.reveal {
+  // Base slide styling
+  .slides {
+    text-align: left;
+  }
+
+  // Section/slide backgrounds
+  section {
+    // Ensure consistent background
+    &[data-background-color] {
+      // Custom backgrounds override default
+    }
+  }
+
+  // Title slide styling
+  .title-slide,
+  #title-slide {
+    text-align: center;
+
+    h1.title {
+      color: $dawg-white;
+      background-color: $dawg-red;
+      padding: 0.4em 0.6em;
+      margin-bottom: 0.3em;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+
+    h2.subtitle,
+    p.subtitle {
+      color: $slate;
+      font-size: 1.1em;
+      margin-top: 0.5em;
+      font-weight: 400;
+    }
+
+    .author,
+    p.author {
+      color: $dawg-black;
+      font-weight: 500;
+      margin-top: 1em;
+      font-size: 0.9em;
+    }
+
+    .institute,
+    p.institute {
+      color: $dawg-grey;
+      font-size: 0.8em;
+    }
+
+    .date,
+    p.date {
+      color: $dawg-grey;
+      font-size: 0.75em;
+      margin-top: 0.8em;
+    }
+  }
+}
+
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+
+.reveal {
+  // Headings - red text on white background (matching beamer)
+  h1, h2, h3, h4, h5, h6 {
+    color: $dawg-red;
+    font-weight: $headingFontWeight;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+  }
+
+  // Slide titles (h2 in reveal.js)
+  h2 {
+    border-bottom: 3px solid $dawg-red;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.6em;
+  }
+
+  // Section headers (larger h1)
+  section.center h1 {
+    text-align: center;
+  }
+
+  // Body text
+  p {
+    line-height: 1.5;
+    margin-bottom: 0.8em;
+  }
+
+  // Strong/bold in red for emphasis
+  strong, b {
+    color: $dawg-red;
+    font-weight: 600;
+  }
+
+  // Links
+  a {
+    color: $linkColor;
+    text-decoration: none;
+    border-bottom: 1px dotted $linkColor;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      color: $linkColorHover;
+      border-bottom-color: $linkColorHover;
+    }
+  }
+
+  // Citation-style links (dark blue)
+  a.citation,
+  .citation a {
+    color: $olympic;
+    border-bottom-color: $olympic;
+
+    &:hover {
+      color: lighten($olympic, 15%);
+    }
+  }
+}
+
+// =============================================================================
+// LISTS - Black bullets/numbers (NOT red)
+// =============================================================================
+
+.reveal {
+  ul, ol {
+    margin-left: 0;
+    padding-left: 1.2em;
+
+    li {
+      margin-bottom: 0.4em;
+      line-height: 1.4;
+    }
+  }
+
+  // Unordered lists
+  ul {
+    list-style-type: disc;
+
+    li::marker {
+      color: $dawg-black;
+    }
+
+    ul {
+      list-style-type: circle;
+      margin-top: 0.3em;
+
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+
+  // Ordered lists
+  ol {
+    list-style-type: decimal;
+
+    li::marker {
+      color: $dawg-black;
+      font-weight: 600;
+    }
+
+    ol {
+      list-style-type: lower-alpha;
+      margin-top: 0.3em;
+    }
+  }
+
+  // Definition lists
+  dl {
+    dt {
+      font-weight: 600;
+      color: $dawg-red;
+      margin-top: 0.8em;
+    }
+
+    dd {
+      margin-left: 1.5em;
+      color: $slate;
+    }
+  }
+}
+
+// =============================================================================
+// CODE BLOCKS
+// =============================================================================
+
+.reveal {
+  // Inline code
+  code {
+    background-color: $light-gray;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: $slate;
+  }
+
+  // Code blocks
+  pre {
+    background-color: $light-gray;
+    border-left: 4px solid $dawg-red;
+    border-radius: 0 4px 4px 0;
+    padding: 0.8em 1em;
+    font-size: 0.55em;
+    line-height: 1.4;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+
+    code {
+      background: none;
+      padding: 0;
+      max-height: 450px;
+      overflow: auto;
+    }
+  }
+}
+
+// =============================================================================
+// BLOCK ELEMENTS
+// =============================================================================
+
+.reveal {
+  // Block quotes
+  blockquote {
+    background-color: $creamery;
+    border-left: 5px solid $dawg-red;
+    padding: 0.8em 1.2em;
+    margin: 1em 0;
+    font-style: italic;
+    color: $slate;
+    border-radius: 0 4px 4px 0;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    cite {
+      display: block;
+      margin-top: 0.5em;
+      font-size: 0.85em;
+      color: $olympic;
+      font-style: normal;
+
+      &::before {
+        content: "— ";
+      }
+    }
+  }
+
+  // Callout boxes (Quarto)
+  .callout {
+    border-radius: 4px;
+    padding: 0.8em 1em;
+    margin: 1em 0;
+    border-left: 4px solid;
+
+    &.callout-note {
+      background-color: rgba($odyssey, 0.5);
+      border-left-color: $olympic;
+    }
+
+    &.callout-warning {
+      background-color: rgba(255, 193, 7, 0.15);
+      border-left-color: #ffc107;
+    }
+
+    &.callout-important,
+    &.callout-caution {
+      background-color: rgba($dawg-red, 0.1);
+      border-left-color: $dawg-red;
+    }
+
+    &.callout-tip {
+      background-color: rgba($lake-herrick, 0.1);
+      border-left-color: $lake-herrick;
+    }
+
+    .callout-title {
+      font-weight: 600;
+      margin-bottom: 0.3em;
+    }
+  }
+}
+
+// =============================================================================
+// TABLES
+// =============================================================================
+
+.reveal {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 0.8em;
+
+    th {
+      background-color: $dawg-red;
+      color: $dawg-white;
+      font-weight: 600;
+      padding: 0.6em 0.8em;
+      text-align: left;
+      border-bottom: 2px solid darken($dawg-red, 10%);
+    }
+
+    td {
+      padding: 0.5em 0.8em;
+      border-bottom: 1px solid $light-gray;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba($creamery, 0.4);
+    }
+
+    tr:hover {
+      background-color: rgba($odyssey, 0.3);
+    }
+
+    // Striped variant
+    &.striped tbody tr:nth-child(odd) {
+      background-color: rgba($creamery, 0.3);
+    }
+  }
+}
+
+// =============================================================================
+// FOOTER (Three-section like beamer)
+// =============================================================================
+
+// Hide default Quarto footer (we use our own)
+.reveal .footer {
+  display: none !important;
+}
+
+// Hide any Quarto/reveal.js elements that might show at the bottom
+.reveal .controls-arrow,
+.reveal .navigate-left,
+.reveal .navigate-right,
+.reveal .navigate-up,
+.reveal .navigate-down {
+  border-color: $dawg-grey !important;
+}
+
+// Remove any stray borders or backgrounds from reveal container
+.reveal::before,
+.reveal::after,
+.reveal .slides::before,
+.reveal .slides::after {
+  display: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+// Three-section footer implementation
+.uga-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 2.2em;
+  font-size: 14px;
+  z-index: 1000;
+
+  .footer-author {
+    flex: 2;
+    background-color: $dawg-red;
+    color: $dawg-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1em;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .footer-title {
+    flex: 1;
+    background-color: $odyssey;
+    color: $dawg-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .footer-info {
+    flex: 2;
+    background-color: $lake-herrick;
+    color: $dawg-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1em;
+    position: relative;
+
+    .footer-date {
+      white-space: nowrap;
+      color: $dawg-white !important;
+    }
+
+    .slide-number {
+      white-space: nowrap;
+      color: $dawg-white !important;
+      font-weight: 600;
+      position: absolute;
+      right: 1em;
+    }
+  }
+}
+
+// =============================================================================
+// PROGRESS BAR
+// =============================================================================
+
+// Hide progress bar completely (footer provides slide numbers)
+// Must hide both container and span to prevent teal line from showing
+.reveal .progress {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+
+  span {
+    display: none !important;
+    visibility: hidden !important;
+    background: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+
+// Hide any stray progress-related elements
+.progress,
+.reveal .progress-bar {
+  display: none !important;
+}
+
+// Ensure no teal lines appear from progress or playback elements
+.reveal .playback {
+  display: none !important;
+}
+
+// Override any leftover reveal.js styling at bottom
+.reveal .slide-background-content::before,
+.reveal .slide-background-content::after {
+  display: none !important;
+}
+
+// =============================================================================
+// SLIDE NUMBER
+// =============================================================================
+
+// Hide built-in slide number (we use our own in the footer)
+// Use direct child selector to avoid hiding our custom .slide-number in .uga-footer
+.reveal > .slide-number {
+  display: none !important;
+}
+
+// =============================================================================
+// COLUMNS LAYOUT
+// =============================================================================
+
+.reveal {
+  .columns {
+    display: flex;
+    gap: 2em;
+
+    .column {
+      flex: 1;
+
+      &:first-child {
+        padding-right: 1em;
+      }
+
+      &:last-child {
+        padding-left: 1em;
+      }
+    }
+  }
+}
+
+// =============================================================================
+// IMAGES AND FIGURES
+// =============================================================================
+
+.reveal {
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  figure {
+    margin: 1em 0;
+
+    figcaption {
+      font-size: 0.7em;
+      color: $dawg-grey;
+      text-align: center;
+      margin-top: 0.5em;
+      font-style: italic;
+    }
+  }
+
+  // R/ggplot output
+  .cell-output-display {
+    text-align: center;
+
+    img {
+      max-height: 500px;
+    }
+  }
+}
+
+// =============================================================================
+// MATH
+// =============================================================================
+
+.reveal {
+  .math {
+    color: $dawg-black;
+  }
+
+  // Display math
+  .math.display {
+    margin: 1em 0;
+    font-size: 1.1em;
+  }
+}
+
+// =============================================================================
+// FRAGMENTS AND ANIMATIONS
+// =============================================================================
+
+.reveal {
+  .fragment {
+    transition: all 0.3s ease;
+
+    &.highlight-red {
+      &.visible {
+        color: $dawg-red;
+      }
+    }
+
+    &.highlight-current-red {
+      &.current-fragment {
+        color: $dawg-red;
+      }
+    }
+  }
+}
+
+// =============================================================================
+// SPEAKER NOTES
+// =============================================================================
+
+.reveal .speaker-notes {
+  font-family: $mainFont;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $slate;
+  background-color: $dawg-white;
+}
+
+// =============================================================================
+// PRINT STYLES
+// =============================================================================
+
+@media print {
+  .reveal {
+    .slides section {
+      page-break-after: always;
+    }
+
+    .uga-footer {
+      position: relative;
+      margin-top: 1em;
+    }
+
+    .progress {
+      display: none;
+    }
+  }
+}
+
+// =============================================================================
+// RESPONSIVE ADJUSTMENTS
+// =============================================================================
+
+@media screen and (max-width: 768px) {
+  .reveal {
+    font-size: 28px;
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    pre {
+      font-size: 0.5em;
+    }
+  }
+
+  .uga-footer {
+    font-size: 11px;
+
+    .footer-title {
+      display: none;
+    }
+
+    .footer-author {
+      flex: 0 0 50%;
+    }
+
+    .footer-info {
+      flex: 0 0 50%;
+    }
+  }
+}
+
+// =============================================================================
+// SECTION DIVIDERS
+// =============================================================================
+
+.reveal {
+  // Section title slides (centered)
+  section.section-slide,
+  section[data-section-slide="true"] {
+    h1 {
+      background-color: $dawg-red;
+      color: $dawg-white;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      display: inline-block;
+    }
+  }
+
+  // Background variants
+  &.has-light-background {
+    color: $dawg-black;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $dawg-red;
+    }
+  }
+
+  &.has-dark-background {
+    color: $dawg-white;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $dawg-white;
+    }
+
+    a {
+      color: lighten($lake-herrick, 20%);
+    }
+  }
+}
+
+// =============================================================================
+// QUARTO-SPECIFIC OVERRIDES
+// =============================================================================
+
+// Panel tabsets
+.reveal .panel-tabset {
+  .nav-tabs {
+    border-bottom: 2px solid $light-gray;
+    margin-bottom: 1em;
+
+    .nav-link {
+      color: $slate;
+      border: none;
+      padding: 0.5em 1em;
+      margin-right: 0.5em;
+      border-radius: 4px 4px 0 0;
+
+      &:hover {
+        background-color: $light-gray;
+      }
+
+      &.active {
+        background-color: $dawg-red;
+        color: $dawg-white;
+      }
+    }
+  }
+}
+
+// Footnotes
+.reveal .footnotes {
+  font-size: 0.6em;
+  color: $dawg-grey;
+  border-top: 1px solid $light-gray;
+  margin-top: 1.5em;
+  padding-top: 0.5em;
+}
+
+// References
+.reveal #refs {
+  font-size: 0.65em;
+
+  .csl-entry {
+    margin-bottom: 0.5em;
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+  }
+}
+
+// =============================================================================
+// NUCLEAR OVERRIDES - Final catch-all rules
+// =============================================================================
+
+// Force our footer's slide-number styling
+.reveal .uga-footer .footer-info .slide-number,
+.uga-footer .footer-info .slide-number,
+.uga-footer .slide-number {
+  color: $dawg-white !important;
+  background: transparent !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  // Use our absolute positioning (right-aligned in footer)
+  position: absolute !important;
+  right: 1em !important;
+  bottom: auto !important;
+  top: auto !important;
+  left: auto !important;
+  font-size: inherit !important;
+}
+
+// Hide the built-in reveal.js slide number completely (it's teal by default)
+.reveal > .slide-number,
+.reveal .slide-number:not(.uga-footer .slide-number) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+// Kill any element that might appear as a colored bar at the bottom
+.reveal-viewport::after,
+.reveal::after,
+body::after {
+  display: none !important;
+  content: none !important;
+}
+
+// Ensure Quarto's default footer elements are completely gone
+.reveal .footer,
+.reveal .slide-footer,
+.reveal footer {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}
+
+// Fix the slide-menu-button (hamburger menu) at bottom-left
+// It inherits link styling and shows a teal border - remove it
+.reveal .slide-menu-button,
+.reveal .slide-menu-button a,
+.slide-menu-button {
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+// Also fix the chalkboard buttons if present
+.reveal .slide-chalkboard-buttons,
+.reveal .slide-chalkboard-buttons a {
+  border: none !important;
+  border-bottom: none !important;
+}
