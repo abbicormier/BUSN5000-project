@@ -56,8 +56,13 @@ files to that same directory:
   extract from the raw CPS files
 - `cpsmar24_documentation.pdf` — the CPS codebook (variable
   definitions, value codes)
-- `Project_Progress_Check_Tables_and_Figures.pdf` — reference for
-  the progress check (Week 4)
+<!--
+  TODO: `Project_Progress_Check_Tables_and_Figures.pdf` was
+  intentionally removed from this list. It is being gated so
+  students only see it between the progress check deadline and the
+  final project due date. The hosting/gating mechanism is still
+  TBD — see notes.Rmd Wave 2 File packs.
+-->
 - `project_progress_check_template.html` — a partial knit showing
   the project's initial tables and figures
 - `check_setup_project.R` — verifies your file sort for the main
