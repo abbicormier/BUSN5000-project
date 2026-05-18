@@ -1,0 +1,152 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BUSN 5000 Project Guide",
+    "section": "",
+    "text": "Preface\nWelcome to the BUSN 5000 Project Guide — the canonical reference for the Pre-project, Project Progress Check, and Final Project for BUSN 5000 (Intro to Data Science for Business and Economics) at the University of Georgia.\nThis guide covers:\nThe guide is the single source of truth. Announcements on eLC remind you of upcoming deadlines and point back here for the rules.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-this-guide",
+    "href": "index.html#how-to-use-this-guide",
+    "title": "BUSN 5000 Project Guide",
+    "section": "How to use this guide",
+    "text": "How to use this guide\nRead the chapters in order the first time through. After that, treat it as a reference — jump to whatever section you need. Each chapter has its own table of contents in the sidebar.\nIf you find a section that’s wrong, unclear, or out of date, please flag it via the “report an issue” link at the top of any page.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgments",
+    "href": "index.html#acknowledgments",
+    "title": "BUSN 5000 Project Guide",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nThe course materials in this guide are by Chris Cornwell and Abbi Cormier, with substantial contributions from the BUSN 5000 teaching team across many semesters.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "1  Setup",
+    "section": "",
+    "text": "1.1 Outline (to be written)\nThis chapter walks you through getting your computer ready to do BUSN 5000 project work.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "setup.html#outline-to-be-written",
+    "href": "setup.html#outline-to-be-written",
+    "title": "1  Setup",
+    "section": "",
+    "text": "Installing R and RStudio\nInstalling the required R packages\nUnderstanding the project directory structure you’ll create\nWhere each file goes (the file-sort exercise)\nRunning the setup-check script\nOpening the .Rproj file\nVerifying everything works\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild. See project_cleanup_findings.md §10 in the working folder.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "pre-project.html",
+    "href": "pre-project.html",
+    "title": "2  Pre-project",
+    "section": "",
+    "text": "2.1 Outline (to be written)\nThis chapter covers the BUSN 5000 Pre-project Exercise.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-project</span>"
+    ]
+  },
+  {
+    "objectID": "pre-project.html#outline-to-be-written",
+    "href": "pre-project.html#outline-to-be-written",
+    "title": "2  Pre-project",
+    "section": "",
+    "text": "Purpose of the pre-project\nWhat you’ll produce (a 3-slide deck demonstrating setup)\nStep-by-step walkthrough\nSubmission rubric (all-or-nothing 5 points; common formatting errors)\nFilename convention\nCommon mistakes and how to avoid them\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Pre-project</span>"
+    ]
+  },
+  {
+    "objectID": "main-project.html",
+    "href": "main-project.html",
+    "title": "3  Main Project",
+    "section": "",
+    "text": "3.1 Outline (to be written)\nThis chapter is the slide-by-slide guide to the BUSN 5000 Project: Exploring Pay Differences between Women and Men.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Main Project</span>"
+    ]
+  },
+  {
+    "objectID": "main-project.html#outline-to-be-written",
+    "href": "main-project.html#outline-to-be-written",
+    "title": "3  Main Project",
+    "section": "",
+    "text": "Project overview and learning goals\nData: March 2024 CPS ASEC\nThe 35-slide deck structure\nSlide-by-slide instructions (migrated from the current Instructions HTML)\nPoint allocations per slide\nLine limits and write-up rules\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Main Project</span>"
+    ]
+  },
+  {
+    "objectID": "progress-check.html",
+    "href": "progress-check.html",
+    "title": "4  Progress Check",
+    "section": "",
+    "text": "4.1 Outline (to be written)\nThe Project Progress Check is an optional bonus opportunity that gives you feedback on your project halfway through and rewards progress.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
+    ]
+  },
+  {
+    "objectID": "progress-check.html#outline-to-be-written",
+    "href": "progress-check.html#outline-to-be-written",
+    "title": "4  Progress Check",
+    "section": "",
+    "text": "What the progress check is and isn’t\nWhich slides are graded (Title, Academic Honesty, Distribution of earnings by gender, Wages and hours differences, Career log wage profiles, Evolution of the gender wage gap)\nScoring: 5 points (clean), 3 points (formatting clean / content error), 0 (formatting error)\nHow to submit\nHow feedback is provided\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Progress Check</span>"
+    ]
+  },
+  {
+    "objectID": "submission.html",
+    "href": "submission.html",
+    "title": "5  Submission",
+    "section": "",
+    "text": "5.1 Outline (to be written)\nThis chapter covers how to submit your work to Gradescope without losing points to formatting.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
+    ]
+  },
+  {
+    "objectID": "submission.html#outline-to-be-written",
+    "href": "submission.html#outline-to-be-written",
+    "title": "5  Submission",
+    "section": "",
+    "text": "Filename convention (sectiontime_lastname_firstname_*.pdf)\nPDF format (landscape, color, formatting preserved)\nThe HTML → PDF workflow (not knit-to-PDF)\nBrowser-specific save-as-PDF tips\nWhat “100% compliant with the knitted template” means in practice\nDeadlines and late-submission policy\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Submission</span>"
+    ]
+  },
+  {
+    "objectID": "common-errors.html",
+    "href": "common-errors.html",
+    "title": "6  Common Errors and FAQ",
+    "section": "",
+    "text": "6.1 Outline (to be written)\nIf something is broken, look here first.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors and FAQ</span>"
+    ]
+  },
+  {
+    "objectID": "common-errors.html#outline-to-be-written",
+    "href": "common-errors.html#outline-to-be-written",
+    "title": "6  Common Errors and FAQ",
+    "section": "",
+    "text": "The “did setup work?” diagnostic (check_setup.R)\nCommon error catalog:\n\nCSS in the wrong folder\neval=FALSE left on a completed chunk\nYAML edited\nWrong working directory\nMissing packages\nKnit-to-PDF instead of HTML → PDF\nIncorrect filename on Gradescope\n\nCommunication policy (no content review by email; one thread per issue; no same-issue cross-emails)\nHow to ask for help productively\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors and FAQ</span>"
+    ]
+  }
+]
