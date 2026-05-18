@@ -126,19 +126,17 @@ line (e.g., the `output:` value, the `css:` reference, the
 
 **Fix:**
 
-1. Download a fresh copy of the relevant Rmd
-   (`pre_project.Rmd` or `project.Rmd`) from the file pack on
-   eLC. Save it somewhere temporary like your Downloads folder —
-   not in your `Project/` directory.
-2. Open the fresh copy. Copy the entire YAML block (the section
-   between the two `---` markers at the top of the file).
+1. Identify which Rmd is broken: `pre_project.Rmd` or
+   `project.Rmd`.
+2. Copy the canonical YAML block from the relevant chapter:
+   - **Pre-project:** the YAML block is in
+     [Pre-project Step 4](pre-project.qmd#step-4-fill-in-the-yaml-author-line).
+   - **Main project:** the YAML block is in
+     [Main Project — The YAML block](main-project.qmd#the-yaml-block).
 3. Open your working Rmd. Replace your current YAML with the YAML
    you just copied.
 4. Re-add your name on the `author:` line.
-5. **Delete the fresh Rmd copy** from your Downloads folder so you
-   don't accidentally start working in it instead of your real
-   file.
-6. Re-knit.
+5. Re-knit.
 
 ### Using the Knit dropdown instead of the Knit button
 

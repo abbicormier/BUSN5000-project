@@ -98,6 +98,25 @@ author: "Jane Doe"
 Don't change anything else in the YAML. This is the most common
 place students introduce formatting errors.
 
+The canonical pre-project YAML block (for reference and recovery if
+yours gets corrupted):
+
+```yaml
+---
+title: "BUSN 5000 :: Pre-Project Exercise"
+subtitle: Measuring Labor Force Participation
+author: "First Name Last Name"
+date: |
+    | Summer 2026
+    | (updated `r format(Sys.time(), '%d %b %y')`)
+output:
+  ioslides_presentation:
+    css: css/project_slidedeck.css
+    widescreen: false
+urlcolor: "#004E60"  # Use hex code for Olympic blue from visual UGA guide
+---
+```
+
 ### Step 5: Complete the code chunk on Slide 2
 
 Slide 2 is titled "Read `LF.csv` and print its contents." The code

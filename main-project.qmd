@@ -20,7 +20,25 @@ The project is intentionally built to mirror the course content
 week by week. As you cover new material in class, the next chunk
 of the project becomes doable.
 
-![Project-course alignment](assets/instructions_img_1.png){fig-alt="Diagram showing how the 35 project slides map to weeks 1-7 of the course: Week 1 Data Fundamentals → Slides 1-7; Week 2 Beginning to Learn → Slides 8-12; Week 3 Models for Exploration → Slides 13-20; Week 4 Making Inferences → Slides 21-26; Week 5 Sources of Bias → Through Slide 20 (optional check); Week 7 Regression Fundamentals → Slides 27-35"}
+![Project-course alignment](assets/instructions_img_1.png){fig-alt="Diagram showing how the 35 project slides map to weeks 1-7 of the in-person course: Week 1 Data Fundamentals → Slides 1-7; Week 2 Beginning to Learn → Slides 8-12; Week 3 Models for Exploration → Slides 13-20; Week 4 Making Inferences → Slides 21-26; Week 5 Sources of Bias → Through Slide 20 (optional check); Week 7 Regression Fundamentals → Slides 27-35"}
+
+::: {.callout-note}
+## BUSN 5000E summer schedule
+
+The image above shows the in-person (16-week) Spring/Fall pacing.
+The BUSN 5000E summer schedule is condensed — two course modules
+per calendar week. Re-mapped to BUSN 5000E calendar weeks:
+
+- **Week 1** (Modules 1–2, Data Fundamentals + Beginning to
+  Learn): unlocks project slides 1–12
+- **Week 2** (Modules 3–4, Models for Exploration + Making
+  Inferences): unlocks slides 13–20
+- **Week 3** (Modules 5–6, Measurement Error & Confounding):
+  optional check on tables & figures through slide 20
+- **Week 4** (Modules 7–8, Bayesian + Regression Fundamentals):
+  unlocks slides 21–35; **Project Progress Check due Mon Jul 6**
+- **Week 7**: **Final Project due Thu Jul 23**
+:::
 
 If you fall behind on the course content, the project gets harder
 fast. Stay on schedule.
@@ -72,14 +90,36 @@ slide's section below). **We will not read beyond the line limit.**
 Stay disciplined — concise writing is what's being graded, not
 volume.
 
+::: {.callout-important}
+## What counts as a "line"
+
+"Lines of text" means **rendered, countable lines on your final
+PDF** — not sentences, and not lines as they appear in RStudio's
+editor or output preview. A long sentence that wraps into three
+visual lines on the rendered slide counts as three lines.
+
+Submissions that exceed the line limit are **heavily penalized**.
+Always check your knitted PDF and count the actual visible lines
+on the slide before you submit.
+:::
+
 ### Echo settings
 
 The template's global `echo = TRUE` setting displays your code on
-each slide by default. A handful of chunks individually set
-`echo = FALSE` (the `.5` chunks that display tables/figures, the
-three `datasummary` chunks, and the appendix `var_doc_table`).
+each slide by default. We've individually overridden this to
+`echo = FALSE` on a specific list of chunks where displaying the
+code would be redundant or take up unnecessary space:
+
+- The `.5` chunks (`btl2.5`, `mi2.5`, `mi3.5`, `reg1.5`, `reg2.5`)
+  — these display tables and figures from objects defined in the
+  previous chunk; the "code" is just the object name.
+- The three `datasummary` chunks (`mi1`, `ed_vars`, `demo_vars`)
+  — `datasummary` calls are long and not informative to show.
+- The appendix `var_doc_table` chunk — just renders the
+  documentation table built in `var_doc`.
+
 **Do not edit these `echo` settings.** They exist to keep the deck
-to 35 slides.
+to exactly 35 slides.
 
 ### HTML commands wrapping chunks
 
@@ -95,6 +135,24 @@ should make to the YAML. After your name is in, save the file
 under a new name following the convention from the
 [Submission chapter](submission.qmd#filename-conventions):
 `firstname_lastname_project.Rmd`.
+
+The canonical project YAML block (for reference and recovery if
+yours gets corrupted):
+
+```yaml
+---
+title: "BUSN 5000 Project"
+subtitle: "Exploring Pay Differences between Women and Men"
+author: "First Name Last Name"
+date: |
+    | Summer 2026
+    | (updated `r format(Sys.time(), '%d %b %y')`)
+output:
+  ioslides_presentation:
+    css: css/project_slidedeck.css
+    widescreen: true
+---
+```
 
 ::: {.callout-important}
 **Do not change anything else in the YAML.** Edits beyond the
@@ -124,6 +182,15 @@ the top-right of the chunk), set `eval = TRUE` on that chunk so
 its output appears when you knit. You can run individual chunks
 without knitting the entire document.
 :::
+
+## A note on units
+
+Throughout your write-ups, use **percent** and **percentage point**
+correctly. They are not interchangeable.
+
+A wage gap going from 25% to 20% is a **5 percentage point**
+decrease — not a 5% decrease. (A 5% decrease from 25% would be
+23.75%, not 20%.) Mixing the two is a recurring point of deduction.
 
 ## Slide-by-slide instructions
 
@@ -386,13 +453,19 @@ In the regression analysis, you'll distinguish between personal
 and household characteristics among the demographic variables.
 
 ::: {.callout-tip}
-## Pro tip
+## Pro tips
 
-Moving from top to bottom in the `models` object, the list of
-controls grows as indicated by the name of the model — with the
-exception of the final model "Only Singles", which estimates the
-same relationship as the "Add Person" model but on the new
-subset.
+- Moving from top to bottom in the `models` object, the list of
+  controls grows as indicated by the name of the model — with the
+  exception of the final model "Only Singles", which estimates
+  the same relationship as the "Add Person" model but on the new
+  subset.
+- To decide whether a variable belongs in the "Add Person" or
+  "Add Household" model, ask yourself: *"Can I define this
+  variable for a particular individual irrespective of other
+  individuals who may or may not exist in their life?"* If yes →
+  Person. If no (it depends on someone else, like a spouse or a
+  child) → Household.
 :::
 
 #### Slide 28: Reporting the results
