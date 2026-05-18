@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Common Errors and FAQ – BUSN 5000 Project Guide</title>
+<title>6&nbsp; Common Errors – BUSN 5000 Project Guide</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./common-errors.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Common Errors and FAQ</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./common-errors.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Common Errors</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./common-errors.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Common Errors and FAQ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Common Errors</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -171,7 +171,44 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#outline-to-be-written" id="toc-outline-to-be-written" class="nav-link active" data-scroll-target="#outline-to-be-written"><span class="header-section-number">6.1</span> Outline (to be written)</a></li>
+  <li><a href="#how-to-use-this-chapter" id="toc-how-to-use-this-chapter" class="nav-link active" data-scroll-target="#how-to-use-this-chapter"><span class="header-section-number">6.1</span> How to use this chapter</a></li>
+  <li><a href="#setup-errors" id="toc-setup-errors" class="nav-link" data-scroll-target="#setup-errors"><span class="header-section-number">6.2</span> Setup errors</a>
+  <ul class="collapse">
+  <li><a href="#css-in-the-wrong-folder" id="toc-css-in-the-wrong-folder" class="nav-link" data-scroll-target="#css-in-the-wrong-folder"><span class="header-section-number">6.2.1</span> CSS in the wrong folder</a></li>
+  <li><a href="#working-from-your-downloads-folder" id="toc-working-from-your-downloads-folder" class="nav-link" data-scroll-target="#working-from-your-downloads-folder"><span class="header-section-number">6.2.2</span> Working from your Downloads folder</a></li>
+  <li><a href="#required-files-missing-or-in-the-wrong-subfolder" id="toc-required-files-missing-or-in-the-wrong-subfolder" class="nav-link" data-scroll-target="#required-files-missing-or-in-the-wrong-subfolder"><span class="header-section-number">6.2.3</span> Required files missing or in the wrong subfolder</a></li>
+  </ul></li>
+  <li><a href="#workflow-errors" id="toc-workflow-errors" class="nav-link" data-scroll-target="#workflow-errors"><span class="header-section-number">6.3</span> Workflow errors</a>
+  <ul class="collapse">
+  <li><a href="#knitting-before-running-the-r-script" id="toc-knitting-before-running-the-r-script" class="nav-link" data-scroll-target="#knitting-before-running-the-r-script"><span class="header-section-number">6.3.1</span> Knitting before running the R script</a></li>
+  <li><a href="#variable-name-confusion" id="toc-variable-name-confusion" class="nav-link" data-scroll-target="#variable-name-confusion"><span class="header-section-number">6.3.2</span> Variable name confusion</a></li>
+  <li><a href="#touching-the-setup-chunk" id="toc-touching-the-setup-chunk" class="nav-link" data-scroll-target="#touching-the-setup-chunk"><span class="header-section-number">6.3.3</span> Touching the setup chunk</a></li>
+  </ul></li>
+  <li><a href="#rendering-errors-the-knit-step" id="toc-rendering-errors-the-knit-step" class="nav-link" data-scroll-target="#rendering-errors-the-knit-step"><span class="header-section-number">6.4</span> Rendering errors (the knit step)</a>
+  <ul class="collapse">
+  <li><a href="#leaving-eval-false-on-a-completed-chunk" id="toc-leaving-eval-false-on-a-completed-chunk" class="nav-link" data-scroll-target="#leaving-eval-false-on-a-completed-chunk"><span class="header-section-number">6.4.1</span> Leaving <code>eval = FALSE</code> on a completed chunk</a></li>
+  <li><a href="#editing-the-yaml-beyond-the-author-line" id="toc-editing-the-yaml-beyond-the-author-line" class="nav-link" data-scroll-target="#editing-the-yaml-beyond-the-author-line"><span class="header-section-number">6.4.2</span> Editing the YAML beyond the author line</a></li>
+  <li><a href="#using-the-knit-dropdown-instead-of-the-knit-button" id="toc-using-the-knit-dropdown-instead-of-the-knit-button" class="nav-link" data-scroll-target="#using-the-knit-dropdown-instead-of-the-knit-button"><span class="header-section-number">6.4.3</span> Using the Knit dropdown instead of the Knit button</a></li>
+  </ul></li>
+  <li><a href="#output-format-errors" id="toc-output-format-errors" class="nav-link" data-scroll-target="#output-format-errors"><span class="header-section-number">6.5</span> Output format errors</a>
+  <ul class="collapse">
+  <li><a href="#wrong-css" id="toc-wrong-css" class="nav-link" data-scroll-target="#wrong-css"><span class="header-section-number">6.5.1</span> Wrong CSS</a></li>
+  <li><a href="#wrong-css-wrong-orientation" id="toc-wrong-css-wrong-orientation" class="nav-link" data-scroll-target="#wrong-css-wrong-orientation"><span class="header-section-number">6.5.2</span> Wrong CSS + wrong orientation</a></li>
+  <li><a href="#wrong-orientation" id="toc-wrong-orientation" class="nav-link" data-scroll-target="#wrong-orientation"><span class="header-section-number">6.5.3</span> Wrong orientation</a></li>
+  <li><a href="#long-landscape" id="toc-long-landscape" class="nav-link" data-scroll-target="#long-landscape"><span class="header-section-number">6.5.4</span> Long landscape</a></li>
+  <li><a href="#portrait" id="toc-portrait" class="nav-link" data-scroll-target="#portrait"><span class="header-section-number">6.5.5</span> Portrait</a></li>
+  <li><a href="#portrait-wrong-css" id="toc-portrait-wrong-css" class="nav-link" data-scroll-target="#portrait-wrong-css"><span class="header-section-number">6.5.6</span> Portrait + wrong CSS</a></li>
+  <li><a href="#latex-slides-knit-to-pdf-slide-format" id="toc-latex-slides-knit-to-pdf-slide-format" class="nav-link" data-scroll-target="#latex-slides-knit-to-pdf-slide-format"><span class="header-section-number">6.5.7</span> LaTeX slides (knit-to-PDF, slide format)</a></li>
+  <li><a href="#latex-document-knit-to-pdf-document-format" id="toc-latex-document-knit-to-pdf-document-format" class="nav-link" data-scroll-target="#latex-document-knit-to-pdf-document-format"><span class="header-section-number">6.5.8</span> LaTeX document (knit-to-PDF, document format)</a></li>
+  <li><a href="#not-knit" id="toc-not-knit" class="nav-link" data-scroll-target="#not-knit"><span class="header-section-number">6.5.9</span> Not knit</a></li>
+  <li><a href="#wrong-file" id="toc-wrong-file" class="nav-link" data-scroll-target="#wrong-file"><span class="header-section-number">6.5.10</span> Wrong file</a></li>
+  </ul></li>
+  <li><a href="#content-errors" id="toc-content-errors" class="nav-link" data-scroll-target="#content-errors"><span class="header-section-number">6.6</span> Content errors</a>
+  <ul class="collapse">
+  <li><a href="#numbers-in-your-paragraph-dont-match-lf.csv-pre-project" id="toc-numbers-in-your-paragraph-dont-match-lf.csv-pre-project" class="nav-link" data-scroll-target="#numbers-in-your-paragraph-dont-match-lf.csv-pre-project"><span class="header-section-number">6.6.1</span> Numbers in your paragraph don’t match <code>LF.csv</code> (pre-project)</a></li>
+  <li><a href="#wrong-filename" id="toc-wrong-filename" class="nav-link" data-scroll-target="#wrong-filename"><span class="header-section-number">6.6.2</span> Wrong filename</a></li>
+  </ul></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help"><span class="header-section-number">6.7</span> Getting help</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/abbicormier/BUSN5000-project/edit/main/common-errors.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/abbicormier/BUSN5000-project/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -180,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Common Errors and FAQ</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Common Errors</span></h1>
 </div>
 
 
@@ -197,37 +234,246 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>If something is broken, look here first.</p>
-<section id="outline-to-be-written" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="outline-to-be-written"><span class="header-section-number">6.1</span> Outline (to be written)</h2>
+<p>If something has gone wrong, look here first. This chapter is a diagnostic catalog of the failure modes we see most often, organized roughly in the order they tend to bite during the project workflow.</p>
+<section id="how-to-use-this-chapter" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="how-to-use-this-chapter"><span class="header-section-number">6.1</span> How to use this chapter</h2>
 <ul>
-<li>The “did setup work?” diagnostic (<code>check_setup.R</code>)</li>
-<li>Common error catalog:
-<ul>
-<li>CSS in the wrong folder</li>
-<li><code>eval=FALSE</code> left on a completed chunk</li>
-<li>YAML edited</li>
-<li>Wrong working directory</li>
-<li>Missing packages</li>
-<li>Knit-to-PDF instead of HTML → PDF</li>
-<li>Incorrect filename on Gradescope</li>
-</ul></li>
-<li>Communication policy (no content review by email; one thread per issue; no same-issue cross-emails)</li>
-<li>How to ask for help productively</li>
+<li><strong>If you’ve gotten an error message</strong> when running a script or knitting, search the relevant section below for the symptom.</li>
+<li><strong>If your output renders but looks wrong</strong> when you compare it to the reference in the <a href="./submission.html">Submission chapter</a>, jump to <a href="#output-format-errors">Output format errors</a> — that’s where the visual examples live.</li>
+<li><strong>If you’ve checked everything and still can’t resolve it,</strong> see <a href="#getting-help">Getting help</a> at the end of this chapter.</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Each entry follows the same pattern: <strong>Symptom</strong>, <strong>Cause</strong>, <strong>Fix</strong>.</p>
+</section>
+<section id="setup-errors" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="setup-errors"><span class="header-section-number">6.2</span> Setup errors</h2>
+<section id="css-in-the-wrong-folder" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="css-in-the-wrong-folder"><span class="header-section-number">6.2.1</span> CSS in the wrong folder</h3>
+<p><strong>Symptom:</strong> Your knitted slides have no UGA styling — plain text, no colors, default fonts.</p>
+<p><strong>Cause:</strong> <code>project_slidedeck.css</code> is anywhere other than <code>Project/css/</code>.</p>
+<p><strong>Fix:</strong> Move the file into <code>Project/css/</code>. Re-knit. Visual example of what this looks like: <a href="#output-format-errors">Wrong CSS</a>.</p>
+</section>
+<section id="working-from-your-downloads-folder" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="working-from-your-downloads-folder"><span class="header-section-number">6.2.2</span> Working from your Downloads folder</h3>
+<p><strong>Symptom:</strong> “File not found” errors when running scripts or knitting. R can’t see your data files even though they exist.</p>
+<p><strong>Cause:</strong> RStudio’s working directory is your Downloads folder, not your <code>Project/</code> folder. The <code>here()</code> paths in scripts and the Rmd resolve to the wrong place.</p>
+<p><strong>Fix:</strong> Move all files into <code>Project/</code> and always open RStudio by double-clicking <code>Project.Rproj</code>. Never work from Downloads.</p>
+</section>
+<section id="required-files-missing-or-in-the-wrong-subfolder" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="required-files-missing-or-in-the-wrong-subfolder"><span class="header-section-number">6.2.3</span> Required files missing or in the wrong subfolder</h3>
+<p><strong>Symptom:</strong> “Cannot open the connection” or “object not found” errors during a script run or knit.</p>
+<p><strong>Cause:</strong> A required file isn’t where the script or Rmd expects it (e.g., <code>LF.R</code> is in your project root instead of <code>r/</code>, or <code>pppub24.csv</code> is missing from <code>data/</code>).</p>
+<p><strong>Fix:</strong> Run <code>check_setup_preproject.R</code> (pre-project) or <code>check_setup_project.R</code> (main project). The script tells you exactly which file is misplaced and where it should go.</p>
+</section>
+</section>
+<section id="workflow-errors" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="workflow-errors"><span class="header-section-number">6.3</span> Workflow errors</h2>
+<section id="knitting-before-running-the-r-script" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="knitting-before-running-the-r-script"><span class="header-section-number">6.3.1</span> Knitting before running the R script</h3>
+<p><strong>Symptom:</strong> Knit errors out with a “file not found” message pointing at <code>out/LF.csv</code> or <code>data/cpsmar_e.csv</code>.</p>
+<p><strong>Cause:</strong> You haven’t run <code>LF.R</code> (pre-project) or <code>cpsmar_e.R</code> (main project) yet, so the file the Rmd is trying to read doesn’t exist.</p>
+<p><strong>Fix:</strong> Run the relevant R script first (open it in the editor, Select All, click Run), then knit the Rmd.</p>
+</section>
+<section id="variable-name-confusion" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="variable-name-confusion"><span class="header-section-number">6.3.2</span> Variable name confusion</h3>
+<p><strong>Symptom:</strong> Knit errors out mid-document with “object not found” — a chunk references <code>cpsmar_a</code> but you defined <code>cpsmar_e</code> (or similar).</p>
+<p><strong>Cause:</strong> Typo or misalignment between chunks. You defined the analysis sample with one name, then referenced a different name in a downstream chunk.</p>
+<p><strong>Fix:</strong> Read each chunk carefully. Match data-frame names exactly across chunks. The variable structure in the template is: <code>cpsmar_e</code> (the extract) → <code>cpsmar_a</code> (the analysis sample) → <code>singles</code> (the singles subset).</p>
+</section>
+<section id="touching-the-setup-chunk" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="touching-the-setup-chunk"><span class="header-section-number">6.3.3</span> Touching the setup chunk</h3>
+<p><strong>Symptom:</strong> Output looks broken or knit fails in unexpected ways (missing libraries, scientific notation issues, formatting wrong).</p>
+<p><strong>Cause:</strong> You changed <code>include = FALSE</code> to <code>include = TRUE</code> on the setup chunk, or otherwise modified the setup chunk’s contents.</p>
+<p><strong>Fix:</strong> Restore the setup chunk to its original state. The <code>eval = FALSE → TRUE</code> toggle only applies to content code chunks (<code>btl1</code>, <code>btl2</code>, <code>mi1</code>, etc.), never the setup chunk.</p>
+</section>
+</section>
+<section id="rendering-errors-the-knit-step" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="rendering-errors-the-knit-step"><span class="header-section-number">6.4</span> Rendering errors (the knit step)</h2>
+<section id="leaving-eval-false-on-a-completed-chunk" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="leaving-eval-false-on-a-completed-chunk"><span class="header-section-number">6.4.1</span> Leaving <code>eval = FALSE</code> on a completed chunk</h3>
+<p><strong>Symptom:</strong> Your code is correct but the output doesn’t appear in the knitted slide. The chunk shows the code but no result below it.</p>
+<p><strong>Cause:</strong> The chunk option <code>eval = FALSE</code> is still set. R Markdown displays the code but skips running it during knit.</p>
+<p><strong>Fix:</strong> Change <code>eval = FALSE</code> to <code>eval = TRUE</code> on every content chunk you’ve completed. Re-knit.</p>
+</section>
+<section id="editing-the-yaml-beyond-the-author-line" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="editing-the-yaml-beyond-the-author-line"><span class="header-section-number">6.4.2</span> Editing the YAML beyond the author line</h3>
+<p><strong>Symptom:</strong> The knit produces unexpected output — different layout, missing CSS, wrong document class, no slide breaks.</p>
+<p><strong>Cause:</strong> You changed something in the YAML besides the <code>author:</code> line (e.g., the <code>output:</code> value, the <code>css:</code> reference, the <code>widescreen:</code> setting).</p>
+<p><strong>Fix:</strong> Restore the YAML to its original values, leaving only the <code>author:</code> line as your edit. If unsure, open a fresh copy of <code>pre_project.Rmd</code> or <code>project.Rmd</code> and copy the YAML block over.</p>
+</section>
+<section id="using-the-knit-dropdown-instead-of-the-knit-button" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="using-the-knit-dropdown-instead-of-the-knit-button"><span class="header-section-number">6.4.3</span> Using the Knit dropdown instead of the Knit button</h3>
+<p><strong>Symptom:</strong> Output is a Word document, a LaTeX-styled PDF, or some format that doesn’t match the slide deck reference.</p>
+<p><strong>Cause:</strong> You clicked the small dropdown arrow next to the Knit button and selected “Knit to PDF / Word / etc.” That overrides the output format specified in the Rmd’s YAML.</p>
+<p><strong>Fix:</strong> Click the <strong>Knit</strong> button itself, not the dropdown arrow. The YAML already tells R Markdown to knit to HTML; just trust the button.</p>
+</section>
+</section>
+<section id="output-format-errors" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="output-format-errors"><span class="header-section-number">6.5</span> Output format errors</h2>
+<p>These are the canonical “submission rejected” failure modes, each shown with a real example from a prior submission. If your output matches any of these images, your submission will receive a 0.</p>
+<section id="wrong-css" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="wrong-css"><span class="header-section-number">6.5.1</span> Wrong CSS</h3>
+<p><strong>Symptom:</strong> Output is in landscape but has no UGA styling — plain text, gray gradients, default browser fonts.</p>
+<p><strong>Cause:</strong> <code>project_slidedeck.css</code> was not found at knit time (usually because it’s not in <code>Project/css/</code>).</p>
+<p><strong>Fix:</strong> Verify the CSS file is in <code>Project/css/</code>. Re-knit.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_wrong_css.png" class="img-fluid figure-img" alt="Slide with plain text, no UGA styling, default fonts and gray gradients"></p>
+<figcaption>Wrong CSS example</figcaption>
+</figure>
+</div>
+</section>
+<section id="wrong-css-wrong-orientation" class="level3" data-number="6.5.2">
+<h3 data-number="6.5.2" class="anchored" data-anchor-id="wrong-css-wrong-orientation"><span class="header-section-number">6.5.2</span> Wrong CSS + wrong orientation</h3>
+<p><strong>Symptom:</strong> Output is portrait AND has no UGA styling.</p>
+<p><strong>Cause:</strong> Both CSS is missing and the print dialog saved as portrait.</p>
+<p><strong>Fix:</strong> Move CSS to <code>Project/css/</code>, re-knit, then save with <strong>Landscape</strong> orientation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_wrong_css_orientation.png" class="img-fluid figure-img" alt="Portrait-oriented slide deck with no UGA styling"></p>
+<figcaption>Wrong CSS, wrong orientation example</figcaption>
+</figure>
+</div>
+</section>
+<section id="wrong-orientation" class="level3" data-number="6.5.3">
+<h3 data-number="6.5.3" class="anchored" data-anchor-id="wrong-orientation"><span class="header-section-number">6.5.3</span> Wrong orientation</h3>
+<p><strong>Symptom:</strong> Correct UGA styling, but the PDF is portrait.</p>
+<p><strong>Cause:</strong> Print dialog defaulted to portrait and you didn’t change it.</p>
+<p><strong>Fix:</strong> In the browser’s print dialog, set <strong>Layout / Orientation to Landscape</strong> before saving.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_wrong_orientation.png" class="img-fluid figure-img" alt="Portrait-oriented slide deck with correct UGA styling"></p>
+<figcaption>Wrong orientation example</figcaption>
+</figure>
+</div>
+</section>
+<section id="long-landscape" class="level3" data-number="6.5.4">
+<h3 data-number="6.5.4" class="anchored" data-anchor-id="long-landscape"><span class="header-section-number">6.5.4</span> Long landscape</h3>
+<p><strong>Symptom:</strong> Landscape PDF, but the slide content is stretched horizontally across a single very wide page instead of broken into separate slide pages.</p>
+<p><strong>Cause:</strong> A print dialog scaling setting fit multiple slides onto one wide page.</p>
+<p><strong>Fix:</strong> Reset print dialog scaling to default. Make sure <strong>Pages per sheet = 1</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_long_landscape.png" class="img-fluid figure-img" alt="Single wide page with multiple slides squished onto it"></p>
+<figcaption>Long landscape example</figcaption>
+</figure>
+</div>
+</section>
+<section id="portrait" class="level3" data-number="6.5.5">
+<h3 data-number="6.5.5" class="anchored" data-anchor-id="portrait"><span class="header-section-number">6.5.5</span> Portrait</h3>
+<p><strong>Symptom:</strong> Output is portrait. (Same as “Wrong orientation” above, isolated here as an example.)</p>
+<p><strong>Cause:</strong> Print dialog defaulted to portrait.</p>
+<p><strong>Fix:</strong> Set Layout to <strong>Landscape</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_portrait.png" class="img-fluid figure-img" alt="Portrait-oriented slide deck"></p>
+<figcaption>Portrait example</figcaption>
+</figure>
+</div>
+</section>
+<section id="portrait-wrong-css" class="level3" data-number="6.5.6">
+<h3 data-number="6.5.6" class="anchored" data-anchor-id="portrait-wrong-css"><span class="header-section-number">6.5.6</span> Portrait + wrong CSS</h3>
+<p><strong>Symptom:</strong> Output is portrait AND has no UGA styling. Same underlying causes as the “Wrong CSS + wrong orientation” case, isolated here as a distinct example pattern.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_portrait_wrong_css.png" class="img-fluid figure-img" alt="Portrait-oriented slide deck with no UGA styling"></p>
+<figcaption>Portrait + wrong CSS example</figcaption>
+</figure>
+</div>
+</section>
+<section id="latex-slides-knit-to-pdf-slide-format" class="level3" data-number="6.5.7">
+<h3 data-number="6.5.7" class="anchored" data-anchor-id="latex-slides-knit-to-pdf-slide-format"><span class="header-section-number">6.5.7</span> LaTeX slides (knit-to-PDF, slide format)</h3>
+<p><strong>Symptom:</strong> Output is a slide deck rendered with LaTeX/Beamer styling — different fonts, different layout, no UGA brand colors.</p>
+<p><strong>Cause:</strong> You used the Knit dropdown to select “Knit to PDF” with slide output, overriding the Rmd’s HTML-based ioslides format.</p>
+<p><strong>Fix:</strong> Use the Knit button (not the dropdown). The Rmd’s YAML specifies <code>ioslides_presentation</code> for a reason.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_latex_slides.png" class="img-fluid figure-img" alt="Slide deck rendered as LaTeX/Beamer instead of HTML ioslides"></p>
+<figcaption>LaTeX slides example</figcaption>
+</figure>
+</div>
+</section>
+<section id="latex-document-knit-to-pdf-document-format" class="level3" data-number="6.5.8">
+<h3 data-number="6.5.8" class="anchored" data-anchor-id="latex-document-knit-to-pdf-document-format"><span class="header-section-number">6.5.8</span> LaTeX document (knit-to-PDF, document format)</h3>
+<p><strong>Symptom:</strong> Output is a regular PDF document, not a slide deck at all. Looks like a paper or article.</p>
+<p><strong>Cause:</strong> You used the Knit dropdown to select “Knit to PDF” with document output, AND likely modified the YAML to change the output format.</p>
+<p><strong>Fix:</strong> Restore the YAML. Knit with the button. Save as PDF from the HTML output.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_latex_document.png" class="img-fluid figure-img" alt="Regular PDF document instead of a slide deck"></p>
+<figcaption>LaTeX document example</figcaption>
+</figure>
+</div>
+</section>
+<section id="not-knit" class="level3" data-number="6.5.9">
+<h3 data-number="6.5.9" class="anchored" data-anchor-id="not-knit"><span class="header-section-number">6.5.9</span> Not knit</h3>
+<p><strong>Symptom:</strong> Submission is the raw <code>.Rmd</code> file, or a file that was never actually knit — no rendering at all.</p>
+<p><strong>Cause:</strong> You uploaded the wrong file (the <code>.Rmd</code> source instead of the saved-as-PDF output).</p>
+<p><strong>Fix:</strong> Knit the Rmd to HTML, save the HTML as PDF using your browser’s print dialog, then upload that PDF.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_not_knit.png" class="img-fluid figure-img" alt="Raw Rmd content or unrenderable file submitted"></p>
+<figcaption>Not knit example</figcaption>
+</figure>
+</div>
+</section>
+<section id="wrong-file" class="level3" data-number="6.5.10">
+<h3 data-number="6.5.10" class="anchored" data-anchor-id="wrong-file"><span class="header-section-number">6.5.10</span> Wrong file</h3>
+<p><strong>Symptom:</strong> Submission is something other than the intended project artifact — an old version, a template, an unrelated document.</p>
+<p><strong>Cause:</strong> You uploaded the wrong file.</p>
+<p><strong>Fix:</strong> Locate the correct PDF in your <code>Project/</code> folder and re-upload. Double-check the filename matches the convention.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/bad_wrong_pdf.png" class="img-fluid figure-img" alt="Wrong file submitted to Gradescope"></p>
+<figcaption>Wrong file example</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="content-errors" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="content-errors"><span class="header-section-number">6.6</span> Content errors</h2>
+<section id="numbers-in-your-paragraph-dont-match-lf.csv-pre-project" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="numbers-in-your-paragraph-dont-match-lf.csv-pre-project"><span class="header-section-number">6.6.1</span> Numbers in your paragraph don’t match <code>LF.csv</code> (pre-project)</h3>
+<p><strong>Symptom:</strong> Your slide 3 paragraph cites numbers that don’t reflect your own data — they came from a classmate or from a previous semester.</p>
+<p><strong>Cause:</strong> You copied numbers from a peer instead of running <code>LF.R</code> yourself, or <code>LF.R</code> didn’t actually run and the values you wrote down were stale.</p>
+<p><strong>Fix:</strong> Run <code>LF.R</code> yourself. Open <code>out/LF.csv</code> (or print <code>lf</code> in the console). Fill in your slide 3 paragraph with those values, rounded to two decimal places.</p>
+</section>
+<section id="wrong-filename" class="level3" data-number="6.6.2">
+<h3 data-number="6.6.2" class="anchored" data-anchor-id="wrong-filename"><span class="header-section-number">6.6.2</span> Wrong filename</h3>
+<p><strong>Symptom:</strong> Your file was uploaded but appears under an unexpected name in Gradescope, or you can’t tell which submission is which in your <code>Project/</code> folder later.</p>
+<p><strong>Cause:</strong> The filename didn’t match the required pattern.</p>
+<p><strong>Fix:</strong> Rename your file to the correct convention (<code>firstname_lastname_pre.pdf</code> / <code>firstname_lastname_progress.pdf</code> / <code>firstname_lastname_project.pdf</code>) and re-upload.</p>
+</section>
+</section>
+<section id="getting-help" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="getting-help"><span class="header-section-number">6.7</span> Getting help</h2>
+<p>If your error isn’t in this chapter, or you’ve checked and still can’t resolve it, here’s how to ask for help.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Important</span>Communication policy (summarized from the syllabus)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.</p>
+<ul>
+<li><strong>For content-related questions</strong>, contact <strong>TAL staff</strong> first. If TAL staff can’t solve the problem, then email Abbi or Chris.</li>
+<li><strong>For administrative questions</strong>, email <strong>Abbi first</strong>. She’ll loop in Chris if needed.</li>
+<li><strong>One thread per issue.</strong> Don’t send the same problem to both Abbi and Chris on separate emails. We will loop the other in if needed. Duplicate emails waste resources for your classmates.</li>
+<li><strong>No content review by email before the deadline.</strong> We will not pre-grade or review your project ahead of the due date.</li>
+<li><strong>Email format requirements:</strong>
+<ul>
+<li><strong>Subject line:</strong> include your section time and a brief category (e.g., “coding error” or “homework question”).</li>
+<li><strong>Greeting:</strong> “Hey” is not a proper greeting. “Dear Abbi” or “Dear Ms.&nbsp;Cormier” is.</li>
+<li><strong>Body:</strong> a clear description of the problem and what you’ve tried. For coding issues, paste your code in the email body. For project errors, attach your <code>.Rmd</code> file and paste the error message in the body. <strong>Do not send screenshots or photos.</strong></li>
+<li><strong>Closing:</strong> a proper closing (e.g., “Respectfully, your_name”).</li>
+</ul></li>
+</ul>
+<p>Omission of any of these features may cause your message to be rejected.</p>
 </div>
 </div>
+<p>The full communication policy lives in the course syllabus on eLC — see the <strong>Communication</strong> section. If your question is about email mechanics rather than course content, check there first.</p>
 
 
 </section>

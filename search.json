@@ -372,21 +372,81 @@
   {
     "objectID": "common-errors.html",
     "href": "common-errors.html",
-    "title": "6  Common Errors and FAQ",
+    "title": "6  Common Errors",
     "section": "",
-    "text": "6.1 Outline (to be written)\nIf something is broken, look here first.",
+    "text": "6.1 How to use this chapter\nIf something has gone wrong, look here first. This chapter is a diagnostic catalog of the failure modes we see most often, organized roughly in the order they tend to bite during the project workflow.\nEach entry follows the same pattern: Symptom, Cause, Fix.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors and FAQ</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors</span>"
     ]
   },
   {
-    "objectID": "common-errors.html#outline-to-be-written",
-    "href": "common-errors.html#outline-to-be-written",
-    "title": "6  Common Errors and FAQ",
+    "objectID": "common-errors.html#how-to-use-this-chapter",
+    "href": "common-errors.html#how-to-use-this-chapter",
+    "title": "6  Common Errors",
     "section": "",
-    "text": "The “did setup work?” diagnostic (check_setup.R)\nCommon error catalog:\n\nCSS in the wrong folder\neval=FALSE left on a completed chunk\nYAML edited\nWrong working directory\nMissing packages\nKnit-to-PDF instead of HTML → PDF\nIncorrect filename on Gradescope\n\nCommunication policy (no content review by email; one thread per issue; no same-issue cross-emails)\nHow to ask for help productively\n\n\n\n\n\n\n\nNote\n\n\n\nThis chapter is a stub. Content will be filled in as part of Wave 2 of the project rebuild.",
+    "text": "If you’ve gotten an error message when running a script or knitting, search the relevant section below for the symptom.\nIf your output renders but looks wrong when you compare it to the reference in the Submission chapter, jump to Output format errors — that’s where the visual examples live.\nIf you’ve checked everything and still can’t resolve it, see Getting help at the end of this chapter.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors and FAQ</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors</span>"
+    ]
+  },
+  {
+    "objectID": "common-errors.html#setup-errors",
+    "href": "common-errors.html#setup-errors",
+    "title": "6  Common Errors",
+    "section": "6.2 Setup errors",
+    "text": "6.2 Setup errors\n\n6.2.1 CSS in the wrong folder\nSymptom: Your knitted slides have no UGA styling — plain text, no colors, default fonts.\nCause: project_slidedeck.css is anywhere other than Project/css/.\nFix: Move the file into Project/css/. Re-knit. Visual example of what this looks like: Wrong CSS.\n\n\n6.2.2 Working from your Downloads folder\nSymptom: “File not found” errors when running scripts or knitting. R can’t see your data files even though they exist.\nCause: RStudio’s working directory is your Downloads folder, not your Project/ folder. The here() paths in scripts and the Rmd resolve to the wrong place.\nFix: Move all files into Project/ and always open RStudio by double-clicking Project.Rproj. Never work from Downloads.\n\n\n6.2.3 Required files missing or in the wrong subfolder\nSymptom: “Cannot open the connection” or “object not found” errors during a script run or knit.\nCause: A required file isn’t where the script or Rmd expects it (e.g., LF.R is in your project root instead of r/, or pppub24.csv is missing from data/).\nFix: Run check_setup_preproject.R (pre-project) or check_setup_project.R (main project). The script tells you exactly which file is misplaced and where it should go.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors</span>"
+    ]
+  },
+  {
+    "objectID": "common-errors.html#workflow-errors",
+    "href": "common-errors.html#workflow-errors",
+    "title": "6  Common Errors",
+    "section": "6.3 Workflow errors",
+    "text": "6.3 Workflow errors\n\n6.3.1 Knitting before running the R script\nSymptom: Knit errors out with a “file not found” message pointing at out/LF.csv or data/cpsmar_e.csv.\nCause: You haven’t run LF.R (pre-project) or cpsmar_e.R (main project) yet, so the file the Rmd is trying to read doesn’t exist.\nFix: Run the relevant R script first (open it in the editor, Select All, click Run), then knit the Rmd.\n\n\n6.3.2 Variable name confusion\nSymptom: Knit errors out mid-document with “object not found” — a chunk references cpsmar_a but you defined cpsmar_e (or similar).\nCause: Typo or misalignment between chunks. You defined the analysis sample with one name, then referenced a different name in a downstream chunk.\nFix: Read each chunk carefully. Match data-frame names exactly across chunks. The variable structure in the template is: cpsmar_e (the extract) → cpsmar_a (the analysis sample) → singles (the singles subset).\n\n\n6.3.3 Touching the setup chunk\nSymptom: Output looks broken or knit fails in unexpected ways (missing libraries, scientific notation issues, formatting wrong).\nCause: You changed include = FALSE to include = TRUE on the setup chunk, or otherwise modified the setup chunk’s contents.\nFix: Restore the setup chunk to its original state. The eval = FALSE → TRUE toggle only applies to content code chunks (btl1, btl2, mi1, etc.), never the setup chunk.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors</span>"
+    ]
+  },
+  {
+    "objectID": "common-errors.html#rendering-errors-the-knit-step",
+    "href": "common-errors.html#rendering-errors-the-knit-step",
+    "title": "6  Common Errors",
+    "section": "6.4 Rendering errors (the knit step)",
+    "text": "6.4 Rendering errors (the knit step)\n\n6.4.1 Leaving eval = FALSE on a completed chunk\nSymptom: Your code is correct but the output doesn’t appear in the knitted slide. The chunk shows the code but no result below it.\nCause: The chunk option eval = FALSE is still set. R Markdown displays the code but skips running it during knit.\nFix: Change eval = FALSE to eval = TRUE on every content chunk you’ve completed. Re-knit.\n\n\n6.4.2 Editing the YAML beyond the author line\nSymptom: The knit produces unexpected output — different layout, missing CSS, wrong document class, no slide breaks.\nCause: You changed something in the YAML besides the author: line (e.g., the output: value, the css: reference, the widescreen: setting).\nFix: Restore the YAML to its original values, leaving only the author: line as your edit. If unsure, open a fresh copy of pre_project.Rmd or project.Rmd and copy the YAML block over.\n\n\n6.4.3 Using the Knit dropdown instead of the Knit button\nSymptom: Output is a Word document, a LaTeX-styled PDF, or some format that doesn’t match the slide deck reference.\nCause: You clicked the small dropdown arrow next to the Knit button and selected “Knit to PDF / Word / etc.” That overrides the output format specified in the Rmd’s YAML.\nFix: Click the Knit button itself, not the dropdown arrow. The YAML already tells R Markdown to knit to HTML; just trust the button.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors</span>"
+    ]
+  },
+  {
+    "objectID": "common-errors.html#output-format-errors",
+    "href": "common-errors.html#output-format-errors",
+    "title": "6  Common Errors",
+    "section": "6.5 Output format errors",
+    "text": "6.5 Output format errors\nThese are the canonical “submission rejected” failure modes, each shown with a real example from a prior submission. If your output matches any of these images, your submission will receive a 0.\n\n6.5.1 Wrong CSS\nSymptom: Output is in landscape but has no UGA styling — plain text, gray gradients, default browser fonts.\nCause: project_slidedeck.css was not found at knit time (usually because it’s not in Project/css/).\nFix: Verify the CSS file is in Project/css/. Re-knit.\n\n\n\nWrong CSS example\n\n\n\n\n6.5.2 Wrong CSS + wrong orientation\nSymptom: Output is portrait AND has no UGA styling.\nCause: Both CSS is missing and the print dialog saved as portrait.\nFix: Move CSS to Project/css/, re-knit, then save with Landscape orientation.\n\n\n\nWrong CSS, wrong orientation example\n\n\n\n\n6.5.3 Wrong orientation\nSymptom: Correct UGA styling, but the PDF is portrait.\nCause: Print dialog defaulted to portrait and you didn’t change it.\nFix: In the browser’s print dialog, set Layout / Orientation to Landscape before saving.\n\n\n\nWrong orientation example\n\n\n\n\n6.5.4 Long landscape\nSymptom: Landscape PDF, but the slide content is stretched horizontally across a single very wide page instead of broken into separate slide pages.\nCause: A print dialog scaling setting fit multiple slides onto one wide page.\nFix: Reset print dialog scaling to default. Make sure Pages per sheet = 1.\n\n\n\nLong landscape example\n\n\n\n\n6.5.5 Portrait\nSymptom: Output is portrait. (Same as “Wrong orientation” above, isolated here as an example.)\nCause: Print dialog defaulted to portrait.\nFix: Set Layout to Landscape.\n\n\n\nPortrait example\n\n\n\n\n6.5.6 Portrait + wrong CSS\nSymptom: Output is portrait AND has no UGA styling. Same underlying causes as the “Wrong CSS + wrong orientation” case, isolated here as a distinct example pattern.\n\n\n\nPortrait + wrong CSS example\n\n\n\n\n6.5.7 LaTeX slides (knit-to-PDF, slide format)\nSymptom: Output is a slide deck rendered with LaTeX/Beamer styling — different fonts, different layout, no UGA brand colors.\nCause: You used the Knit dropdown to select “Knit to PDF” with slide output, overriding the Rmd’s HTML-based ioslides format.\nFix: Use the Knit button (not the dropdown). The Rmd’s YAML specifies ioslides_presentation for a reason.\n\n\n\nLaTeX slides example\n\n\n\n\n6.5.8 LaTeX document (knit-to-PDF, document format)\nSymptom: Output is a regular PDF document, not a slide deck at all. Looks like a paper or article.\nCause: You used the Knit dropdown to select “Knit to PDF” with document output, AND likely modified the YAML to change the output format.\nFix: Restore the YAML. Knit with the button. Save as PDF from the HTML output.\n\n\n\nLaTeX document example\n\n\n\n\n6.5.9 Not knit\nSymptom: Submission is the raw .Rmd file, or a file that was never actually knit — no rendering at all.\nCause: You uploaded the wrong file (the .Rmd source instead of the saved-as-PDF output).\nFix: Knit the Rmd to HTML, save the HTML as PDF using your browser’s print dialog, then upload that PDF.\n\n\n\nNot knit example\n\n\n\n\n6.5.10 Wrong file\nSymptom: Submission is something other than the intended project artifact — an old version, a template, an unrelated document.\nCause: You uploaded the wrong file.\nFix: Locate the correct PDF in your Project/ folder and re-upload. Double-check the filename matches the convention.\n\n\n\nWrong file example",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors</span>"
+    ]
+  },
+  {
+    "objectID": "common-errors.html#content-errors",
+    "href": "common-errors.html#content-errors",
+    "title": "6  Common Errors",
+    "section": "6.6 Content errors",
+    "text": "6.6 Content errors\n\n6.6.1 Numbers in your paragraph don’t match LF.csv (pre-project)\nSymptom: Your slide 3 paragraph cites numbers that don’t reflect your own data — they came from a classmate or from a previous semester.\nCause: You copied numbers from a peer instead of running LF.R yourself, or LF.R didn’t actually run and the values you wrote down were stale.\nFix: Run LF.R yourself. Open out/LF.csv (or print lf in the console). Fill in your slide 3 paragraph with those values, rounded to two decimal places.\n\n\n6.6.2 Wrong filename\nSymptom: Your file was uploaded but appears under an unexpected name in Gradescope, or you can’t tell which submission is which in your Project/ folder later.\nCause: The filename didn’t match the required pattern.\nFix: Rename your file to the correct convention (firstname_lastname_pre.pdf / firstname_lastname_progress.pdf / firstname_lastname_project.pdf) and re-upload.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors</span>"
+    ]
+  },
+  {
+    "objectID": "common-errors.html#getting-help",
+    "href": "common-errors.html#getting-help",
+    "title": "6  Common Errors",
+    "section": "6.7 Getting help",
+    "text": "6.7 Getting help\nIf your error isn’t in this chapter, or you’ve checked and still can’t resolve it, here’s how to ask for help.\n\n\n\n\n\n\nImportantCommunication policy (summarized from the syllabus)\n\n\n\n\nFor content-related questions, contact TAL staff first. If TAL staff can’t solve the problem, then email Abbi or Chris.\nFor administrative questions, email Abbi first. She’ll loop in Chris if needed.\nOne thread per issue. Don’t send the same problem to both Abbi and Chris on separate emails. We will loop the other in if needed. Duplicate emails waste resources for your classmates.\nNo content review by email before the deadline. We will not pre-grade or review your project ahead of the due date.\nEmail format requirements:\n\nSubject line: include your section time and a brief category (e.g., “coding error” or “homework question”).\nGreeting: “Hey” is not a proper greeting. “Dear Abbi” or “Dear Ms. Cormier” is.\nBody: a clear description of the problem and what you’ve tried. For coding issues, paste your code in the email body. For project errors, attach your .Rmd file and paste the error message in the body. Do not send screenshots or photos.\nClosing: a proper closing (e.g., “Respectfully, your_name”).\n\n\nOmission of any of these features may cause your message to be rejected.\n\n\nThe full communication policy lives in the course syllabus on eLC — see the Communication section. If your question is about email mechanics rather than course content, check there first.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Common Errors</span>"
     ]
   },
   {
