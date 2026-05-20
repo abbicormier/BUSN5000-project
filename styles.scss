@@ -12,10 +12,10 @@ $creamery:     #D6D2C4;
 $light-gray:   #EEEEEE;
 $slate:        #333333;
 
-// Fonts (Merriweather Sans to match syllabus/schedule)
+// Fonts (match syllabus/schedule — flatly convention)
 $font-family-sans-serif: 'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family-monospace:  'Source Code Pro', 'Fira Code', 'Monaco', 'Consolas', monospace;
-$headings-font-family:   'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, 'Courier New', monospace;
+$headings-font-family:   'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headings-font-weight:   600;
 
 // Bootstrap overrides (flow into cosmo)
@@ -32,8 +32,51 @@ $navbar-fg:  $dawg-white;
 
 /*-- scss:rules --*/
 
-// Load Merriweather Sans + Source Code Pro from Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;600;700&family=Source+Code+Pro:wght@400;500&display=swap');
+// Self-hosted fonts (run `python fetch_fonts.py` once to populate
+// assets/fonts/). No Google Fonts CDN dependency at page-load time.
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/Merriweather_Sans-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/Merriweather_Sans-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/Merriweather_Sans-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/Raleway-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('assets/fonts/Raleway-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('assets/fonts/Raleway-700.woff2') format('woff2');
+}
 
 // Headings — all Dawg Red, semi-bold (matches uga.scss)
 .quarto-title-block .title,

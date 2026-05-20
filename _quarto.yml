@@ -16,13 +16,12 @@ book:
     - submission.qmd
     - common-errors.qmd
     - r-ai-resources.qmd
-  repo-url: https://github.com/abbicormier/BUSN5000-project
-  repo-actions: [edit, issue]
   search: true
   page-navigation: true
 
 language:
   title-block-published: "Last updated"
+  title-block-author-single: ""
 
 format:
   html:
