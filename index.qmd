@@ -23,8 +23,9 @@ Read the chapters in order the first time through. After that, treat
 it as a reference — jump to whatever section you need. Each chapter
 has its own table of contents in the sidebar.
 
-If you find a section that's wrong, unclear, or out of date, please
-flag it via the "report an issue" link at the top of any page.
+If you find a section that's wrong, unclear, or out of date, reach
+out to the teaching team — see [Getting help](common-errors.qmd#getting-help)
+in the Common Errors chapter for how to contact us.
 
 ## Acknowledgments
 
