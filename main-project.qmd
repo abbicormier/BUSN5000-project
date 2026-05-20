@@ -68,11 +68,28 @@ files to that same directory:
 - `check_setup_project.R` — verifies your file sort for the main
   project
 
-Sort those into your existing `Project/` directory following the
-same conventions as the pre-project (Rmd in root, R scripts in
-`r/`, PDFs in root, etc.). Then run `check_setup_project.R` from
-RStudio (open the script, Select All, Run) to confirm everything's
-in place.
+Here's the destination for each new file:
+
+| File | Goes in |
+|------|---------|
+| `project.Rmd` | `Project/` (root) |
+| `cpsmar_e.R` | `Project/r/` |
+| `check_setup_project.R` | `Project/r/` |
+
+Then run `check_setup_project.R` from RStudio (open the script,
+Select All, Run) to confirm everything's in place.
+
+## Optional bonus midway through
+
+Below is the slide-by-slide walkthrough for the entire project,
+to be submitted in full at the end of the semester. You don't
+have to wait until then to show progress — partway through, the
+optional **Project Progress Check** lets you submit an
+in-progress version of your deck for up to 5 bonus points (and
+serves as a safety net if your pre-project lost points).
+
+See the [Progress Check chapter](progress-check.qmd) for what's
+scored and when it's due.
 
 ## General rules
 
@@ -92,7 +109,7 @@ If your deck doesn't comply exactly, it will receive a 0%.
 
 Each write-up slide has a specific line limit (noted in the
 slide's section below). **We will not read beyond the line limit.**
-Stay disciplined — concise writing is what's being graded, not
+Stay disciplined — concise writing is what's being scored, not
 volume.
 
 ::: {.callout-important}
@@ -199,7 +216,7 @@ decrease — not a 5% decrease. (A 5% decrease from 25% would be
 
 ## Slide-by-slide instructions
 
-The point allocation for each graded slide is shown in parentheses
+The point allocation for each scored slide is shown in parentheses
 next to the slide title. Slides without a point allocation are
 section dividers or scaffolding chunks (the code chunks whose
 output is displayed on the next `.5` slide).

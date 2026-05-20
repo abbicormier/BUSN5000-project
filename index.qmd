@@ -10,7 +10,7 @@ This guide covers:
 - How to set up your computer and your project folder
 - What the pre-project is and how to complete it
 - What the main project is and how to complete it
-- What the progress check is and how it's graded
+- What the progress check is and how it's scored
 - How to submit your work
 - How to recognize and recover from common errors
 

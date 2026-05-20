@@ -14,16 +14,31 @@ library(here)   # For easy file referencing in project workflows
 
 #-------------------------------------------------------------------------------
 
-# Defensive check: confirm the raw CPS person file is in the
-# expected location before we try to read it. If it isn't, we
+# Defensive check: confirm both raw CPS data files are in their
+# expected locations before we proceed. If either is missing we
 # stop here with a helpful message rather than letting read_csv
 # fail with a generic "cannot open the connection" error.
+#
+# LF.R only reads pppub24.csv directly, but the main project's
+# extract script (cpsmar_e.R) will need hhpub24.csv too. Easier
+# to confirm both are sorted correctly now than to find out later.
 
 if (!file.exists(here("data", "pppub24.csv"))) {
   stop(
     "data/pppub24.csv was not found. Place it inside your ",
     "Project/data/ folder and re-run this script. See the Setup ",
     "chapter of the Project Guide if you need a refresher: ",
+    "https://abbicormier.github.io/BUSN5000-project/setup.html"
+  )
+}
+
+if (!file.exists(here("data", "hhpub24.csv"))) {
+  stop(
+    "data/hhpub24.csv was not found. Place it inside your ",
+    "Project/data/ folder and re-run this script. (LF.R doesn't ",
+    "use this file directly, but the main project will — easier ",
+    "to catch the placement issue now than during the main ",
+    "project.) See the Setup chapter of the Project Guide: ",
     "https://abbicormier.github.io/BUSN5000-project/setup.html"
   )
 }

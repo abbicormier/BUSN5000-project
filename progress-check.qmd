@@ -1,7 +1,7 @@
 # Progress Check
 
 The Project Progress Check is an **optional** mid-project submission
-that gives you a small bonus on your Project grade in exchange for
+that gives you a small bonus on your Project score in exchange for
 showing that the core tables and figures are on track. It's
 offered in Week 4 of the semester, halfway between the Pre-project
 and the Final Project.
@@ -13,7 +13,7 @@ You don't have to submit it. We strongly recommend that you do.
 Two reasons:
 
 1. **Bonus points.** A complete and correct progress check earns up
-   to **5 bonus points** on your Project grade (per the syllabus).
+   to **5 bonus points** on your Project score (per the syllabus).
 2. **A safety net for the Pre-project.** If you earned a 0 on the
    Pre-project, the progress check is your one opportunity to earn
    those points back. Submit a clean progress check and the lost
@@ -37,7 +37,7 @@ Gradescope.
 There is no "progress check version" of the project. There's just
 the project, as it stands at the progress-check deadline.
 
-## What's graded
+## What's scored
 
 The progress check covers **about two-thirds of the project's
 core tables and figures**. Specifically, we look at six slides:
@@ -58,14 +58,14 @@ Submission chapter. Your deck must be 35 slides total even if many
 of the content slides are still placeholder.
 :::
 
-## Rubric
+## Scoring
 
 Three possible outcomes:
 
 | Result | Score | Criteria |
 |---|---|---|
-| **Full credit** | 5 bonus points | All six graded slides are visible, completed, and correct, AND the deck is 100% compliant with the formatting requirements. |
-| **Partial credit** | 3 bonus points | The deck is 100% compliant with formatting, but at least one graded slide has a content error. |
+| **Full credit** | 5 bonus points | All six scored slides are visible, completed, and correct, AND the deck is 100% compliant with the formatting requirements. |
+| **Partial credit** | 3 bonus points | The deck is 100% compliant with formatting, but at least one scored slide has a content error. |
 | **No credit** | 0 bonus points | Any formatting error (wrong CSS, wrong orientation, knit-to-PDF instead of HTML→PDF, etc.). |
 
 ::: {.callout-important}
@@ -74,7 +74,7 @@ submission that's saved with the wrong orientation, lost CSS, or
 the wrong PDF workflow earns 0. Formatting first, then content.
 :::
 
-## What's *not* graded
+## What's *not* scored
 
 - **Written sections.** We do not read the prose write-ups (Overview,
   Baseline comparisons, Documenting the differences, etc.) during
@@ -85,7 +85,7 @@ the wrong PDF workflow earns 0. Formatting first, then content.
   They're evaluated in the Final Project.
 
 This focus is intentional — the progress check is a checkpoint, not
-a full grade. Use the un-graded slides for trying things out,
+a full score. Use the un-scored slides for trying things out,
 sketching write-ups, etc.
 
 ## Submission

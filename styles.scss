@@ -12,10 +12,10 @@ $creamery:     #D6D2C4;
 $light-gray:   #EEEEEE;
 $slate:        #333333;
 
-// Fonts (match uga.scss exactly)
-$font-family-sans-serif: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// Fonts (Merriweather Sans to match syllabus/schedule)
+$font-family-sans-serif: 'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-monospace:  'Source Code Pro', 'Fira Code', 'Monaco', 'Consolas', monospace;
-$headings-font-family:   'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headings-font-family:   'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headings-font-weight:   600;
 
 // Bootstrap overrides (flow into cosmo)
@@ -32,8 +32,8 @@ $navbar-fg:  $dawg-white;
 
 /*-- scss:rules --*/
 
-// Load Source Sans Pro + Source Code Pro from Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Source+Code+Pro:wght@400;500&display=swap');
+// Load Merriweather Sans + Source Code Pro from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;600;700&family=Source+Code+Pro:wght@400;500&display=swap');
 
 // Headings — all Dawg Red, semi-bold (matches uga.scss)
 .quarto-title-block .title,
@@ -42,6 +42,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
 }
+
+// Heading sizes — match syllabus/schedule
+h1, .h1 { font-size: 34px; }
+h2, .h2 { font-size: 30px; }
+h3, .h3 { font-size: 24px; }
 
 // h2 with red bottom border (matches uga.scss slide-title treatment)
 h2 {

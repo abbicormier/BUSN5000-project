@@ -8,13 +8,13 @@ it correctly, you'll have:
 - Set up the proper directory structure on your computer
 - Learned how to knit your `.Rmd` to an HTML slide deck and save it
   in PDF format
-- Earned the **5% of your Project grade** that the Pre-project is
+- Earned the **5% of your Project score** that the Pre-project is
   worth
 
 ::: {.callout-important}
 ## All-or-nothing
 
-The Pre-project is worth **5% of your Project grade**, graded
+The Pre-project is worth **5% of your Project score**, scored
 all-or-nothing. If your content is correct **and** your slide
 deck is 100% compliant with the formatting in
 `pre_project_knitted_template.html`, you earn the full 5%. Any
@@ -33,8 +33,9 @@ that first.
 
 A 3-slide PDF slide deck:
 
-1. **Title slide** — auto-generated from the YAML block; just
-   requires your name.
+1. **Title slide** — auto-generated from the YAML block (short for
+   *YAML Ain't Markup Language* — the structured metadata at the
+   top of the Rmd); just requires your name.
 2. **Read LF.csv and print its contents** — one code chunk you
    complete.
 3. **Document the contents of LF.csv** — one paragraph with six

@@ -337,7 +337,7 @@ can't resolve it, here's how to ask for help.
   in if needed. Duplicate emails waste resources for your
   classmates.
 - **No content review by email before the deadline.** We will not
-  pre-grade or review your project ahead of the due date.
+  pre-score or review your project ahead of the due date.
 - **Email format requirements:**
   - **Subject line:** include your section time and a brief
     category (e.g., "coding error" or "homework question").
