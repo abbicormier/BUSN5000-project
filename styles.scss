@@ -91,6 +91,13 @@ h1, .h1 { font-size: 34px; }
 h2, .h2 { font-size: 30px; }
 h3, .h3 { font-size: 24px; }
 
+// h4 — Olympic blue, 23px (matches schedule's custom override)
+h4, .h4 {
+  font-size: 23px;
+  color: $olympic;
+  margin-top: 1.5rem;
+}
+
 // h2 with red bottom border (matches uga.scss slide-title treatment)
 h2 {
   border-bottom: 3px solid $dawg-red;
